@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Linux 网络相关 | MyBlog</title><meta name="author" content="illyber"><meta name="copyright" content="illyber"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="下载工具wget，不能多线程当我们在使用wget命令下载文件时，通常会需要将文件下载到指定的目录，这时就可以使用 -P 参数来指定目录，如果指定的目录不存在，则会自动创建。 1wget -P &#x2F;usr&#x2F;local&#x2F;src http:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-4.0.9.tar.gz  如果需要对下载的文件进行重命名，则可以通过 -O 参数指定文件名，需要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 网络相关">
+<meta property="og:url" content="https://illyber.github.io/2023/08/25/Linux/network_cmd/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="下载工具wget，不能多线程当我们在使用wget命令下载文件时，通常会需要将文件下载到指定的目录，这时就可以使用 -P 参数来指定目录，如果指定的目录不存在，则会自动创建。 1wget -P &#x2F;usr&#x2F;local&#x2F;src http:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-4.0.9.tar.gz  如果需要对下载的文件进行重命名，则可以通过 -O 参数指定文件名，需要">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg">
+<meta property="article:published_time" content="2023-08-25T15:18:06.276Z">
+<meta property="article:modified_time" content="2023-08-25T15:18:06.276Z">
+<meta property="article:author" content="illyber">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="network">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://illyber.github.io/2023/08/25/Linux/network_cmd/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Linux 网络相关',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-25 23:18:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">78</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-2.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="MyBlog"><span class="site-name">MyBlog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux 网络相关</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-25T15:18:06.276Z" title="发表于 2023-08-25 23:18:06">2023-08-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-25T15:18:06.276Z" title="更新于 2023-08-25 23:18:06">2023-08-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Linux 网络相关"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="下载工具"><a href="#下载工具" class="headerlink" title="下载工具"></a>下载工具</h1><h2 id="wget，不能多线程"><a href="#wget，不能多线程" class="headerlink" title="wget，不能多线程"></a>wget，不能多线程</h2><p>当我们在使用<code>wget</code>命令下载文件时，通常会需要将文件下载到指定的目录，这时就可以使用 <code>-P</code> 参数来指定目录，如果指定的目录不存在，则会自动创建。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -P /usr/local/src http://download.redis.io/releases/redis-4.0.9.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>如果需要对下载的文件进行重命名，则可以通过 <code>-O</code> 参数指定文件名，需要注意的是，如果重命名中包含路径，那么该路径必须实现创建好。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget  http://download.redis.io/releases/redis-4.0.9.tar.gz  -O /usr/local/src/redis.tar.gz</span><br></pre></td></tr></table></figure>
+<p>经测试 小写的和大写的都可以 但是大写的会显示下载过程 小写的不会</p>
+<h2 id="aria2"><a href="#aria2" class="headerlink" title="aria2"></a>aria2</h2><p><strong>1、直链下载</strong></p>
+<p>下载直链文件，只需在命令后附加地址，如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aria2c http://xx.com/xx</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>aria2</code>的多线程和分段下载功能可以加快文件的下载速度，对于下载大文件时特别有用。<code>-s</code> 多线程下载，<code>-x</code> 分段下载，如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aria2c -s 2 -x 2 http://xx.com/xx</span><br><span class="line">-s, --split=&lt;N&gt;</span><br><span class="line">-x, --max-connection-per-server=&lt;NUM&gt;</span><br></pre></td></tr></table></figure>
+<p>这将使用<code>2</code>个线程和<code>2</code>个连接来下载该文件。</p>
+<p>如果需要重命名为<code>yy</code>的话加上<code>--out</code>或者<code>-o</code>参数，如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aria2c --out=yy http://xx.com/xx</span><br><span class="line">aria2c -o yy http://xx.com/xx</span><br></pre></td></tr></table></figure>
+
+<p><strong>2、BT下载</strong>  </p>
+<p>种子和磁力下载：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aria2c ‘xxx.torrnet‘</span><br><span class="line">aria2c &#x27;磁力链接&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>列出种子内容：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aria2c -S xxx.torrent</span><br></pre></td></tr></table></figure>
+
+<p>下载种子内编号为<code>1</code>、<code>4</code>、<code>5</code>、<code>6</code>、<code>7</code>的文件，如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aria2c --select-file=1,4-7 xxx.torrent</span><br></pre></td></tr></table></figure>
+
+<p>设置<code>bt</code>端口：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aria2c --listen-port=3653 ‘xxx.torrent’</span><br></pre></td></tr></table></figure>
+
+<h1 id="翻墙"><a href="#翻墙" class="headerlink" title="翻墙"></a>翻墙</h1><h2 id="error"><a href="#error" class="headerlink" title="error"></a>error</h2><p>安装软件及依赖</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">必选依赖</span></span><br><span class="line">sudo apt install libcanberra-gtk-module libcanberra-gtk3-module gconf2 gconf-service libappindicator1</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">可选依赖</span></span><br><span class="line">sudo apt-ge install libssl-dev</span><br><span class="line">sudo apt-get install libsodium-dev</span><br></pre></td></tr></table></figure>
+
+<p>在 <a target="_blank" rel="noopener" href="https://github.com/qingshuisiyuan/electron-ssr-backup/releases">https://github.com/qingshuisiyuan/electron-ssr-backup/releases</a> 下载安装 electron-ssr-0.2.6.deb</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ./&lt;pkgname&gt;</span><br></pre></td></tr></table></figure>
+
+<p>运行 <code>electron-ssr</code>，查看是否有报错</p>
+<p>处理错误</p>
+<p>若报错无 Python，则运行 <code>sudo apt install python2.7</code>；再新建符号链接 <code>ln -s /usr/bin/python2.7 /usr/bin/python</code></p>
+<p><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/202301281946425.png" alt="image-20220509000950667"></p>
+<p>或安装依赖</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libssl-dev</span><br><span class="line">sudo apt-get install libsodium-dev</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python2.7</span><br><span class="line">sudo ln -s /usr/bin/python2.7 /usr/bin/python</span><br><span class="line">sudo apt install ./electron-ssr-0.2.6.deb</span><br></pre></td></tr></table></figure>
+
+<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/202301281946426.png" alt="image-20220509001152330"></p>
+<p>网络-&gt;网络代理-&gt;手动。手动设置好后，重启后自动可用。再不可用，填写配置URL(C)</p>
+<p><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/202301281946427.png" alt="image-20220509001409389"></p>
+<p>配置 URL(C) 里的内容：<code>http://127.0.0.1:2333/proxy.pac</code></p>
+<h1 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h1><p>如何连接服务器？参考自 <a target="_blank" rel="noopener" href="https://wangdoc.com/ssh/basic">SSH教程</a></p>
+<ol>
+<li>在客户端 ssh-keygen 生成密钥</li>
+<li>服务器安装 <code>openssh-server</code></li>
+<li>在服务器运行 <code>sudo systemctl start sshd.service</code></li>
+<li>在客户端运行 <code>ssh-copy-id -i key_file user@host</code> 上传公钥到服务器 <code>~/.ssh/authorized_keys</code>文件</li>
+<li>在客户端运行 <code>ssh username@hostname</code> 即可连接到服务器</li>
+</ol>
+<h1 id="ip-命令的含义"><a href="#ip-命令的含义" class="headerlink" title="ip 命令的含义"></a>ip 命令的含义</h1><p>可用来查询 ip 地址<br><code>ip a</code> （同 <code>ip addr</code>, <code>ip address</code>）<br>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35054568">Linux中国 - 解读 ip 命令展示的网络连接信息</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lo        本地环回接口（loopback interface），是一个虚拟的接口。</span><br><span class="line">wlp2s0    无线网卡</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">BROADCAST   该接口支持广播</span><br><span class="line">MULTICAST   该接口支持多播</span><br><span class="line">UP          网络接口已启用</span><br><span class="line">LOWER_UP    网络电缆已插入，设备已连接至网络</span><br><span class="line">mtu 1500                                    最大传输单位（数据包大小）为1,500字节</span><br><span class="line">qdisc pfifo_fast                            用于数据包排队</span><br><span class="line">state UP                                    网络接口已启用</span><br><span class="line">group default                               接口组</span><br><span class="line">qlen 1000                                   传输队列长度</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">link/ether 00:1e:4f:c8:43:fc                接口的 MAC（硬件）地址</span><br><span class="line">brd ff:ff:ff:ff:ff:ff                       广播地址</span><br><span class="line">inet 192.168.0.24/24                        IPv4 地址</span><br><span class="line">brd 192.168.0.255                           广播地址</span><br><span class="line">scope global                                全局有效</span><br><span class="line">dynamic enp0s25                             地址是动态分配的</span><br><span class="line">valid_lft 80866sec                          IPv4 地址的有效使用期限</span><br><span class="line">preferred_lft 80866sec                      IPv4 地址的首选生存期</span><br><span class="line">inet6 fe80::2c8e:1de0:a862:14fd/64          IPv6 地址</span><br><span class="line">scope link                                  仅在此设备上有效</span><br><span class="line">valid_lft forever                           IPv6 地址的有效使用期限</span><br><span class="line">preferred_lft forever                       IPv6 地址的首选生存期</span><br></pre></td></tr></table></figure>
+
+<h1 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h1><p>&#x2F;etc&#x2F;resolv.conf 是DNS客户机配置文件，用于设置DNS服务器的IP地址及DNS域名，还包含了主机的域名搜索顺序。我的 &#x2F;etc&#x2F;resolv.conf 自动填的是路由器的 IP 地址。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Generated by NetworkManager</span>  </span><br><span class="line">search lan</span><br><span class="line">nameserver       #DNS服务器的IP地址</span><br></pre></td></tr></table></figure>
+
+<h1 id="zeroconf"><a href="#zeroconf" class="headerlink" title="zeroconf"></a>zeroconf</h1><p>Zero Configuration Network (zeroconf)。ZEROCONF又被叫做 IPv4 Link-Local (IPv4LL)和 Automatic Private IP Addressing (APIPA)。它是一个动态配置协议，系统可以通过它来连接到网络。</p>
+<p>很多Linux发行版都默认安装该服务，当系统无法连接DHCP server的时候，就会尝试通过 ZEROCONF 来获取 IP。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://illyber.github.io">illyber</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://illyber.github.io/2023/08/25/Linux/network_cmd/">https://illyber.github.io/2023/08/25/Linux/network_cmd/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://illyber.github.io" target="_blank">MyBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/linux/">linux</a><a class="post-meta__tags" href="/tags/network/">network</a></div><div class="post_share"><div class="social-share" data-image="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/08/25/Linux/host_and_account/" title="Linux 主机和账户设置"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Linux 主机和账户设置</div></div></a></div><div class="next-post pull-right"><a href="/2023/08/25/Linux/ownership_and_permission/" title="Linux 所有权和权限"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Linux 所有权和权限</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/11/06/Linux/boot/" title="Boot 相关"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-06</div><div class="title">Boot 相关</div></div></a></div><div><a href="/2023/08/25/Linux/input_method/" title="Linux 安装输入法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-25</div><div class="title">Linux 安装输入法</div></div></a></div><div><a href="/2023/08/25/Linux/file_and_directory/" title="Linux 文件和目录"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-25</div><div class="title">Linux 文件和目录</div></div></a></div><div><a href="/2023/08/25/Linux/host_and_account/" title="Linux 主机和账户设置"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-25</div><div class="title">Linux 主机和账户设置</div></div></a></div><div><a href="/2023/08/25/Linux/ownership_and_permission/" title="Linux 所有权和权限"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-25</div><div class="title">Linux 所有权和权限</div></div></a></div><div><a href="/2023/11/10/Linux/partition_dump/" title="Linux 硬盘和分区"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-10</div><div class="title">Linux 硬盘和分区</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="utterances-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">illyber</div><div class="author-info__description">学习计算机的记录</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">78</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7"><span class="toc-number">1.</span> <span class="toc-text">下载工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#wget%EF%BC%8C%E4%B8%8D%E8%83%BD%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">wget，不能多线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#aria2"><span class="toc-number">1.2.</span> <span class="toc-text">aria2</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BF%BB%E5%A2%99"><span class="toc-number">2.</span> <span class="toc-text">翻墙</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#error"><span class="toc-number">2.1.</span> <span class="toc-text">error</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%90%86"><span class="toc-number">2.3.</span> <span class="toc-text">代理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ssh"><span class="toc-number">3.</span> <span class="toc-text">ssh</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ip-%E5%91%BD%E4%BB%A4%E7%9A%84%E5%90%AB%E4%B9%89"><span class="toc-number">4.</span> <span class="toc-text">ip 命令的含义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DNS"><span class="toc-number">5.</span> <span class="toc-text">DNS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#zeroconf"><span class="toc-number">6.</span> <span class="toc-text">zeroconf</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/21/punctuation/" title="标点符号的英文名称">标点符号的英文名称</a><time datetime="2023-11-21T15:22:21.957Z" title="发表于 2023-11-21 23:22:21">2023-11-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/21/network/" title="网络是怎样连接的_户根勤-笔记">网络是怎样连接的_户根勤-笔记</a><time datetime="2023-11-21T15:22:21.954Z" title="发表于 2023-11-21 23:22:21">2023-11-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/21/Shell/shell_scripting/" title="Shell-脚本编程">Shell-脚本编程</a><time datetime="2023-11-21T15:22:21.954Z" title="发表于 2023-11-21 23:22:21">2023-11-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/21/Shell/wildcard_&amp;_regex/" title="Shell-通配符和正则表达式">Shell-通配符和正则表达式</a><time datetime="2023-11-21T15:22:21.954Z" title="发表于 2023-11-21 23:22:21">2023-11-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/21/Tool/docker/" title="docker 常用命令">docker 常用命令</a><time datetime="2023-11-21T15:22:21.954Z" title="发表于 2023-11-21 23:22:21">2023-11-21</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By illyber</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><div class="js-pjax"><script>function loadUtterances () {
+  let ele = document.createElement('script')
+  ele.setAttribute('id', 'utterances_comment')
+  ele.setAttribute('src', 'https://utteranc.es/client.js')
+  ele.setAttribute('repo', 'illyber/comments')
+  ele.setAttribute('issue-term', 'url')
+  let nowTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'photon-dark' : 'github-light'
+  ele.setAttribute('theme', nowTheme)
+  ele.setAttribute('crossorigin', 'anonymous')
+  ele.setAttribute('async', 'true')
+  document.getElementById('utterances-wrap').insertAdjacentElement('afterbegin',ele)
+}
+
+function utterancesTheme (theme) {
+  const iframe = document.querySelector('.utterances-frame')
+  if (iframe) {
+    const theme = theme === 'dark' ? 'photon-dark' : 'github-light'
+    const message = {
+      type: 'set-theme',
+      theme: theme
+    };
+    iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+}
+
+btf.addModeChange('utterances', utterancesTheme)
+
+if ('Utterances' === 'Utterances' || !true) {
+  if (true) btf.loadComment(document.getElementById('utterances-wrap'), loadUtterances)
+  else loadUtterances()
+} else {
+  function loadOtherComment () {
+    loadUtterances()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
