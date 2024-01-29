@@ -139,6 +139,14 @@ cp /mnt/usr/* /mnt/new -prv  ##preserve, recursive, verbose
 sudo chown root:root /usrtmp/bin/sudo
 sudo chmod 4755 /usrtmp/bin/sudo
 ```
+## rsync
+remote sync
+适用于大文件和跨文件系统传输，和远程传输。
+```shell
+rsync -P source destination
+```
+`-P` 与 `--partial --progress` 选项的作用是相同的，该选项使得文件可以分块传输并显示传输过程中的进度。
+`-r`/`--recursive` 递归到目录中传输。
 
 ## 用tar迁移
 - 压缩原系统
@@ -190,11 +198,19 @@ sudo update-grub
 /dev/sda到/dev/sdb
 
 ```shell
-dd if=/dev/sda bs=1M | zstd > dd.img.zst
+dd if=/dev/sda bs=1M | zstd -T0 > dd.img.zst
 zstd dd.img.zst -T0 -dc | dd of=/dev/sdb bs=1M
 ```
 ## 用dump迁移
 ## btrfs迁移
+
+必须是只读快照才能 send/receive
+
+```shell
+btrfs send <snapshot> | btrfs receive <snapshot>
+```
+
+
 
 # chroot注意事项
 
@@ -226,3 +242,6 @@ mount --rbind /dev /mnt/dev/
 Linux沿袭Unix的风格，将所有设备认成是一个文件。
 # btrfs备份
 snapper和btrfs-assistant
+
+# Windows diskpart 删除分区
+![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202311261825395.png)

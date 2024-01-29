@@ -43,5 +43,7 @@ categories: []
 | \.       | 点/句号              | dot/stop                           |
 | ?        | 问号                 | question mark                      |
 | !        | 感叹号               | exclamation mark/exclamation point |
-| \|       | 竖线                 | vertical bar/vertical virgule      | 
-
+| \|       | 竖线                 | vertical bar/vertical virgule      |
+| \-       | 连字号               | hyphen                             |
+| --       | 破折号               | dash                               | 
+  

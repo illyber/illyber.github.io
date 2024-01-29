@@ -222,3 +222,11 @@ tar -cvf - dir1 dir2 dir3 | zstd -T0  > output.tar.zst
 
 > “rc” 是取自 “runcom”, 来自麻省理工学院在 1965 年发展的 CTSS系统。相关文献曾记载这一段话：”具有从档案中取出一系列命令来执行的功能；这称为 “run commands” 又称为 “runcom”，而这种档案又称为一个 runcom (a runcom)。
 
+# rsync命令
+remote sync
+适用于大文件和跨文件系统传输，和远程传输。
+```shell
+rsync -P source destination
+```
+`-P` 与 `--partial --progress` 选项的作用是相同的，该选项使得文件可以分块传输并显示传输过程中的进度。
+`-r`/`--recursive` 递归到目录中传输。

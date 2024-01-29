@@ -2,19 +2,53 @@
 title: Boot 相关
 tags:
   - linux
+  - boot
 categories:
   - Linux
 ---
-LegacyBIOS/UEFI BIOS -> MBR/GPT -> grub
+LegacyBIOS/UEFI BIOS -> grub/MBR/GPT
+
+# 显示开机信息
+
+dmesg (display message)
 
 # initramfs
 
+archlinux 是 initramfs-linux.img, debian 是 initrd.img (名字如此，实质还是initramfs)
 启动时，先加载 vmlinuz, 再加载 initramfs
-生成 `initramfs-linux.img`，用 `mkinitcpio -P`命令，这个命令一般会自动运行。
+## debian
+生成：mkinitramfs. low-level tool for generating an initramfs image
+更新：update-initramfs. 调用mkinitramfs实现的
+解压：unmkinitramfs - extract content from an initramfs image
+查看内容：lsinitramfs - list content of an initramfs image
+配置文件：/etc/initramfs-tools/initramfs.conf
+```shell
+/etc/initramfs-tools/
+├── conf.d
+│   ├── driver-policy
+│   └── resume
+├── hooks
+├── initramfs.conf
+├── modules
+├── scripts
+│   ├── init-bottom
+│   ├── init-premount
+│   ├── init-top
+│   ├── local-bottom
+│   ├── local-premount
+│   ├── local-top
+│   ├── nfs-bottom
+│   ├── nfs-premount
+│   ├── nfs-top
+│   └── panic
+└── update-initramfs.conf
+```
 
+## archlinux
+生成 `initramfs-linux.img`，用 `mkinitcpio -P`命令，这个命令一般会自动运行。
 mkinitcpio的主配置文件是`/etc/mkinitcpio.conf`。此外，内核软件包的预配置文件位于`/etc/mkinitcpio.d`（例如：`/etc/mkinitcpio.d/linux.preset`）。
 
- `initramfs-linux.img`位于 `/boot`目录下。
+`initramfs-linux.img`位于 `/boot`目录下。
 
 # grub和启动项
 
@@ -25,11 +59,36 @@ mkinitcpio的主配置文件是`/etc/mkinitcpio.conf`。此外，内核软件包
 ```shell
 #安装 GRUB 到 EFI 分区：
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ARCH
+
+--target=x86_64-efi   平台为x86_64-efi
+--efi-directory=/boot/efi —— 将 grubx64.efi 安装到之前的指定位置（EFI 分区）
+--bootloader-id=ARCH —— 取名为 ARCH
+-d, --directory=/boot    use images and modules under DIR [default=/usr/lib/grub/<platform>]
 ```
 
 ## Debian 生成grub.cfg文件
 
 ![生成grub.cfg](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202302041453740.svg)
+
+## 添加其它启动grub
+编辑 /etc/grub.d/40_custom 文件
+```shell
+#!/bin/sh                                                                                                   
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.
+menuentry 'Arch' --class archlinux {
+   insmod part_gpt
+   insmod btrfs
+   set root='hd1,gpt8'
+   #root是boot分区
+   search --no-floppy --fs-uuid --set=root FDD2-3FD3
+   chainloader /EFI/archlinux/grubx64.efi
+   #efi
+}
+```
+
 
 ## 美化
 

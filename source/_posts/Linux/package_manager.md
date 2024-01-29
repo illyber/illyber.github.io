@@ -7,6 +7,25 @@ categories:
 ---
 # apt
 
+## dpkg-reconfigure
+
+重新设置已安装的软件
+
+```shell
+dpkg-reconfigure [options] packages
+```
+
+## dpkg-preconfigure
+
+let packages ask questions prior to their installation
+
+```shell
+dpkg-preconfigure [options] package.deb
+dpkg-preconfigure --apt
+```
+
+
+
 ## 仓库分类
 
 Ubuntu 的仓库分类：

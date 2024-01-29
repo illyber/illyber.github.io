@@ -96,7 +96,9 @@ git show <hash>	显示 hash 对应的更改
 ```shell
 git branch [--list]								    列出branch
 git branch <name>                                   新建名为name的分支
-git checkout -b <name>                              新建并切换到name分支
+初始化了仓库之后要提交到缓存，才能创建新分支。
+# git checkout -b <name>                              新建并切换到name分支
+git switch <branch>									切换到分支. checkout命令有歧义，不建议用.
 git branch -d <branch>							    删除 branch
 
 git checkout <branch>							    切换到 branch
