@@ -176,3 +176,6 @@ menuentry 'Arch' --class archlinux {
    #efi
 }
 ```
+
+# 编辑UEFI启动项
+efibootmgr
