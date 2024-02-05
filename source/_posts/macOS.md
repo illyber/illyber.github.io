@@ -2,10 +2,8 @@
 title: macOS 知识
 tags:
   - macOS
-categories:
-  - OS
-  - macOS
-date: 2023-12-01
+categories: []
+date: 2023-12-01 00:00:00
 updated:
 ---
 
