@@ -179,3 +179,8 @@ menuentry 'Arch' --class archlinux {
 
 # 编辑UEFI启动项
 efibootmgr
+```shell
+efibootmgr              显示所有UEFI启动项
+efibootmgr -v           显示所有UEFI启动项及详细信息
+efibootmgr -b 0001 -B //删除编号为0001的启动项
+```
