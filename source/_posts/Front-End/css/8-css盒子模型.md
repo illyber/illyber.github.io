@@ -28,6 +28,114 @@ CSS盒子模型本质上是一个盒子，封装周围的HTML元素，它包括�
 
 ![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402132219032.png)
 ## 139-盒子模型边框border
+![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402140821227.png)
+
+border可以设置元素的边框。边框有三部分组成:边框宽度(粗细)、边框样式、边框颜色
+语法：
+```html
+border: border-width || border-style || border-color;
+```
+
+![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402140825556.png)
+
+边框样式：
+![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402140830672.png)
+
+```html
+<html>
+    <head>
+        <title>盒子模型之边框</title>
+        <style>
+            div{
+                width: 300px;
+                height: 200px;
+                /* 边框的粗细 */
+                border-width: 5px;
+                /* 边框的样式 solid实线、dashed虚线、dotted点线 */
+                border-style: solid;
+                /* 边框的颜色 */
+                border-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>
+```
+
+## 140-边框的复合写法
+语法：
+```html
+border: 1px solid red; 没有顺序
+```
+
+```html
+<html>
+    <head>
+        <title>边框的复合写法</title>
+        <style>
+            div{
+                width: 300px;
+                height: 200px;
+                border: 5px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>
+```
+
+边框分开写法：
+```html
+border-top: 1px solid red; /*只设定上边框，其余同理*/
+```
+
+```html
+<html>
+
+<head>
+
+<title>边框的复合写法</title>
+
+<style>
+
+div{
+
+width: 300px;
+
+height: 200px;
+
+border: 5px solid red;
+
+border-top: 10px dashed green;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div></div>
+
+</body>
+
+</html>
+```
+
+## 141-表格细线边框
+border-collapse 属性控制浏览器绘制表格边框的方式。它控制相邻单元格的边框。
+语法：
+```html
+border-collapse: collapse;
+```
+- collapse 单词是合并的意思
+- border-collapse: collapse; 表示相邻边框合并在一起而不是相加，变细
+## 142-边框会影响盒子实际大小
 
 # PS基本操作
 # 综合案例
