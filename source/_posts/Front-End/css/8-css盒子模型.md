@@ -89,7 +89,7 @@ border: 1px solid red; 没有顺序
 </html>
 ```
 
-边框分开写法：
+边框分段写法：
 ```html
 border-top: 1px solid red; /*只设定上边框，其余同理*/
 ```
@@ -150,6 +150,19 @@ border-collapse: collapse;
 ### 144-padding复合属性
 ![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402142331154.png)
 
+### 145-padding会影响盒子实际大小
+当我们给盒子指定padding值之后, 发生了2件事情:
+1. 内容和边框有了距离，添加了内边距。
+2. padding影响了盒子实际大小。
+也就是说，如果盒子已经有了宽度和高度，此时再指定内边框，会撑大盒子.
+解决方案：
+如果保证盒子跟效果图大小保持一致，则让width/height减去多出来的内边距大小即可。
+
+### 146-padding应用-新浪导航栏(上)
+因为每个导航栏里面的字数不一样多,我们可以不用给每个盒子宽度了,直接给padding最合适.
+![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402151502217.png)
+
+### 148-小米侧边栏修改
 
 # PS基本操作
 # 综合案例
