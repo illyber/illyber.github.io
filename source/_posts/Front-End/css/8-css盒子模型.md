@@ -27,7 +27,8 @@ CSS盒子模型本质上是一个盒子，封装周围的HTML元素，它包括�
 ![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402132219431.png)
 
 ![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402132219032.png)
-## 139-盒子模型边框border
+## 边框 (border)
+### 139-盒子模型边框border
 ![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402140821227.png)
 
 border可以设置元素的边框。边框有三部分组成:边框宽度(粗细)、边框样式、边框颜色
@@ -64,7 +65,7 @@ border: border-width || border-style || border-color;
 </html>
 ```
 
-## 140-边框的复合写法
+### 140-边框的复合写法
 语法：
 ```html
 border: 1px solid red; 没有顺序
@@ -127,7 +128,7 @@ border-top: 10px dashed green;
 </html>
 ```
 
-## 141-表格细线边框
+### 141-表格细线边框
 border-collapse 属性控制浏览器绘制表格边框的方式。它控制相邻单元格的边框。
 语法：
 ```html
@@ -135,7 +136,20 @@ border-collapse: collapse;
 ```
 - collapse 单词是合并的意思
 - border-collapse: collapse; 表示相邻边框合并在一起而不是相加，变细
-## 142-边框会影响盒子实际大小
+### 142-边框会影响盒子实际大小
+设置盒子的宽和高不包括边框。
+1. 测量盒子大小的时候，不量边框.
+2. 如果测量的时候包含了边框，则需要width/height减去边框宽度
+
+## 内边距 (padding)
+### 143-盒子模型内边距padding
+- padding 属性用于设置内边距，即边框与内容之间的距离.
+- padding会撑大盒子
+![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402142309818.png)
+
+### 144-padding复合属性
+![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402142331154.png)
+
 
 # PS基本操作
 # 综合案例
