@@ -163,7 +163,18 @@ border-collapse: collapse;
 ![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402151502217.png)
 
 ### 148-小米侧边栏修改
+### 149-padding不会撑开盒子的情况
+- 如果盒子本身没有指定width/height属性, 则此时padding不会撑开盒子大小.
+- 只要有了width/height属性，到了极限还可以有滚动条
 
+## 外边距 (margin)
+### 150-盒子模型外边距margin
+margin属性用于设置外边距，即控制盒子和盒子之间的距离。
+![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402160015975.png)
+margin简写方式代表的意义跟padding完全一致。
+```html
+margin: 30px 50px;
+```
 # PS基本操作
 # 综合案例
 # 圆角边框
