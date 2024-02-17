@@ -175,6 +175,40 @@ margin简写方式代表的意义跟padding完全一致。
 ```html
 margin: 30px 50px;
 ```
+
+### 151-外边距典型应用-块级盒子水平居中对齐
+外边距可以让块级盒子水平居中，但是必须满足两个条件:
+1. 盒子必须指定了宽度(width)
+2. 盒子左右的外边距都设置为auto
+常见的写法，以下三种都可以：
+- `margin-left:auto; margin-right: auto;`
+- `margin:auto;`
+- `margin:0 auto;`
+
+### 152-行内元素和行内块元素水平居中
+注意: 以上方法是让块级元素水平居中，行内元素或者行内块元素水平居中给其父元素添加text-align:center即可。看作文字
+```html
+<html>
+    <head>
+        <title>行内元素和行内块元素水平居中</title>
+        <style>
+            .header{
+                width: 900px;
+                height: 200px;
+                background-color: pink;
+                margin: 0 auto;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <span>里面的文字</span>
+        </div>
+    </body>
+</html>
+```
+
 # PS基本操作
 # 综合案例
 # 圆角边框
