@@ -209,6 +209,42 @@ margin: 30px 50px;
 </html>
 ```
 
+### 153-外边距合并-嵌套块元素塌陷
+使用margin定义块元素的垂直外边距时，可能会出现外边距的合并。
+对于两个嵌套关系(父子关系)的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距值.
+```html
+<html>
+    <head>
+        <title></title>
+        <style>
+            .father{
+                width: 400px;
+                height: 400px;
+                background-color: purple;
+                margin-top: 50px;
+            }
+            .son{
+                width: 200px;
+                height: 200px;
+                background-color: pink;
+                margin-top: 100px;
+            }
+        </style>
+    </head>
+    <body>
+       <div class="father">
+            <div class="son"></div>
+       </div> 
+    </body>
+</html>
+```
+
+![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402191940495.png)
+解决方案：
+- 可以为父元素定义上边框。`border: 1px solid transparent; /*transparent 透明的*/`
+- 可以为父元素定义上内边距。`padding: 1px;`
+- 可以为父元素添加 overflow:hidden;优点：不会改变盒子大小。
+
 # PS基本操作
 # 综合案例
 # 圆角边框
