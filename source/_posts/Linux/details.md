@@ -7,12 +7,13 @@ categories:
 date: updated
 ---
 参见《Linux命令行与shell脚本编程大全》
-# 主机
+# 主机名
 修改主机名：`sudo hostnamectl set-hostname <new_hostname>`
                     `hostname new_hostname`
 查看主机名：`hostname` 或 `hostnamectl`
 
-# 添加账户 (useradd)
+# 账户管理
+## 添加账户 (useradd)
 useradd 选项 用户名
 
 ```shell
@@ -50,13 +51,13 @@ useradd –d  /home/sam -m sam
 ```shell
 useradd -s /bin/sh -g group –G adm,root gem
 ```
-# 删除账户
+## 删除账户
 userdel 选项 用户名
 
 ```shell
 -r 把用户的主目录一起删除
 ```
-# 修改账户 (usermod)
+## 修改账户 (usermod)
 usermod 选项 用户名
 
 常用的选项包括-c, -d, -m, -g, -G, -s, -u以及-o等，这些选项的意义与useradd命令中的选项一样，可以为用户指定新的资源值。
@@ -66,13 +67,13 @@ su
 sudo usermod -aG sudo <username>
 ```
 
-# 切换账户
+## 切换账户
 切换到其它账户： `su other_account`
 
-# 修改密码
+## 修改密码
 修改 account 的密码： `passwd account`
 
-# 列出所有账户
+## 列出所有账户
 - `cat /etc/passwd`
 
 # 时间
@@ -84,4 +85,4 @@ sudo usermod -aG sudo <username>
 
 Windows 与 Linux 看待硬件时间的方式不同。Windows 把电脑的硬件时钟（RTC）看成是本地时间，即 RTC = Local Time，Windows 会直接显示硬件时间；而 Linux 则是把电脑的硬件时钟看成 UTC 时间，即 RTC = UTC，那么 Linux 显示的时间就是硬件时间加上时区。
 
-查看硬件时间 `timedatectl status`
+查看硬件时间和时区 `timedatectl status` or `hwclock`
