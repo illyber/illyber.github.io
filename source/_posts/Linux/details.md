@@ -74,3 +74,14 @@ sudo usermod -aG sudo <username>
 
 # 列出所有账户
 - `cat /etc/passwd`
+
+# 时间
+- [GMT](https://sspai.com/link?target=https%3A%2F%2Fbaike.baidu.com%2Fitem%2F%25E4%25B8%2596%25E7%2595%258C%25E6%2597%25B6%2F692237)：Greenwich Mean Time，即格林尼治标准时间，也就是世界时。GMT 以地球自转为基础的时间计量系统，但由于地球自转不均匀，导致 GMT 不精确，现在已经不再作为世界标准时间使用。
+- [UTC](https://sspai.com/link?target=https%3A%2F%2Fbaike.baidu.com%2Fitem%2F%25E5%258D%258F%25E8%25B0%2583%25E4%25B8%2596%25E7%2595%258C%25E6%2597%25B6%2F787659)：Universal Time Coordinated，即协调世界时。UTC 是以原子时秒长为基础，在时刻上尽量接近于 GMT 的一种时间计量系统。为确保 UTC 与 GMT 相差不会超过 0.9 秒，在有需要的情况下会在 UTC 内加上正或负闰秒。UTC 现在作为世界标准时间使用。
+- RTC：Real-Time Clock，即实时时钟，也就是BIOS存储的硬件时间。
+
+世界上不同地区所在的时区是不同的，这些时区决定了当地的本地时间。比如北京处于东八区 (CST)，即北京时间为 UTC + 8，如果 UTC 时间现在是上午 6 点整，那么北京时间为 14 点整。
+
+Windows 与 Linux 看待硬件时间的方式不同。Windows 把电脑的硬件时钟（RTC）看成是本地时间，即 RTC = Local Time，Windows 会直接显示硬件时间；而 Linux 则是把电脑的硬件时钟看成 UTC 时间，即 RTC = UTC，那么 Linux 显示的时间就是硬件时间加上时区。
+
+查看硬件时间 `timedatectl status`
