@@ -141,7 +141,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 359.5
+    "width": 355.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -154,7 +154,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "3a6ed76d9d7fc0c4",
+  "active": "519e361742b8dcf2",
   "lastOpenFiles": [
     "source/_posts/Front-End/source/_posts/Front-End",
     "source/_posts/Front-End/source/_posts",
