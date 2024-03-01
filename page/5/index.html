@@ -1,0 +1,534 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>MyBlog</title><meta name="author" content="illyber"><meta name="copyright" content="illyber"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="学习计算机的记录">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="https://illyber.github.io/page/5/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="学习计算机的记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg">
+<meta property="article:author" content="illyber">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://illyber.github.io/page/5/index.html"><link rel="preconnect"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MyBlog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-03-01 11:44:20'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">81</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page fixed" id="page-header" style="background-image: url('https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-2.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="MyBlog"><span class="site-name">MyBlog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">MyBlog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Tool/Editor/object/" title="Vim Object">Vim Object</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Tool/">Tool</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Tool/Editor/">Editor</a></span></div><div class="content">
+
+基础类型：
+word (w)
+sentence (s)
+paragraph (p)
+
+
+高阶 Surround 类型：
+[], &quot;&quot;, &#39; &#39;, ``, &#123;&#125;, ()
+
+
+高阶 Tag 类型（t）
+选中类型：
+不包括空格   inner (i)
+包括尾部空格 around (a)
+
+
+
+operator 和 object 一起使用：operator{object}
+
+diw 光标在中间时也可以删除整个单词，不删除后面的空格
+daw 光标在中间时也可以删除整个单词，删除后面的空格
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Tool/Editor/operator/" title="Vim Operator">Vim Operator</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Tool/">Tool</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Tool/Editor/">Editor</a></span></div><div class="content">The motion commands can be used after an operator command, to have the command operate on the text that was moved over.  That is the text between the cursor position before and after the motion.  Operators are generally used to delete or change text.
+通用&#123;number&#125;dd&#123;motion&#125;d&#123;object&#125;&quot;[x]d&#123;motion&#125;dd 行模式&#x2F;linewised 及物动词，x 不及物动词.
+剪切并修改
+cc。删除该行并插入. 重复一次是可视化的行模式 V
+s。删除该字符并插入，是c的快捷键
+vim里y，d，x，c复制
+A. 在行末追加
+
+删除剪切复制粘贴
+dvb. 位于单词末尾时删除这个单词。
+daw. 删除光标所在单词
+paste co ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Tool/Editor/plugin/" title="Vim Plugin">Vim Plugin</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Tool/">Tool</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Tool/Editor/">Editor</a></span></div><div class="content">plug-inpreservim&#x2F;nerdcommente主页
+:help nerdcommenter
+
+[count]&lt;leader&gt;cc |NERDCommenterComment|
+
+Comment out the current line or text selected in visual mode.
+
+[count]&lt;leader&gt;c&lt;space&gt; |NERDCommenterToggle|
+Toggles the comment state of the selected line(s). If the topmost selected line is commented, all selected lines are uncommented and vice versa.
+
+[count]&lt;leader&gt;ci |NERDCommenterInvert|
+Toggles the comment state of the selected line(s) individually.
+
+
+插件12345678910#  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Tool/Editor/register/" title="vim 寄存器">vim 寄存器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Tool/">Tool</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Tool/Editor/">Editor</a></span></div><div class="content">参考 harttle - Vim 寄存器完全手册
+
+查看寄存器内容 :reg
+复制文本到指定寄存器：&quot;+寄存器名字+y, eg: &quot;9yy
+粘贴寄存器内容：&quot;+寄存器名字+p
+“+p 可以粘贴剪切板的内容，
+“:p 可以粘贴上一个 Vim 命令（比如你刚刚费力拼写的正则表达式），
+“&#x2F;p 可以粘贴上一次搜索关键词（你猜的没错，正是 normal 模式下的 &#x2F;foo 搜索命令）。
+
+
+
+寄存器分类Vim 提供了 10 类寄存器，可在 Vim 中通过 :help registers 查看帮助。
+
+匿名寄存器 “”
+编号寄存器 “0 到 “9
+小删除寄存器 “-
+26 个命名寄存器 “a 到 “z
+3 个只读寄存器 “:, “., “%
+Buffer 交替文件寄存器 “#
+表达式寄存器 “&#x3D;
+选区和拖放寄存器 “*, “+, “~
+黑洞寄存器 “_
+搜索模式寄存器 “&#x2F;
+
+1. 匿名寄存器使用 d, c, s, x 等会删除字符的命令时，被删除字符会进入匿名寄存器 “”。 你可以认为 “” 寄存器是一个指针，指向刚才被存到 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Tool/Editor/search-substitute/" title="vim 搜索和替换">vim 搜索和替换</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Tool/">Tool</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Tool/Editor/">Editor</a></span></div><div class="content">注意查找回车应当用 \n，而替换为回车应当用 \r（相当于 &lt;CR&gt;）。harttle - 在 Vim 中优雅地查找和替换cooper - Vim查找替换及正则表达式的使用
+searchvim 查找支持正则表达式
+
+
+
+key
+effect
+
+
+
+/
+向下查找。n 查找下一个，N 查找上一个
+
+
+/\&lt;theme\&gt;
+严格匹配 theme
+
+
+
+如果你输入 “&#x2F;the”，你也可能找到 “there”。要找到以 “the” 结尾的单词，可以用：  /the\&gt; \&gt; 是一个特殊的记号，表示只匹配单词末尾。类似地，\&lt; 只匹配单词的开头。这样，要匹配一个完整的单词 “the”，只需：/\&lt;the\&gt;
+
+
+?
+向上查找。? 也就是 shift + /
+
+
+q/
+查看查找历史
+
+
+q?
+查看向上查找历史
+
+
+后缀\c
+大小写不敏感
+
+
+后缀\C
+大小写敏感
+
+
+*
+查找光标所在单词
+
+
+g*
+查找光标所在字符序列
+
+
+:set incsearch
+敲键时就高亮
+
+
+:set hlsearch
+highlight all patte ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Tool/Editor/vscode/" title="Vscode notes">Vscode notes</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Tool/">Tool</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Tool/Editor/">Editor</a></span></div><div class="content">vscode安装和配置安装vscode
+安装curl
+
+1sudo apt install curl
+
+
+用 curl 导入 Microsoft GPG 公钥：
+
+1curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+
+一旦成功，这个命令将会返回OK.
+
+添加 Visual Studio Code 软件源
+
+1sudo add-apt-repository &quot;deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main&quot;
+
+
+安装 Visual Studio Code 软件包：
+
+12sudo apt updatesudo apt install code
+
+
+如发生错误，可尝试安装下列依赖包
+
+1sudo apt install software-properties-common apt-transport-https
+
+vscode 插件
+chinese
+C&#x2F; ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Front-End/1_html/00-%E5%9F%BA%E7%A1%80%E8%AE%A4%E7%9F%A5/" title="html-基础认知">html-基础认知</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.548Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Front-End/">Front-End</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Front-End/html/">html</a></span></div><div class="content">
+
+
+笔记介绍
+—、基础认知
+HTML认知
+00-基础班导学-精讲与实战
+01-网页组成和本质
+02-浏览器（browser）
+03-web标准
+
+
+HTML初体验
+04-HTML感知
+05-HTML骨架
+06-vscode的简介和使用
+07-注释
+
+
+
+
+二、HTML标签
+08-标签组成和关系
+
+
+
+
+
+笔记介绍是这个课程：
+前端开发入门教程，web前端零基础html5 +css3+前端项目视频教程
+html部分的笔记
+—、基础认知目标: 认识网页组成和五大浏览器，明确Web标准的构成，使用HTML骨架搭建出一个网页。
+HTML认知00-基础班导学-精讲与实战Q: 课程有什么用？
+A: 写网页开发网站
+01-网页组成和本质问题1:网页由哪些部分组成?
+√文字、图片、音频、视频、超链接
+02-浏览器（browser）浏览器:是网页显示、运行的平台，是前端开发必备利器
+常见的五大浏览器: IE浏览器、火狐浏览器（Firefox)、谷歌浏览器(Chrome)、 Safari浏览器、欧朋浏览器（Opera)
+渲染引擎（浏览器内核)︰浏览器中专门对代码进行解析渲染的部分
+浏览器内核的源流：
+
+ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Front-End/1_html/01-%E6%8E%92%E7%89%88%E6%A0%87%E7%AD%BE/" title="html-排版标签">html-排版标签</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.548Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Front-End/">Front-End</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Front-End/html/">html</a></span></div><div class="content">
+
+
+09-标题标签和段落标签
+1. 标题标签
+2. 段落标签
+
+
+10-换行和水平线标签
+11-文本格式化标签
+
+
+
+09-标题标签和段落标签1. 标题标签
+效果
+
+
+
+代码
+
+123456&lt;h1&gt;1级标题&lt;/h1&gt;&lt;h2&gt;2级标题&lt;/h2&gt;&lt;h3&gt;3级标题&lt;/h3&gt;&lt;h4&gt;4级标题&lt;/h4&gt;&lt;h5&gt;5级标题&lt;/h5&gt;&lt;h6&gt;6级标题&lt;/h6&gt;
+
+
+语义: 
+一到六级标题, 重要性依次递减; 
+因为要在网页显示, 所以放在body里; title放在head里
+
+
+特点: 加粗, 变大, 标题自动折行
+
+2. 段落标签
+场景: 用于分段显示
+代码:
+
+123&lt;p&gt;    这是一段&lt;/p&gt;
+
+
+语义:段落
+特点:
+段落之间存在间隙
+独占一行
+
+
+
+10-换行和水平线标签换行标签:
+
+代码: &lt;br&gt;. break rule, 水平尺
+特点:
+单标签
+强制换行
+
+
+效果图:
+
+水平分割线标签:
+
+代码: &lt ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Front-End/1_html/02-%E5%AA%92%E4%BD%93%E6%A0%87%E7%AD%BE/" title="html-媒体标签">html-媒体标签</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.548Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Front-End/">Front-End</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Front-End/html/">html</a></span></div><div class="content">
+
+
+12-图片-基本使用
+13-图片-属性
+14-绝对路径
+15-相对路径-同级和下级
+16-相对路径-上级
+17-音频标签
+18-视频标签
+19-超链接
+20-综合案例-招聘
+21-综合案例-跳转-index
+22-综合案例-跳转-其他页面
+
+
+
+12-图片-基本使用
+代码: &lt;img src=&quot;&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
+特点: 
+单标签
+img标签要展示对应的效果，需要借助标签的属性进行设置
+
+
+标签的完整结构图:
+
+
+
+
+标签属性的注意点:
+Windows上的路径名可以用斜杠
+属性写在开始标签
+属性之间没有顺序之分
+
+
+
+13-图片-属性alt属性:
+
+属性值: 替换文本
+作用: 图片加载失败时, 显示alt的文本
+
+title属性:
+
+属性值: 提示文本
+作用: 鼠标悬停时显示的文本
+注意: title不仅可用于img标签, 还可用于其它标签.
+
+width和height标签:
+
+属性值: 宽度和高度(数字)
+注意点:
+如果width和height只设置了一个, 会等比例缩放
+如果两个都设置了 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Front-End/1_html/03-%E5%88%97%E8%A1%A8%E6%A0%87%E7%AD%BE/" title="html-列表标签">html-列表标签</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.548Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Front-End/">Front-End</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Front-End/html/">html</a></span></div><div class="content">
+
+
+01-列表-使用场景
+02-列表-无序和有序
+无序列表
+有序列表
+03-列表-自定义 dl
+
+
+
+01-列表-使用场景
+场景:在网页中按照行展示关联性的内容，如:新闻列表、排行榜、账单等  
+特点:按照行的方式，整齐显示内容  
+种类:无序列表、有序列表、自定义列表
+
+02-列表-无序和有序无序列表
+标签组成:
+
+
+
+
+标签名
+说明
+
+
+
+ul
+表示无序表的整体, 用于包裹li标签(unordered list)
+
+
+li
+表示无序列表的每一项, 用于包含每一行的内容(list item)
+
+
+
+注意点:  
+ul只能包含li标签, 不能包含诸如strong标签(有点怀疑)
+li标签可以包括任何内容, 如strong标签
+
+
+
+有序列表
+标签组成:
+
+
+
+
+标签名
+说明
+
+
+
+ol
+表示无序表的整体, 用于包裹li标签(ordered list)
+
+
+li
+表示无序列表的每一项, 用于包含每一行的内容(list item)
+
+
+
+注意点:  
+
+ol只能包含li标签, 不能包含诸如strong标签(有点怀疑)
+li标签可以包括任何内容, 如strong标签
+
+
+
+03-列表-自定 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/4/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#content-inner">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/#content-inner">9</a><a class="extend next" rel="next" href="/page/6/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">illyber</div><div class="author-info__description">学习计算机的记录</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">81</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/01/network/" title="网络是怎样连接的_户根勤-笔记">网络是怎样连接的_户根勤-笔记</a><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/01/package-lock.json/" title="无题">无题</a><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/01/punctuation/" title="标点符号的英文名称">标点符号的英文名称</a><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/01/%E8%AE%B2%E8%AF%BE%E6%96%B9%E6%B3%95/" title="无题">无题</a><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/01/Linux/boot/" title="Boot 相关">Boot 相关</a><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Data-Structure/"><span class="card-category-list-name">Data-Structure</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Front-End/"><span class="card-category-list-name">Front-End</span><span class="card-category-list-count">16</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Front-End/css/"><span class="card-category-list-name">css</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Front-End/html/"><span class="card-category-list-name">html</span><span class="card-category-list-count">8</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Language/"><span class="card-category-list-name">Language</span><span class="card-category-list-count">25</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Language/C/"><span class="card-category-list-name">C</span><span class="card-category-list-count">19</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Language/C/data-type/"><span class="card-category-list-name">data_type</span><span class="card-category-list-count">6</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Language/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Language/Python/"><span class="card-category-list-name">Python</span><span class="card-category-list-count">5</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">12</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Shell/"><span class="card-category-list-name">Shell</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Tool/"><span class="card-category-list-name">Tool</span><span class="card-category-list-count">12</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Tool/Editor/"><span class="card-category-list-name">Editor</span><span class="card-category-list-count">10</span></a></li></ul></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/algorithm/" style="font-size: 1.32em; color: #99a2ae">algorithm</a> <a href="/tags/shell/" style="font-size: 1.23em; color: #999ea6">shell</a> <a href="/tags/macOS/" style="font-size: 1.1em; color: #999">macOS</a> <a href="/tags/C/" style="font-size: 1.5em; color: #99a9bf">C</a> <a href="/tags/boot/" style="font-size: 1.1em; color: #999">boot</a> <a href="/tags/expression/" style="font-size: 1.1em; color: #999">expression</a> <a href="/tags/regex/" style="font-size: 1.1em; color: #999">regex</a> <a href="/tags/network/" style="font-size: 1.14em; color: #999b9d">network</a> <a href="/tags/css/" style="font-size: 1.28em; color: #99a0aa">css</a> <a href="/tags/vim/" style="font-size: 1.41em; color: #99a5b7">vim</a> <a href="/tags/linux/" style="font-size: 1.46em; color: #99a7bb">linux</a> <a href="/tags/btrfs/" style="font-size: 1.1em; color: #999">btrfs</a> <a href="/tags/wildcard/" style="font-size: 1.1em; color: #999">wildcard</a> <a href="/tags/python/" style="font-size: 1.19em; color: #999da1">python</a> <a href="/tags/html/" style="font-size: 1.37em; color: #99a4b2">html</a> <a href="/tags/bash/" style="font-size: 1.1em; color: #999">bash</a> <a href="/tags/docker/" style="font-size: 1.1em; color: #999">docker</a> <a href="/tags/regular/" style="font-size: 1.1em; color: #999">regular</a> <a href="/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/tags/vscode/" style="font-size: 1.1em; color: #999">vscode</a> <a href="/tags/package-manager/" style="font-size: 1.1em; color: #999">package manager</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">76</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">81</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-03-01T03:44:19.550Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By illyber</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>CSS-CSS盒子模型 | MyBlog</title><meta name="author" content="illyber"><meta name="copyright" content="illyber"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="学习目标 能够准确阐述盒子模型的4个组成部分 能够利用边框复合写法给元素添加边框 能够计算盒子的实际大小 能够利用盒子模型布局模块案例 能够给盒子设置圆角边框 能够给盒子添加阴影 能够给文字添加阴影  盒子模型页面布局三大核心：盒子模型、浮动、定位 137-看透网页布局本质网页布局过程:1.先准备好相关的网页元素，网页元素基本都是盒子Box。2.利用CSS设置好盒子样式，然后摆放到相应位置；3.往">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS-CSS盒子模型">
+<meta property="og:url" content="https://illyber.github.io/2024/02/13/Front-End/2_css/8-css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="学习目标 能够准确阐述盒子模型的4个组成部分 能够利用边框复合写法给元素添加边框 能够计算盒子的实际大小 能够利用盒子模型布局模块案例 能够给盒子设置圆角边框 能够给盒子添加阴影 能够给文字添加阴影  盒子模型页面布局三大核心：盒子模型、浮动、定位 137-看透网页布局本质网页布局过程:1.先准备好相关的网页元素，网页元素基本都是盒子Box。2.利用CSS设置好盒子样式，然后摆放到相应位置；3.往">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg">
+<meta property="article:published_time" content="2024-02-13T11:43:00.000Z">
+<meta property="article:modified_time" content="2024-03-01T03:18:17.548Z">
+<meta property="article:author" content="illyber">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://illyber.github.io/2024/02/13/Front-End/2_css/8-css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.html"><link rel="preconnect"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CSS-CSS盒子模型',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-01 11:18:17'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">81</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-2.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="MyBlog"><span class="site-name">MyBlog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CSS-CSS盒子模型</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-02-13T11:43:00.000Z" title="发表于 2024-02-13 19:43:00">2024-02-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-01T03:18:17.548Z" title="更新于 2024-03-01 11:18:17">2024-03-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Front-End/">Front-End</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Front-End/css/">css</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="CSS-CSS盒子模型"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1><span id="学习目标">学习目标</span></h1><ul>
+<li>能够准确阐述盒子模型的4个组成部分</li>
+<li>能够利用边框复合写法给元素添加边框</li>
+<li>能够计算盒子的实际大小</li>
+<li>能够利用盒子模型布局模块案例</li>
+<li>能够给盒子设置圆角边框</li>
+<li>能够给盒子添加阴影</li>
+<li>能够给文字添加阴影</li>
+</ul>
+<h1><span id="盒子模型">盒子模型</span></h1><p>页面布局三大核心：盒子模型、浮动、定位</p>
+<h2><span id="137-看透网页布局本质">137-看透网页布局本质</span></h2><p>网页布局过程:<br>1.先准备好相关的网页元素，网页元素基本都是盒子Box。<br>2.利用CSS设置好盒子样式，然后摆放到相应位置；<br>3.往盒子里面装内容.</p>
+<h2><span id="138-盒子模型box-model组成部分">138-盒子模型(box model)组成部分</span></h2><p>CSS盒子模型本质上是一个盒子，封装周围的HTML元素，它包括：边框、外边距、内边距、和实际内容<br><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402132219431.png" alt="image.png"></p>
+<p><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402132219032.png" alt="image.png"></p>
+<h2><span id="边框-border">边框 (border)</span></h2><h3><span id="139-盒子模型边框border">139-盒子模型边框border</span></h3><p><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402140821227.png" alt="image.png"></p>
+<p>border可以设置元素的边框。边框有三部分组成:边框宽度(粗细)、边框样式、边框颜色<br>语法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border: border-width || border-style || border-color;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402140825556.png" alt="image.png"></p>
+<p>边框样式：<br><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402140830672.png" alt="image.png"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>盒子模型之边框<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">            <span class="selector-tag">div</span>&#123;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">                <span class="comment">/* 边框的粗细 */</span></span></span><br><span class="line"><span class="language-css">                <span class="attribute">border-width</span>: <span class="number">5px</span>;</span></span><br><span class="line"><span class="language-css">                <span class="comment">/* 边框的样式 solid实线、dashed虚线、dotted点线 */</span></span></span><br><span class="line"><span class="language-css">                <span class="attribute">border-style</span>: solid;</span></span><br><span class="line"><span class="language-css">                <span class="comment">/* 边框的颜色 */</span></span></span><br><span class="line"><span class="language-css">                <span class="attribute">border-color</span>: pink;</span></span><br><span class="line"><span class="language-css">            &#125;</span></span><br><span class="line"><span class="language-css">        </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3><span id="140-边框的复合写法">140-边框的复合写法</span></h3><p>语法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border: 1px solid red; 没有顺序</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>边框的复合写法<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">            <span class="selector-tag">div</span>&#123;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">border</span>: <span class="number">5px</span> solid red;</span></span><br><span class="line"><span class="language-css">            &#125;</span></span><br><span class="line"><span class="language-css">        </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>边框分段写法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-top: 1px solid red; /*只设定上边框，其余同理*/</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>边框的复合写法<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-tag">div</span>&#123;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="attribute">border</span>: <span class="number">5px</span> solid red;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="attribute">border-top</span>: <span class="number">10px</span> dashed green;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3><span id="141-表格细线边框">141-表格细线边框</span></h3><p>border-collapse 属性控制浏览器绘制表格边框的方式。它控制相邻单元格的边框。<br>语法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-collapse: collapse;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>collapse 单词是合并的意思</li>
+<li>border-collapse: collapse; 表示相邻边框合并在一起而不是相加，变细</li>
+</ul>
+<h3><span id="142-边框会影响盒子实际大小">142-边框会影响盒子实际大小</span></h3><p>设置盒子的宽和高不包括边框。</p>
+<ol>
+<li>测量盒子大小的时候，不量边框.</li>
+<li>如果测量的时候包含了边框，则需要width&#x2F;height减去边框宽度</li>
+</ol>
+<h2><span id="内边距-padding">内边距 (padding)</span></h2><h3><span id="143-盒子模型内边距padding">143-盒子模型内边距padding</span></h3><ul>
+<li>padding 属性用于设置内边距，即边框与内容之间的距离.</li>
+<li>padding会撑大盒子<br><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402142309818.png" alt="image.png"></li>
+</ul>
+<h3><span id="144-padding复合属性">144-padding复合属性</span></h3><p><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402142331154.png" alt="image.png"></p>
+<h3><span id="145-padding会影响盒子实际大小">145-padding会影响盒子实际大小</span></h3><p>当我们给盒子指定padding值之后, 发生了2件事情:</p>
+<ol>
+<li>内容和边框有了距离，添加了内边距。</li>
+<li>padding影响了盒子实际大小。<br>也就是说，如果盒子已经有了宽度和高度，此时再指定内边框，会撑大盒子.<br>解决方案：<br>如果保证盒子跟效果图大小保持一致，则让width&#x2F;height减去多出来的内边距大小即可。</li>
+</ol>
+<h3><span id="146-padding应用-新浪导航栏上">146-padding应用-新浪导航栏(上)</span></h3><p>因为每个导航栏里面的字数不一样多,我们可以不用给每个盒子宽度了,直接给padding最合适.<br><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402151502217.png" alt="image.png"></p>
+<h3><span id="148-小米侧边栏修改">148-小米侧边栏修改</span></h3><h3><span id="149-padding不会撑开盒子的情况">149-padding不会撑开盒子的情况</span></h3><ul>
+<li>如果盒子本身没有指定width&#x2F;height属性, 则此时padding不会撑开盒子大小.</li>
+<li>只要有了width&#x2F;height属性，到了极限还可以有滚动条</li>
+</ul>
+<h2><span id="外边距-margin">外边距 (margin)</span></h2><h3><span id="150-盒子模型外边距margin">150-盒子模型外边距margin</span></h3><p>margin属性用于设置外边距，即控制盒子和盒子之间的距离。<br><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402160015975.png" alt="image.png"><br>margin简写方式代表的意义跟padding完全一致。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">margin: 30px 50px;</span><br></pre></td></tr></table></figure>
+
+<h3><span id="151-外边距典型应用-块级盒子水平居中对齐">151-外边距典型应用-块级盒子水平居中对齐</span></h3><p>外边距可以让块级盒子水平居中，但是必须满足两个条件:</p>
+<ol>
+<li>盒子必须指定了宽度(width)</li>
+<li>盒子左右的外边距都设置为auto<br>常见的写法，以下三种都可以：</li>
+</ol>
+<ul>
+<li><code>margin-left:auto; margin-right: auto;</code></li>
+<li><code>margin:auto;</code></li>
+<li><code>margin:0 auto;</code></li>
+</ul>
+<h3><span id="152-行内元素和行内块元素水平居中">152-行内元素和行内块元素水平居中</span></h3><p>注意: 以上方法是让块级元素水平居中，行内元素或者行内块元素水平居中给其父元素添加text-align:center即可。看作文字</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>行内元素和行内块元素水平居中<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">            <span class="selector-class">.header</span>&#123;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">width</span>: <span class="number">900px</span>;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">margin</span>: <span class="number">0</span> auto;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">text-align</span>: center;</span></span><br><span class="line"><span class="language-css">            &#125;</span></span><br><span class="line"><span class="language-css">        </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;header&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>里面的文字<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3><span id="153-外边距合并-嵌套块元素塌陷">153-外边距合并-嵌套块元素塌陷</span></h3><p>使用margin定义块元素的垂直外边距时，可能会出现外边距的合并。<br>对于两个嵌套关系(父子关系)的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距值.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">            <span class="selector-class">.father</span>&#123;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">width</span>: <span class="number">400px</span>;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">height</span>: <span class="number">400px</span>;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">background-color</span>: purple;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">margin-top</span>: <span class="number">50px</span>;</span></span><br><span class="line"><span class="language-css">            &#125;</span></span><br><span class="line"><span class="language-css">            <span class="selector-class">.son</span>&#123;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">margin-top</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">            &#125;</span></span><br><span class="line"><span class="language-css">        </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;father&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402191940495.png" alt="image.png"><br>解决方案：</p>
+<ul>
+<li>可以为父元素定义上边框。<code>border: 1px solid transparent; /*transparent 透明的*/</code></li>
+<li>可以为父元素定义上内边距。<code>padding: 1px;</code></li>
+<li>可以为父元素添加 overflow:hidden;优点：不会改变盒子大小。</li>
+</ul>
+<h3><span id="154-清除内外边距">154-清除内外边距</span></h3><p>网页元素很多都带有默认的内外边距。而且不同浏览器默认的也不一致。因此我们在布局前，首先要清除下网页元素的内外边距。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">	padding:0; /*清除内边距*/</span><br><span class="line">	margin:0;  /*清除外边距*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：行内元素为了照顾兼容性，尽量只设置左右内外边距，不要设置上下内外边距。但是转换为块级和行内块元素就可以了。</p>
+<h1><span id="ps基本操作">PS基本操作</span></h1><p>字节用的figma吗？<br>测量元素长度：</p>
+<ul>
+<li>文件→打开：可以打开我们要测量图片</li>
+<li>Ctrl+R：可以打开标尺，或者视图→标尺</li>
+<li>右击标尺，把里面的单位改为像素</li>
+<li>Ctrl+加号(+)可以放大视图，Ctrl+减号(-)可以缩小视图</li>
+<li>按空格，鼠标变成小抓手，可以移动图片</li>
+<li>用选区拖动可以测量大小</li>
+<li>Ctrl+D可以取消选区，或者在旁边空白处点击一下也可以取消选区<br><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402271738388.png" alt="image.png"></li>
+</ul>
+<h1><span id="综合案例">综合案例</span></h1><h2><span id="156-综合案例-产品模块布局分析">156-综合案例-产品模块布局分析</span></h2><p><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402271800899.png" alt="image.png"></p>
+<h2><span id="157-综合案例-box布局">157-综合案例-box布局</span></h2><h1><span id="圆角边框">圆角边框</span></h1><h1><span id="盒子阴影">盒子阴影</span></h1><h1><span id="文字阴影">文字阴影</span></h1></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://illyber.github.io">illyber</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://illyber.github.io/2024/02/13/Front-End/2_css/8-css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/">https://illyber.github.io/2024/02/13/Front-End/2_css/8-css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://illyber.github.io" target="_blank">MyBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/03/01/Data-Structure/summary/" title="数据结构总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">数据结构总结</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/01/macOS/" title="macOS 知识"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">macOS 知识</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="utterances-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">illyber</div><div class="author-info__description">学习计算机的记录</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">81</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">学习目标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">盒子模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">137-看透网页布局本质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">138-盒子模型(box model)组成部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">边框 (border)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">139-盒子模型边框border</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">140-边框的复合写法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">141-表格细线边框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">142-边框会影响盒子实际大小</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">内边距 (padding)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">143-盒子模型内边距padding</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">144-padding复合属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">145-padding会影响盒子实际大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">146-padding应用-新浪导航栏(上)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">148-小米侧边栏修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">149-padding不会撑开盒子的情况</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">外边距 (margin)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">150-盒子模型外边距margin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">151-外边距典型应用-块级盒子水平居中对齐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">152-行内元素和行内块元素水平居中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">153-外边距合并-嵌套块元素塌陷</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">154-清除内外边距</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">PS基本操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">综合案例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">156-综合案例-产品模块布局分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">157-综合案例-box布局</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">圆角边框</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">盒子阴影</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">文字阴影</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/01/network/" title="网络是怎样连接的_户根勤-笔记">网络是怎样连接的_户根勤-笔记</a><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/01/package-lock.json/" title="无题">无题</a><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/01/punctuation/" title="标点符号的英文名称">标点符号的英文名称</a><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/01/%E8%AE%B2%E8%AF%BE%E6%96%B9%E6%B3%95/" title="无题">无题</a><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/01/Linux/boot/" title="Boot 相关">Boot 相关</a><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By illyber</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><div class="js-pjax"><script>(() => {
+  const loadUtterances = () => {
+    let ele = document.createElement('script')
+    ele.id = 'utterances_comment'
+    ele.src = 'https://utteranc.es/client.js'
+    ele.setAttribute('repo', 'illyber/comments')
+    ele.setAttribute('issue-term', 'url')
+    const nowTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'photon-dark' : 'github-light'
+    ele.setAttribute('theme', nowTheme)
+    ele.crossOrigin = 'anonymous'
+    ele.async = true
+    document.getElementById('utterances-wrap').appendChild(ele)
+  }
+
+  const utterancesTheme = theme => {
+    const iframe = document.querySelector('.utterances-frame')
+    if (iframe) {
+      const theme = theme === 'dark' ? 'photon-dark' : 'github-light'
+      const message = {
+        type: 'set-theme',
+        theme: theme
+      };
+      iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+  }
+
+  btf.addGlobalFn('themeChange', utterancesTheme, 'utterances')
+
+  if ('Utterances' === 'Utterances' || !true) {
+    if (true) btf.loadComment(document.getElementById('utterances-wrap'), loadUtterances)
+    else loadUtterances()
+  } else {
+    window.loadOtherComment = loadUtterances
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
