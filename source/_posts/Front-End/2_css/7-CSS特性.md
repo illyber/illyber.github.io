@@ -2,9 +2,9 @@
 title: CSS-CSS特性
 categories:
   - Front-End
-  - css
+  - 2_css
 date: 2023-11-17 00:00:00
-tags: 
+tags:
 updated:
 ---
 

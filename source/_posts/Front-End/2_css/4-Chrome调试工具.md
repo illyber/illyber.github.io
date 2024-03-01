@@ -3,7 +3,7 @@ title: CSS-Chrome调试工具
 tags: css
 categories:
   - Front-End
-  - css
+  - 2_css
 ---
 打开调试工具：
 - 鼠标右键->检查
