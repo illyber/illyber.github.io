@@ -270,7 +270,12 @@ margin: 30px 50px;
 ![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402271800899.png)
 
 ## 157-综合案例-box布局
+## 158-综合案例-图片和段落制作
+1. 要使图片的宽度不超过父元素的宽度，img 加属性`width: 100%;`
+2. 因为标准盒模型下，width设置的是内容区域的宽度。当内容区域没有设置width，设置了padding，此时内容区域的宽度会被padding一点点挤小。当给该元素设置了width，又设置了padding,盒子会被撑大。
+3. width 和 padding 设置的是内容的宽度和高度，要加上padding才是盒子的宽高。
 
+## 160-综合案例-竖线细节制作
 
 # 圆角边框
 # 盒子阴影
