@@ -7,21 +7,33 @@ date: 2024-02-13 19:43:00
 tags:
 updated:
 ---
-# 学习目标
-- 能够准确阐述盒子模型的4个组成部分
-- 能够利用边框复合写法给元素添加边框
-- 能够计算盒子的实际大小
-- 能够利用盒子模型布局模块案例
-- 能够给盒子设置圆角边框
-- 能够给盒子添加阴影
-- 能够给文字添加阴影
+# 总结
+| 属性名                          | 代码                            | 备注                |
+| ------------------------------- | ------------------------------- | ------------------- |
+| **边框/border**                 |                                 |                     |
+| 边框粗细                        | border-width                    |                     |
+| 边框样式                        | border-style                    |                     |
+| 边框颜色                        | border-color                    |                     |
+| 连写                            | border: width style color;      |                     |
+| 设置上边框                      | border-top: width style color;  | bottom, left, right |
+| 表格细线边框                    | border-collapse                 |                     |
+|                                 |                                 |                     |
+| **内边距/padding**              |                                 |                     |
+| 分别设置内边距                  | padding-top                     | left, bottom, right |
+| 简写                            | padding: 5px                    | 上下左右            |
+|                                 | padding: 5px 10px               | 上下 左右           |
+|                                 | padding: 5px 10px 20px          | 上 左右 下          |
+|                                 | padding: 5px 10px 20px 30px     | 上 右 下 左，顺时针 |
+|                                 |                                 |                     |
+| **外边距/margin**               |                                 |                     |
+| 分别设置外边距                  | margin-top                      | right, bottom, left |
+| margin简写的意义跟padding一致。 |                                 |                     |
+| 块级盒子水平居中对齐            | margin: 0 auto;                 |                     |
+| 行内元素和行内块元素水平居中    | 给其父元素添加text-align:center |                     |
+
 # 盒子模型
 页面布局三大核心：盒子模型、浮动、定位
-## 137-看透网页布局本质
-网页布局过程:
-1.先准备好相关的网页元素，网页元素基本都是盒子Box。
-2.利用CSS设置好盒子样式，然后摆放到相应位置；
-3.往盒子里面装内容.
+
 ## 138-盒子模型(box model)组成部分
 CSS盒子模型本质上是一个盒子，封装周围的HTML元素，它包括：边框、外边距、内边距、和实际内容
 ![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402132219431.png)
@@ -95,37 +107,14 @@ border-top: 1px solid red; /*只设定上边框，其余同理*/
 ```
 
 ```html
-<html>
-
-<head>
-
-<title>边框的复合写法</title>
-
 <style>
-
-div{
-
-width: 300px;
-
-height: 200px;
-
-border: 5px solid red;
-
-border-top: 10px dashed green;
-
-}
-
+    div{
+        width: 200px;
+        height: 200px;
+        border: 5px solid blue;
+        border-top: 5px solid red;
+        }
 </style>
-
-</head>
-
-<body>
-
-<div></div>
-
-</body>
-
-</html>
 ```
 
 ### 141-表格细线边框
@@ -136,6 +125,7 @@ border-collapse: collapse;
 ```
 - collapse 单词是合并的意思
 - border-collapse: collapse; 表示相邻边框合并在一起而不是相加，变细
+
 ### 142-边框会影响盒子实际大小
 设置盒子的宽和高不包括边框。
 1. 测量盒子大小的时候，不量边框.
@@ -300,5 +290,6 @@ font-weight: 400;
 list-style: none;
 ```
 # 圆角边框
+
 # 盒子阴影
 # 文字阴影
