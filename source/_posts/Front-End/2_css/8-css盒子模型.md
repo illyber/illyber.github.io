@@ -8,28 +8,29 @@ tags:
 updated:
 ---
 # 总结
-| 属性名                          | 代码                            | 备注                |
-| ------------------------------- | ------------------------------- | ------------------- |
-| **边框/border**                 |                                 |                     |
-| 边框粗细                        | border-width                    |                     |
-| 边框样式                        | border-style                    |                     |
-| 边框颜色                        | border-color                    |                     |
-| 连写                            | border: width style color;      |                     |
-| 设置上边框                      | border-top: width style color;  | bottom, left, right |
-| 表格细线边框                    | border-collapse                 |                     |
-|                                 |                                 |                     |
-| **内边距/padding**              |                                 |                     |
-| 分别设置内边距                  | padding-top                     | left, bottom, right |
-| 简写                            | padding: 5px                    | 上下左右            |
-|                                 | padding: 5px 10px               | 上下 左右           |
-|                                 | padding: 5px 10px 20px          | 上 左右 下          |
-|                                 | padding: 5px 10px 20px 30px     | 上 右 下 左，顺时针 |
-|                                 |                                 |                     |
-| **外边距/margin**               |                                 |                     |
-| 分别设置外边距                  | margin-top                      | right, bottom, left |
-| margin简写的意义跟padding一致。 |                                 |                     |
-| 块级盒子水平居中对齐            | margin: 0 auto;                 |                     |
-| 行内元素和行内块元素水平居中    | 给其父元素添加text-align:center |                     |
+| 效果                     | 属性名                            | 备注                  |
+| ---------------------- | ------------------------------ | ------------------- |
+| **边框/border**          |                                |                     |
+| 边框粗细                   | border-width                   |                     |
+| 边框样式                   | border-style                   |                     |
+| 边框颜色                   | border-color                   |                     |
+| 连写                     | border: width style color;     |                     |
+| 设置上边框                  | border-top: width style color; | bottom, left, right |
+| 表格细线边框                 | border-collapse                |                     |
+| 圆角边框                   | bord                           |                     |
+|                        |                                |                     |
+| **内边距/padding**        |                                |                     |
+| 分别设置内边距                | padding-top                    | left, bottom, right |
+| 简写                     | padding: 5px                   | 上下左右                |
+|                        | padding: 5px 10px              | 上下 左右               |
+|                        | padding: 5px 10px 20px         | 上 左右 下              |
+|                        | padding: 5px 10px 20px 30px    | 上 右 下 左，顺时针         |
+|                        |                                |                     |
+| **外边距/margin**         |                                |                     |
+| 分别设置外边距                | margin-top                     | right, bottom, left |
+| margin简写的意义跟padding一致。 |                                |                     |
+| 块级盒子水平居中对齐             | margin: 0 auto;                |                     |
+| 行内元素和行内块元素水平居中         | 给其父元素添加text-align:center       |                     |
 
 # 盒子模型
 页面布局三大核心：盒子模型、浮动、定位
@@ -289,7 +290,3 @@ font-weight: 400;
 ```html
 list-style: none;
 ```
-# 圆角边框
-
-# 盒子阴影
-# 文字阴影
