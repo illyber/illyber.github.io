@@ -245,3 +245,16 @@ snapper和btrfs-assistant
 
 # Windows diskpart 删除分区
 ![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202311261825395.png)
+
+# 提示linux系统空间用尽
+
+df显示用尽，dh显示占用不多。试试
+
+```bash
+btrfs filesystem df /
+btrfs filesystem df /home
+sudo btrfs filesystem du -s /
+sudo btrfs filesystem du -s /home
+```
+
+重新扫描一下或许就好了。

@@ -21,6 +21,7 @@ screenshot tool
 Unite #将最大最小按钮融合到顶部
 compiz alike lamp effect
 No Titlebar When Maximized
+debian linux updates indicator
 ```
 archlinux 需安装 `gnome-browser-connector`
 # kde生成视频缩略图(thumbnail)
