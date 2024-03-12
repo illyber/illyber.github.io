@@ -16,6 +16,9 @@ dmesg (display message)
 
 archlinux 是 initramfs-linux.img, debian 是 initrd.img (名字如此，实质还是initramfs)
 启动时，先加载 vmlinuz, 再加载 initramfs
+
+生成initramfs用`update-initramfs`命令
+
 ## debian
 生成：mkinitramfs. low-level tool for generating an initramfs image
 更新：update-initramfs. 调用mkinitramfs实现的
@@ -184,3 +187,18 @@ efibootmgr              显示所有UEFI启动项
 efibootmgr -v           显示所有UEFI启动项及详细信息
 efibootmgr -b 0001 -B   删除编号为0001的启动项
 ```
+
+# grub后的动画--plymouth
+
+1. 要安装plymouth-themes, 在/etc/default/grub的GRUB_CMDLINE_LINUX_DEFAULT变量添加splash
+
+2. debian系统的主题位于 /usr/share/plymouth/themes/
+
+3. ```bash
+   plymouth-set-default-theme	显示当前使用的plymouth主题
+   plymouth-set-default-theme -l	显示所有的主题
+   plymouth-set-default-theme -R <theme-name>	设置theme-name为主题
+   	-R, --rebuild-initrd   Rebuild initrd (necessary after changing theme)
+   ```
+
+4. You may need to add some boot parameters, to make the boot animation more "fluently". Some examples: "quiet splash loglevel=3 rd.udev.log_level=3"

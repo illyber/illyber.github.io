@@ -5,15 +5,22 @@ tags:
 categories:
   - Linux
 ---
-# debian 安装搜狗输入法
-
-```shell
-sudo apt purge fcitx* ibus
-sudo apt autoremove
-sudo apt install fcitx
-sudo apt install ./sogoupinyin_4.0.1.2800_x86_64.deb
-sudo apt --fix-broken install
-sudo apt install libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2 libgsettings-qt1
+[TOC]
+# debian安装fcitx5
+1. 卸载 ibus
+2. 安装fcitx5和中文插件
+```bash
+sudo apt install fcitx5 fcitx5-chinese-addons
+```
+3. fcitx5-diagnose命令能诊断输入问题
+4. 可能是zsh在登陆时不读取/etc/profile而读取/etc/zprofile造成的，在/etc/zprofile里调用/etc/profile即可：`echo "source /etc/profile" > /etc/zprofile`
+	为了保险，再新建一个/etc/environment, 内容为：
+```bash
+export XIM_PROGRAM=fcitx                                          
+export XIM=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=“ @im=fcitx” 
 ```
 
 # archlinux安装ibus-libpinyin
