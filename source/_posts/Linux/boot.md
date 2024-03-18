@@ -19,12 +19,18 @@ archlinux 是 initramfs-linux.img, debian 是 initrd.img (名字如此，实质�
 
 生成initramfs用`update-initramfs`命令
 
-## debian
-生成：mkinitramfs. low-level tool for generating an initramfs image
-更新：update-initramfs. 调用mkinitramfs实现的
-解压：unmkinitramfs - extract content from an initramfs image
-查看内容：lsinitramfs - list content of an initramfs image
+## debian的initramfs
+
 配置文件：/etc/initramfs-tools/initramfs.conf
+
+|                     | 命令             | 解释                                             |
+| ------------------- | ---------------- | ------------------------------------------------ |
+| 生成 initramfs      | mkinitramfs      | low-level tool for generating an initramfs image |
+| 更新 initramfs      | update-initramfs | 调用mkinitramfs实现的                            |
+| 解压 initramfs      | unmkinitramfs    | extract content from an initramfs image          |
+| 查看 initramfs 内容 | lsinitramfs      | list content of an initramfs image               |
+
+
 ```shell
 /etc/initramfs-tools/
 ├── conf.d
@@ -47,7 +53,7 @@ archlinux 是 initramfs-linux.img, debian 是 initrd.img (名字如此，实质�
 └── update-initramfs.conf
 ```
 
-## archlinux
+## archlinux的initramfs
 生成 `initramfs-linux.img`，用 `mkinitcpio -P`命令，这个命令一般会自动运行。
 mkinitcpio的主配置文件是`/etc/mkinitcpio.conf`。此外，内核软件包的预配置文件位于`/etc/mkinitcpio.d`（例如：`/etc/mkinitcpio.d/linux.preset`）。
 
