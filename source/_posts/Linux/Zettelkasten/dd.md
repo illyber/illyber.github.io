@@ -1,4 +1,4 @@
-#disk/分区/remove
+#disk/dd #disk/删除分区/dd #传输文件/dd
 dd命令删除分区和分区表：
 ```bash
 dd if=/dev/zero of=/dev/sdb4 bs=1M count=1 progress=status

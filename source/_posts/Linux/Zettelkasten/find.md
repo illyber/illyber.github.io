@@ -1,3 +1,7 @@
+2024 0331 16:14
+Tags: #搜索
+
+---
 
 
 <!-- toc -->
@@ -28,3 +32,9 @@ find /home -size +1M
 ```shell
 find /home/carryf -path "/home/carryf/astetc" -prune -o -type f -name "cdr_*.conf" -print
 ```
+
+
+
+
+
+---

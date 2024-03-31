@@ -1,2 +1,0 @@
-# Windows diskpart 删除分区
-![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202311261825395.png)

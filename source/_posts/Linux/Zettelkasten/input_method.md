@@ -1,3 +1,7 @@
+2024 0331 16:25
+Tags: #linux-set/输入法
+
+---
 [TOC]
 # debian安装fcitx5
 1. 卸载 ibus
@@ -122,3 +126,9 @@ ibus-daemon -drx
 ```shell
 https://wiki.archlinuxcn.org/wiki/建议阅读#中国大陆用户的推荐解决方案
 ```
+
+
+
+
+
+---

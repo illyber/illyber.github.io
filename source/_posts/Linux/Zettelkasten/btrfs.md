@@ -1,3 +1,7 @@
+2024 0331 16:11
+Tags: #disk/filesystem/btrfs
+
+---
 
 [Ubuntu Document](https://help.ubuntu.com/community/btrfs)
 # 子卷/快照
@@ -56,3 +60,8 @@ btrfs property list [-t <type>] <object>
 3. snap-pac, snap-pac-grub
 snap-pac: Pacman hooks that use snapper to create pre/post btrfs snapshots like openSUSE's YaST
 snap-pac-grub: Pacman hook to update GRUB entries for grub-btrfs after snap-pac made snapshots
+
+
+
+
+---

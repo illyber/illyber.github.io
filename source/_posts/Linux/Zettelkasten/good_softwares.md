@@ -1,4 +1,7 @@
-#必装插件/软件
+2024 0331 16:26
+Tags: #linux-set/必装软件
+
+---
 # Gnome plugin
 snap 的 Firefox 安插件有问题，去官网下Firefox（用apt安装），或者用 chrome。
 
@@ -110,3 +113,8 @@ mpv --hwdec=vdpau S01E01.mkv
 
 # flameshot快捷键无法截图
 设置快捷键指令为 `sh -c -- "flameshot gui"`
+
+
+
+
+---

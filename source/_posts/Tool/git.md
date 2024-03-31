@@ -28,13 +28,18 @@ git init <directory>	将指定目录初始化为仓库
 
 # 工作区
 
-- 撤销工作区更改：`git restore file`
+```bash
+使用 "git restore <文件>..." 丢弃工作区的改动
+```
 
-# 添加/删除出 暂存区
 
-把文件移出暂存区/unstage, 工作区保持暂存区的版本
+
+# 添加/取消 暂存区
+
+取消暂存
+
 ```shell
-git restore --staged <file>
+使用 "git restore --staged <文件>..." 以取消暂存，将更改移动到工作区。
 ```
 
 当我们需要删除暂存区或分支上的文件, 同时工作区也不需要这个文件了, 可以使用

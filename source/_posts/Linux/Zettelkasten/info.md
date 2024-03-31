@@ -1,3 +1,7 @@
+2024 0331 16:16
+Tags: #帮助/info
+
+---
 # info
 
 1. 安装pinfo, pinfo有颜色：`sudo apt install pinfo`
@@ -12,3 +16,9 @@
     - BACKUP或DEL键 向后滚动一页。
     ![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202311262234813.png)
 
+
+
+
+
+
+---

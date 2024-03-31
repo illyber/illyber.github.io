@@ -1,5 +1,5 @@
 # fs label
-#disk/分区/label
+#disk/filesystem/label
 1. for ext2/ext3/ext4
 ```shell
 e2label device [newlabel]
