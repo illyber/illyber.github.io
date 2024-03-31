@@ -1,3 +1,8 @@
+2024 0331 20:43
+Tags: #脚本/反斜杠和引号
+
+---
+
 ## 如何输入/输出引号
 
 ```shell
@@ -125,3 +130,5 @@ graph TD
 
 - 如果 echo 的第一个参数只有单个反斜线（`\x68\x61\x72\x74\x74\x6c\x65`），echo 的输出即为 `harttle`，经过 `printf` 后仍然为 `harttle`；
 - 如果 `xargs` 没有添加 [`-0` 参数](https://www.gnu.org/software/findutils/manual/html_node/find_html/xargs-options.html)，`xargs` 会把它的标准输入正常做 Bash 转义，也就是说 `xargs` 给到 `printf` 的第二个参数将会是 `x68x61x72x74x74x6cx65`，因为 Bash 转义中 `\x` 的语义（见“转义”一节）和 `printf` 转义中 `\x` 的语义不同。
+
+---

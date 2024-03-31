@@ -1,3 +1,8 @@
+2024 0331 20:43
+Tags: #脚本/展开
+
+---
+
 [shell中的扩展(Expansions)](https://opengers.github.io/linux/linux-shell-brace-parameter-command-pathname-expansion/)
 ## Brace Expansion（花括号）
 ```shell
@@ -131,3 +136,5 @@ Matches anything except one of the given patterns
 ```
 
 ## Quote Removal
+
+---

@@ -1,3 +1,8 @@
+2024 0331 20:43
+Tags: #脚本/正则表达式
+
+---
+
 # 正则表达式分类
 1. 基本的正则表达式（Basic Regular Expression 又叫 Basic RegEx  简称 BREs）
 2. 扩展的正则表达式（Extended Regular Expression 又叫 Extended RegEx 简称 EREs）
@@ -95,3 +100,5 @@ abc   匹配含有 abc 的字符串
 
 [:graph:]同[:print:],但不包括空格
 ```
+
+---

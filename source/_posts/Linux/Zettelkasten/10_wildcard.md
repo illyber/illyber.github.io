@@ -1,3 +1,8 @@
+2024 0331 20:43
+Tags: #脚本/通配符
+
+---
+
 
 [命令行通配符教程](https://www.ruanyifeng.com/blog/2018/09/bash-wildcards.html)
 
@@ -70,3 +75,5 @@ cat dawg dg dig dog doug dug
 
 
 
+
+---

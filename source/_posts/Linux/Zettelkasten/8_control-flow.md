@@ -1,4 +1,15 @@
+2024 0331 20:43
+Tags: #脚本/控制流
+
+---
+
 ## if 判断
+
+在双小括号里可以用关系符号（如大于号小于号）
+
+```shell
+if (($a > 2))
+```
 
 (1)单分支
 
@@ -59,17 +70,34 @@ esac
 (2)双分号“;;”表示命令序列结束，相当于c中的break
 (3)最后的“`*)`”表示默认模式，相当于c中的default。
 
-## for循环
+## for循环变量取值
 
 现在一般都使用for in结构，for in结构后面可以使用函数来构造范围，比如$()、\`\`这些，里面写一些查找的语法，比如ls test\*，那么遍历之后就是输出文件名了。
 
-在双小括号里可以用关系符号（如大于号小于号）
-
-```shell
-if (($a > 2))
+### 结构
+命令行里有分号
+```bash
+for file in $(ls *md);do echo $file;done
 ```
 
-### 第一类：数字性循环
+脚本里不需要分号，但需要换行
+```bash
+for file in $(ls *md)
+do echo $file
+done
+```
+
+### 第一类：取值为文件名
+
+```shell
+for file in /proc/*;  
+
+for file in $(ls *.sh)
+
+for file in $(echo [0-9]*_*md);do sed -f sed_script $file -i;done
+```
+
+### 第二类：数字性循环
 
 ```shell
 for i in {1..10} 
@@ -80,7 +108,7 @@ for((i=1;i<=10;i++));
 awk 'BEGIN{for(i=1; i<=10; i++) print i}'  
 ```
 
-### 第二类：字符性循环
+### 第三类：字符性循环
 
 ```shell
 for i in `ls`;  
@@ -94,13 +122,6 @@ list="rootfs usr data data2"
 for i in $list;  
 ```
 
-### 第三类：文件名查找
-
-```shell
-for file in /proc/*;  
-
-for file in $(ls *.sh)
-```
 
 ## while 循环
 
@@ -111,3 +132,5 @@ do
 done
 ```
 
+
+---
