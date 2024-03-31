@@ -1,73 +1,3 @@
----
-title: Shell-通配符和正则表达式
-tags:
-  - shell
-  - wildcard
-  - regex
-categories:
-  - Shell
----
-[命令行通配符教程](https://www.ruanyifeng.com/blog/2018/09/bash-wildcards.html)
-
-echo 没有找到对应文件名就按原样输出
-# shell 开启通配符
-
-- bash开启通配符
-```shell
-#开启通配符功能
-shopt -s  extglob
-
-#查看通配符功能是否开启，on表示已经开启
-shopt -s
-```
-
-- zsh
-```shell
-# 开启*支持
-setopt nonomatch
-```
-
-# 通配符字符
-
-[命令行通配符教程 - 阮一峰](https://www.ruanyifeng.com/blog/2018/09/bash-wildcards.html)
-
-通配符匹配文件名的时候不是用空格分开像字符串那样一起匹配，而是一个文件名一个文件名匹配。
-
-除了 `{}` 以外，Bash 扩展通配符的时候，发现不存在匹配的文件，会将通配符原样输出。
-
-```shell
-*			    匹配任意多个字符，包括 0 个和 1 个。[0,∞)
-？			    匹配任意 1 个字符一次，不包括空字符，不包括 0 个。[1,1]
-
-[...]           匹配方括号之中的任意一个字符，比如[aeiou]可以匹配五个元音字母
-[start-end]     表示一个连续的范围，匹配范围内的一个字符
-[^...]和[!...]  匹配不在方括号里面的字符（不包括空字符）。这两种写法是等价的。
-这种模式下也可以使用连续范围的写法[!start-end]
-
-{...}与[...]有一个很重要的区别。如果匹配的文件不存在，[...]会失去模式的功能，变成一个单纯的字符串，而{...}依然可以展开。
-{...} 			表示匹配大括号里面的所有模式，模式之间使用逗号分隔，模式可以是多字符的。
-大括号可以嵌套。
-大括号也可以与其他模式联用。
-{start..end}会匹配连续范围的字符。
-如果遇到无法解释的扩展，模式会原样输出。
-```
-
-```shell
-$ echo {cat,d*}
-cat dawg dg dig dog doug dug
-```
-
-posix 字符类
-
-```shell
-[:alnum:]	    匹配任意 1 个字母或数字
-[:alpha:]		匹配任意 1 个字母
-[:digit:]       匹配任意 1 个数字
-[0-9]			匹配任意 1 个数字
-[:lower:]		匹配任意 1 个小写字母
-[:upper:]		匹配任意 1 个大写字母
-```
-
 # 正则表达式分类
 1. 基本的正则表达式（Basic Regular Expression 又叫 Basic RegEx  简称 BREs）
 2. 扩展的正则表达式（Extended Regular Expression 又叫 Extended RegEx 简称 EREs）
@@ -85,6 +15,7 @@ m    多行匹配
 i    忽略大小写  
 x    允许注释和空格的出现  
 U    非贪婪匹配
+
 # linux正则表达式 (BREs,EREs,PREs) 差异比较
 https://www.cnblogs.com/chengmo/archive/2010/10/10/1847287.html
 
@@ -132,6 +63,7 @@ $ 　　 匹配字符结尾的字符
 a|b|c 匹配符合a字符 或是b字符 或是c字符 的字符串  
 abc   匹配含有 abc 的字符串
 ```
+
 # 转义序列、posix字符类、中括号
 参考：[regular tutorial - Posix Bracket Expressions]
 ```shell

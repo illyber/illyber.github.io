@@ -1,11 +1,3 @@
----
-title: Linux 网络相关
-tags:
-  - linux
-  - network
-categories:
-  - Linux
----
 # 下载工具
 
 ## wget，不能多线程

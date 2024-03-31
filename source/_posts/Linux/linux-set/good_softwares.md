@@ -1,10 +1,4 @@
----
-title: 必要的 Linux 软件
-tags:
-  - linux
-categories:
-  - Linux
----
+#必装插件/软件
 # Gnome plugin
 snap 的 Firefox 安插件有问题，去官网下Firefox（用apt安装），或者用 chrome。
 

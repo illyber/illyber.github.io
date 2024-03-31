@@ -1,11 +1,4 @@
----
-title: Boot 相关
-tags:
-  - linux
-  - boot
-categories:
-  - Linux
----
+#boot
 LegacyBIOS/UEFI BIOS -> grub/MBR/GPT
 
 # 显示开机信息

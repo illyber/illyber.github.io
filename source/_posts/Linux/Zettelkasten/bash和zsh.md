@@ -1,11 +1,8 @@
+2024 0331 16:06
+Tags: #bash	#zsh
+
 ---
-title: bash 快捷键和配置文件
-tags:
-  - shell
-  - bash
-categories:
-  - Shell
----
+
 # bash 快捷键
 ## 说明
 参考 [harttle - Bash 快捷键](https://harttle.land/2015/11/09/bash-shortcuts.html#)
@@ -228,3 +225,9 @@ antigen apply
 ## `${(%):-%N}`
 [${(%):-%N}](https://stackoverflow.com/questions/74822753/why-n-to-get-expansion-of-escapes-in-zsh?rq=3)
 
+
+
+
+
+
+---

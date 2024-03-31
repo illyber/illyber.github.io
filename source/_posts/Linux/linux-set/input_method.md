@@ -1,10 +1,3 @@
----
-title: Linux 安装输入法
-tags:
-  - linux
-categories:
-  - Linux
----
 [TOC]
 # debian安装fcitx5
 1. 卸载 ibus

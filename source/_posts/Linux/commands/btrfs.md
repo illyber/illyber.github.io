@@ -1,10 +1,4 @@
----
-title: btrfs notes
-tags:
-  - btrfs
-categories:
-  - Linux
----
+
 [Ubuntu Document](https://help.ubuntu.com/community/btrfs)
 # 子卷/快照
 ## 删除子卷

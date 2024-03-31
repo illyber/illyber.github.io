@@ -21,8 +21,8 @@ categories:
 
 | effect                              | command                     |
 | ----------------------------------- | --------------------------- |
-| 向下翻页 (forward)                  | <kbd>ctrl</kbd><kbd>f</kbd> |
-| 向上翻页 (backward)                 | <kbd>ctrl</kbd><kbd>b</kbd> |
+| 向下翻整页 (forward)                | <kbd>ctrl</kbd><kbd>f</kbd> |
+| 向上翻整页 (backward)               | <kbd>ctrl</kbd><kbd>b</kbd> |
 | 向下翻半页 (down)（映射成`<Down>`） | <kbd>ctrl</kbd><kbd>d</kbd> |
 | 向上翻半页 (up)（映射成`<Up>`）     | <kbd>ctrl</kbd><kbd>u</kbd> |
 
