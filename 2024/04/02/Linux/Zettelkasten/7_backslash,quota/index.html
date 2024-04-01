@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>7_backslash,quota | MyBlog</title><meta name="author" content="illyber"><meta name="copyright" content="illyber"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="如何输入&#x2F;输出引号1234# 只有单引号，加双引号# 只有双引号，加单引号# 既有单又有双echo &#x27;he&#x27;\&#x27;&#x27;s she&#x27;\&quot;&#x27;s&#x27;&gt;log.txt;cat log.txt  基本知识点引用于Bash 转义和引号的使用  反斜线用来转义除换行之外的所有字符，反斜线加换行为连行; 单引号用来直出字面">
+<meta property="og:type" content="article">
+<meta property="og:title" content="7_backslash,quota">
+<meta property="og:url" content="https://illyber.github.io/2024/04/02/Linux/Zettelkasten/7_backslash,quota/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="如何输入&#x2F;输出引号1234# 只有单引号，加双引号# 只有双引号，加单引号# 既有单又有双echo &#x27;he&#x27;\&#x27;&#x27;s she&#x27;\&quot;&#x27;s&#x27;&gt;log.txt;cat log.txt  基本知识点引用于Bash 转义和引号的使用  反斜线用来转义除换行之外的所有字符，反斜线加换行为连行; 单引号用来直出字面">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg">
+<meta property="article:published_time" content="2024-04-01T21:20:15.506Z">
+<meta property="article:modified_time" content="2024-04-01T22:08:21.359Z">
+<meta property="article:author" content="illyber">
+<meta property="article:tag" content="脚本&#x2F;反斜杠和引号">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://illyber.github.io/2024/04/02/Linux/Zettelkasten/7_backslash,quota/index.html"><link rel="preconnect"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '7_backslash,quota',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-02 06:08:21'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">119</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">63</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-2.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="MyBlog"><span class="site-name">MyBlog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">7_backslash,quota</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-01T21:20:15.506Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-04-01T22:08:21.359Z" title="更新于 2024-04-02 06:08:21">2024-04-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="7_backslash,quota"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h2><span id="如何输入x2f输出引号">如何输入&#x2F;输出引号</span></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">只有单引号，加双引号</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">只有双引号，加单引号</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">既有单又有双</span></span><br><span class="line">echo &#x27;he&#x27;\&#x27;&#x27;s she&#x27;\&quot;&#x27;s&#x27;&gt;log.txt;cat log.txt</span><br></pre></td></tr></table></figure>
+
+<h2><span id="基本知识点">基本知识点</span></h2><p>引用于<a target="_blank" rel="noopener" href="https://harttle.land/2020/06/26/bash-quote-escape.html#header-0">Bash 转义和引号的使用</a></p>
+<ol>
+<li>反斜线用来转义除换行之外的所有字符，反斜线加换行为连行;</li>
+<li>单引号用来直出字面量，其内容部分不允许转义，包括单引号转义也不允许；</li>
+<li>双引号内允许 <a target="_blank" rel="noopener" href="https://www.gnu.org/software/bash/manual/html_node/Command-Substitution.html#Command-Substitution">命令替换</a> 和对特定几个字符转义，双引号内的反斜线对其他字符没有特殊含义，会被当作字面量处理。</li>
+<li>字符串会被处理两次，先被shell处理一次，再被具体程序（如echo）处理一次。</li>
+</ol>
+<h2><span id="一个例子">一个例子</span></h2><p>如果不熟悉 Bash 引号的语义，尤其是配合管道和 xargs 等命令时，事情会变得很复杂很难以理解。 比如下面的命令把 16 进制 ASCII 转为字符串 <code>harttle</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;\\x68\\x61\\x72\\x74\\x74\\x6c\\x65&#x27; | xargs -0 printf &#x27;%b&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>如果没有加引号或没有加 <code>-0</code> 都不会得到正确的结果，二者都会影响参数如何转义。 在介绍完规则后我们重新来看这个例子。</p>
+<h2><span id="斜杠的使用bash-转义">斜杠的使用（Bash 转义）</span></h2><p>一、续行符</p>
+<p>Bash（Posix）转义规则很简单：</p>
+<p>二、<strong>反斜线用来保持字面量</strong>。Bash 里反斜线用来转义下一个字符，保持下一个字符的字面值。 比如 <code>\$</code> 表示字面量 <code>$</code>，否则如果没有反斜线 <code>$</code> 会被 <a target="_blank" rel="noopener" href="https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion">Bash 参数展开</a>。 例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># echo 将收到字面量 \x68\x61\x72\x74\x74\x6c\x65，下一个字符 \ 被保持</span><br><span class="line"># 输出 harttle</span><br><span class="line">echo \\x68\\x61\\x72\\x74\\x74\\x6c\\x65</span><br><span class="line"></span><br><span class="line"># echo 将收到字面量 x68x61x72x74x74x6cx65，下一个字符 x 被保持</span><br><span class="line"># 输出：x68x61x72x74x74x6cx65</span><br><span class="line">echo \x68\x61\x72\x74\x74\x6c\x65</span><br></pre></td></tr></table></figure>
+
+<p>注意 Shell 只负责处理参数和调用命令，不会识别 <code>\t</code>, <code>\n</code>，<code>\x68</code> 等其他编程语言里的 ASCII 特殊字符，这些特殊字符的处理通常在具体的软件中，比如 <code>echo</code>, <code>printf</code> 等。 例如下面的命令会输出 <code>a b</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;a\tb&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>但 <code>\t</code> 的语义并不是由 Shell 表达的，Shell 只是把这个长度为 4 的字符串 <code>&quot;a\tb&quot;</code> 传递给 <code>echo</code> 程序，后者将会收到参数 <code>argv[1] === &quot;a\\tb&quot;</code>。</p>
+<p>二、<strong>反斜线+换行例外</strong>。反斜线后一个字符是换行（<code>&lt;NL&gt;</code>）时上一条规则例外。 这时 <code>\&lt;NL&gt;</code> 表示连行，一个命令可以分行写。换句话说 <code>\&lt;NL&gt;</code> 等效于会在解析时删除。 比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat log.txt |\</span><br><span class="line">grep a |\</span><br><span class="line">grep b</span><br><span class="line"># 等价于</span><br><span class="line">cat log.txt | grep a | grep b</span><br></pre></td></tr></table></figure>
+
+<h2><span id="单引号的使用">单引号的使用</span></h2><p>单引号用来保持引用内容的所有字面量，包括反斜线。也就是说一对单引号中不得出现单引号，它前面有反斜线也不行。 例如下面的命令将会输出 <code>harttle</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># echo 将收到字面量 \x68\x61\x72\x74\x74\x6c\x65</span><br><span class="line">echo &#x27;\x68\x61\x72\x74\x74\x6c\x65&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>如果单引号之间出现单引号，引用内容立即结束（来自其他编程语言的同学注意）。 比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ echo &#x27;foo\&#x27;bar&#x27;   # 回车</span><br><span class="line">quote&gt;              # Shell 继续等待输入，因为第一个引用内容是 foo\</span><br><span class="line">                    # 紧接着是字面量 bar，然后是一个未关闭的 &#x27;</span><br><span class="line">quote&gt;&#x27;             # 输入 &#x27; 结束第二个引用内容（为空字符串）并回车</span><br><span class="line">foar                # echo 收到的输入为 foo\bar，\b 被 echo 解释为退格</span><br></pre></td></tr></table></figure>
+
+<p>这个情况经常在尝试转义单引号里的单引号时发生，比如 <code>sed &#39;s/\&#39;/&quot;/g&#39;</code>, <code>grep &#39;harttle\&#39;s&#39;</code> 都是错误的写法。</p>
+<h2><span id="双引号的作用">双引号的作用</span></h2><p>双引号也是保持引用内容的字面量，但 <code>$</code>, <code>`</code>, <code>\</code> 除外（POSIX 标准）。 其中：</p>
+<ol>
+<li><code>$</code> 用来做 <a target="_blank" rel="noopener" href="https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion">Bash 参数展开</a>，比如 <code>echo &quot;my name is $name.&quot;</code>。</li>
+<li><code>`</code> 表示 <a target="_blank" rel="noopener" href="https://www.gnu.org/software/bash/manual/html_node/Command-Substitution.html#Command-Substitution">命令替换</a>，基本等价于 <code>$()</code>。</li>
+<li><code>\</code> 是我们讨论的重点，它用来转义。</li>
+</ol>
+<p>Shell 转义奇怪的是反斜线后是 <code>$</code>, <code>`</code>, <code>&quot;</code>, <code>\</code>, <code>&lt;NL&gt;</code> 时反斜线才表示转义，否则反斜线没有特殊含义（表示一个反斜线字面量）。 例如下面两个命令都会输出 <code>harttle</code>，因为 <code>&quot;\\x&quot;</code> 的第一个反斜线表示转义，解释为 <code>&quot;\x&quot;</code>，而 <code>&quot;\x&quot;</code> 中的反斜线没有特殊含义，也解释为 <code>&quot;\x&quot;</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;\\x68\\x61\\x72\\x74\\x74\\x6c\\x65&quot;</span><br><span class="line">echo &quot;\x68\x61\x72\x74\x74\x6c\x65&quot;</span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>\&lt;NL&gt;</code> 和单引号一样表示连行，<code>\&quot;</code> 表示字面量双引号，注意这在单引号语法中是不允许的。</p>
+<h2><span id="案例分析">案例分析</span></h2><p>现在继续看本文刚开始的例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;\\x68\\x61\\x72\\x74\\x74\\x6c\\x65&#x27; | xargs -0 printf &#x27;%b&#x27;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>由于 echo 的参数使用单引号，echo 收到的参数为字面量 <code>\\x68\\x61\\x72\\x74\\x74\\x6c\\x65</code>。</li>
+<li>因此 <code>echo &#39;\\x68\\x61\\x72\\x74\\x74\\x6c\\x65&#39;</code> 的输出为：<code>\x68\x61\x72\x74\x74\x6c\x65</code>。</li>
+<li>由于 <code>xargs -0</code> 下标准输入会被当做字面量处理（<code>\</code> 不再是特殊字符），<code>xargs</code> 给到 <code>printf</code> 的第二个参数为字面量 <code>\x68\x61\x72\x74\x74\x6c\x65</code>，第一个参数为 <code>%b</code>。</li>
+<li><code>printf</code> 处理十六进制 ASCII 字面量语法，输出 <code>harttle</code>。</li>
+</ol>
+<p>图解：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">&#x27;\\x68\\x61\\x72\\x74\\x74\\x6c\\x65&#x27; --bash--&gt; \\x68\\x61\\x72\\x74\\x74\\x6c\\x65 --echo--&gt; \x68\x61\x72\x74\x74\x6c\x65 -- xargs and printf--&gt; harttle</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>有两点需要注意：</p>
+<ul>
+<li>如果 echo 的第一个参数只有单个反斜线（<code>\x68\x61\x72\x74\x74\x6c\x65</code>），echo 的输出即为 <code>harttle</code>，经过 <code>printf</code> 后仍然为 <code>harttle</code>；</li>
+<li>如果 <code>xargs</code> 没有添加 <a target="_blank" rel="noopener" href="https://www.gnu.org/software/findutils/manual/html_node/find_html/xargs-options.html"><code>-0</code> 参数</a>，<code>xargs</code> 会把它的标准输入正常做 Bash 转义，也就是说 <code>xargs</code> 给到 <code>printf</code> 的第二个参数将会是 <code>x68x61x72x74x74x6cx65</code>，因为 Bash 转义中 <code>\x</code> 的语义（见“转义”一节）和 <code>printf</code> 转义中 <code>\x</code> 的语义不同。</li>
+</ul>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://illyber.github.io">illyber</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://illyber.github.io/2024/04/02/Linux/Zettelkasten/7_backslash,quota/">https://illyber.github.io/2024/04/02/Linux/Zettelkasten/7_backslash,quota/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://illyber.github.io" target="_blank">MyBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%84%9A%E6%9C%AC-%E5%8F%8D%E6%96%9C%E6%9D%A0%E5%92%8C%E5%BC%95%E5%8F%B7/">脚本/反斜杠和引号</a></div><div class="post_share"><div class="social-share" data-image="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/04/02/Linux/Zettelkasten/6_function/" title="6_function"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">6_function</div></div></a></div><div class="next-post pull-right"><a href="/2024/04/02/Linux/Zettelkasten/7z/" title="7z"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">7z</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="utterances-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">illyber</div><div class="author-info__description">学习计算机的记录</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">119</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">63</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">如何输入&#x2F;输出引号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">基本知识点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">一个例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">斜杠的使用（Bash 转义）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">单引号的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">双引号的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">案例分析</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/cp/" title="cp">cp</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/find/" title="find">find</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/flathub/" title="flathub">flathub</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/good_softwares/" title="good_softwares">good_softwares</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/info/" title="info">info</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By illyber</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><div class="js-pjax"><script>(() => {
+  const loadUtterances = () => {
+    let ele = document.createElement('script')
+    ele.id = 'utterances_comment'
+    ele.src = 'https://utteranc.es/client.js'
+    ele.setAttribute('repo', 'illyber/comments')
+    ele.setAttribute('issue-term', 'url')
+    const nowTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'photon-dark' : 'github-light'
+    ele.setAttribute('theme', nowTheme)
+    ele.crossOrigin = 'anonymous'
+    ele.async = true
+    document.getElementById('utterances-wrap').appendChild(ele)
+  }
+
+  const utterancesTheme = theme => {
+    const iframe = document.querySelector('.utterances-frame')
+    if (iframe) {
+      const theme = theme === 'dark' ? 'photon-dark' : 'github-light'
+      const message = {
+        type: 'set-theme',
+        theme: theme
+      };
+      iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+  }
+
+  btf.addGlobalFn('themeChange', utterancesTheme, 'utterances')
+
+  if ('Utterances' === 'Utterances' || !true) {
+    if (true) btf.loadComment(document.getElementById('utterances-wrap'), loadUtterances)
+    else loadUtterances()
+  } else {
+    window.loadOtherComment = loadUtterances
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

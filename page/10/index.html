@@ -1,0 +1,593 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>MyBlog</title><meta name="author" content="illyber"><meta name="copyright" content="illyber"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="学习计算机的记录">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="https://illyber.github.io/page/10/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="学习计算机的记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg">
+<meta property="article:author" content="illyber">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://illyber.github.io/page/10/index.html"><link rel="preconnect"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MyBlog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-04-02 06:10:33'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">119</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">63</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page fixed" id="page-header" style="background-image: url('https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-2.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="MyBlog"><span class="site-name">MyBlog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">MyBlog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Front-End/1_html/05-%E8%A1%A8%E5%8D%95%E6%A0%87%E7%AD%BE/" title="html-表单标签">html-表单标签</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.548Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Front-End/">Front-End</a></span></div><div class="content">
+
+
+08-表单-应用场景
+09-表单-input基本使用
+10-表单-input-占位符(提示信息)
+11-表单-单选功能和默认选中
+12-表单-上传多个文件
+13-表单-按钮-input
+14-表单-按钮button
+15-表单-下拉菜单
+16-表单-文本域
+17-表单-label标签
+
+
+
+08-表单-应用场景注册, 登录, 搜索, 调查问卷
+09-表单-input基本使用HTML表单：form标签form放在最外面?
+
+场景:在网页中显示收集用户信息的表单效果，如:登录页、注册页. 效果如下
+
+
+
+
+标签名: input
+input标签可以通过type属性值的不同，展示不同效果
+
+
+type属性值：
+
+
+
+
+标签名
+type属性值
+说明
+
+
+
+input
+text
+文本框，用于输入单行文本
+
+
+input
+password
+密码框, 用于输入密码
+
+
+input
+radio
+单选框，用于多选
+
+
+input
+checkbox
+多选框，用于多选多
+
+
+input
+file
+文件选择，用于之后上传文件
+
+
+input
+submit
+提交按钮，用于提交
+
+
+input
+reset
+重 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Front-End/1_html/17-%E6%8B%93%E5%B1%95-%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97/" title="html-标签嵌套">html-标签嵌套</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.548Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Front-End/">Front-End</a></span></div><div class="content">
+
+
+17-拓展-标签嵌套
+
+
+
+17-拓展-标签嵌套拓展1:HTML嵌套规范注意点
+
+块级元素一般作为大容器，可以嵌套:文本、块级元素、行内元素、行内块元素等等
+
+
+但是:p标签中不要嵌套div、p、h等块级元素
+
+
+a标签内部可以嵌套任意元素
+
+
+但是:a标签不能嵌套a标签
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Front-End/2_css/1-%E5%9F%BA%E7%A1%80%E8%AE%A4%E7%9F%A5/" title="CSS-基础认知">CSS-基础认知</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.548Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Front-End/">Front-End</a></span></div><div class="content">01-体验css
+css: 层叠样式表(Cascading style sheets). 很形象，style 的表。用来定义标签的样式。
+csS语法规则
+写在哪里?
+最简单情况：css写在style标签中，style标签一般写在head标签里面，title标签下面
+
+
+怎么写?
+最简单的情况：格式：选择器 &#123;属性名: 属性值&#125;
+
+
+
+
+
+
+02-css引入方式
+内嵌式: CSS 写在style标签中
+提示: style标签虽然可以写在页面任意位置，但是通常约定写在head标签中12345678910111213141516171819&lt;html&gt;&lt;head&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;style&gt;        p&#123;            /* 文字 */            color: red;            font-size: 30px;            background-color: green;            width: ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Front-End/2_css/2-%E9%80%89%E6%8B%A9%E5%99%A8/" title="CSS-选择器">CSS-选择器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.548Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Front-End/">Front-End</a></span></div><div class="content">
+
+
+选择器总结
+优先级
+基础
+03-选择器-标签
+04-选择器-类
+05-选择器-id
+06-选择器-通配符
+
+
+进阶
+复合选择器
+01-选择器-后代
+02-选择器-子代
+
+
+03-选择器-并集
+04-选择器-交集
+05-选择器-伪类
+
+
+
+
+
+选择器总结
+
+
+种类
+语法
+
+
+
+标签选择器
+标签名&#123; css属性名:属性值;&#125;
+
+
+类选择器
+.类名&#123; css属性名:属性值;&#125;
+
+
+id 选择器
+#id属性值&#123; css属性名:属性值;&#125;
+
+
+通配符选择器
+*&#123; css属性名: 属性值;&#125;
+
+
+后代选择器
+选择器1 选择器2 &#123;css&#125;
+
+
+子代选择器
+选择器1 &gt; 选择器2 &#123;css&#125;
+
+
+并集
+选择器1 ,选择器2, ..., 选择器n &#123;css&#125;
+
+
+交集
+选择器1选择器2...选择器n &#123;css&#125;
+
+
+伪类选择器
+选择器:hover &#123;css&#125;
+
+
+优先级
+基础03-选择器-标签结构: 标签名&#1 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Front-End/2_css/3-%E5%AD%97%E4%BD%93%E5%92%8C%E6%96%87%E6%9C%AC%E6%A0%B7%E5%BC%8F/" title="CSS-字体和文本样式">CSS-字体和文本样式</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.548Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Front-End/">Front-End</a></span></div><div class="content">总结
+
+
+属性
+代码
+备注
+
+
+
+单个字体
+
+
+
+
+字体大小
+font-size
+谷歌浏览器默认16 px
+
+
+字体粗细
+font-weight
+取值：关键字和数字
+
+
+字体倾斜
+font-style
+
+
+
+字体颜色
+color
+
+
+
+字体类型
+font-family
+
+
+
+连写
+font
+font: style weight size&#x2F;(line-height) famiy;
+
+
+
+
+
+
+
+文本
+
+
+
+
+文本缩进
+text-indent
+
+
+
+水平对齐方式
+text-align
+
+
+
+文本修饰线
+text-decoration
+
+
+
+垂直居中&#x2F;行高
+line-height
+
+
+
+字体样式07-文字基本样式字体大小
+属性名：font-size
+参数：数字+px
+注意：
+谷歌浏览器默认16 px
+必须加单位 px, 否则无效
+
+
+样例：123456789101112131415161718192021&lt;html&gt;    &lt;head&gt;        &lt;title&gt;document&lt;/title&gt;        &lt;st ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Front-End/2_css/4-Chrome%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/" title="CSS-Chrome调试工具">CSS-Chrome调试工具</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.548Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Front-End/">Front-End</a></span></div><div class="content">打开调试工具：
+
+鼠标右键-&gt;检查
+F12 键
+
+意义：点击左边的 &lt;div&gt;文字&lt;/div&gt; 右边就显示对应的 css
+层叠：删除线表示被下面的属性覆盖或者是注释
+可以在chrome里修改查看效果， 但是源文件不会改变。
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Front-End/2_css/5-%E8%83%8C%E6%99%AF/" title="CSS-背景">CSS-背景</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.548Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Front-End/">Front-End</a></span></div><div class="content">总结
+
+
+属性
+代码
+备注
+
+
+
+背景色
+background-color
+取值：颜色名，rgb&#x2F;rgba，十六进制值
+
+
+背景图
+background-image: url(‘path’);
+
+
+
+背景平铺方式
+background-repeat
+取值: repeat, no-repeat, repeat-x, repeat-y
+
+
+背景位置
+background-position: 水平方向位置 垂直方向位置;
+
+
+
+背景属性连写
+background: color image repeat position;
+
+
+
+07-背景-背景色
+属性名：background-color (bgc)
+取值：颜色名，rgb&#x2F;rgba，十六进制值
+注意点：背景颜色默认值是透明，rgba(0,0,0,0), transparent
+
+08-背景-背景图
+属性名：background-image (bgi)
+取值：background-image: url(&#39;path&#39;);
+注意点：
+path 的单引号可以省略
+图片默认在水平或垂直方向平铺
+图片不能撑开文本框，类 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Front-End/2_css/6-%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/" title="CSS-元素显示模式">CSS-元素显示模式</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.548Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Front-End/">Front-End</a></span></div><div class="content">[TOC]元素显示模式就是元素(标签)以什么方式进行显示,比如 &lt;div&gt; 自己占一行，比如一行可以放多个 &lt;span&gt; 。
+13-显示模式-块块级元素：
+
+一个块级元素占一行，一行只能显示一个
+宽度默认是容器(父级宽度)的100%，高度默认由内容撑开
+高度，宽度、外边距以及内边距都可以控制。
+是一个容器级盒子，里面可以放行内或者块级元素-
+代表标签：div, p, h系列, ul, li, dl, dt, dd, form, header, nav, footer, …
+
+注意：文字类的元素内不能使用块级元素
+
+&lt;p&gt; 标签主要用于存放文字，因此&lt;p&gt;里面不能放块级元素,特别是不能放&lt;div&gt;
+同理，&lt;h1&gt;~&lt;h6&gt; 等都是文字类块级标签，里面也不能放其他块级元素
+
+14-显示模式-行内行内元素：
+
+一行可以显示多个；
+高、宽直接设置是无效的；
+默认宽度就是它本身内容的宽度。
+行内元素只能容纳文本或其他行内元素。
+代表标签：a, span, b, u, i, s, strong, ins, em,  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Language/C/bit_operation/" title="位操作">位操作</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.548Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Language/">Language</a></span></div><div class="content">进制转换$$7&#x3D;2\times 3+1&#x3D;2\times(2\times1+1)+1&#x3D;2^2\times1+2^1\times1+2^0\times1&#x3D;111_{(2)}$$
+
+
+
+16进制
+0x1
+0x2
+0x3
+0x4
+0x5
+0x6
+0x7
+0x8
+0x9
+0xa
+0xb
+0xc
+0xd
+0xe
+0xf
+
+
+
+2进制
+0001
+0010
+0011
+0100
+0101
+0110
+0111
+1000
+1001
+1010
+1011
+1100
+1101
+1110
+1111
+
+
+按位逻辑运算符该操作产生了一个新的位值，但是不改变其运算对象。
+
+
+
+运算符
+
+
+
+
+~
+按位非
+
+
+&amp;
+按位与
+
+
+|
+按位或
+
+
+^
+按位异或（相同为1，不同为0）
+
+
+&amp;&#x3D;
+按位与赋值
+
+
+|&#x3D;
+按位或赋值
+
+
+^&#x3D;
+按位异或赋值
+
+
+移位运算符该操作产生了一个新的位值，但是不改变其运算对象。
+
+
+
+运算符
+作用
+
+
+
+&lt;&lt;
+左移
+
+
+&gt;&gt;
+右移对于无符号类型，用 0 填充空出的位置；对于有符号类型，其 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Language/C/c_standard_version/" title="C 标准历史">C 标准历史</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.548Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Language/">Language</a></span></div><div class="content">C 标准历史
+K&amp;R C。1978年由 Kernighan 和Ritchie合写的书《The C Programming Language》，形成了C语言的事实的标准，简称为K&amp;R C。
+ANSI C（C89或C90）。1989年，美国国家标准局（ANSI）颁布了第一个官方的C语言标准（X3.159-1989），简称为ANSI C或C89；1990年，它被国际标准化组织（ISO）采纳国际标准（ISO&#x2F;IEC9899:1990），简称为C90。这个标准是目前广泛使用并完全支持的。
+C99。1999年，ANSI&#x2F;ISO联合委员会又推出了新的标准（ISO9899:1999），简称C99。这个标准目前支持的可能还不太全面。
+C11。2011年正式发布了 ISO&#x2F;IEC 9899:2011，简称为 C11 标准。
+C17（也被称为为 C18）是于2018年6月发布的 ISO&#x2F;IEC 9899:2018 的非正式名称，也是目前（截止到2020年6月）为止最新的 C语言编程标准，被用来替代 C11 标准。
+
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/9/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/#content-inner">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/#content-inner">11</a><a class="page-number" href="/page/12/#content-inner">12</a><a class="extend next" rel="next" href="/page/11/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">illyber</div><div class="author-info__description">学习计算机的记录</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">119</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">63</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/cp/" title="cp">cp</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/find/" title="find">find</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/flathub/" title="flathub">flathub</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/good_softwares/" title="good_softwares">good_softwares</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/info/" title="info">info</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Data-Structure/"><span class="card-category-list-name">Data-Structure</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Front-End/"><span class="card-category-list-name">Front-End</span><span class="card-category-list-count">21</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Language/"><span class="card-category-list-name">Language</span><span class="card-category-list-count">25</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">50</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Tool/"><span class="card-category-list-name">Tool</span><span class="card-category-list-count">12</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/expression/" style="font-size: 1.1em; color: #999">expression</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4-mv/" style="font-size: 1.1em; color: #999">基本命令/mv</a> <a href="/tags/%E7%A1%AC%E7%9B%98-%E5%88%A0%E9%99%A4%E5%88%86%E5%8C%BA/" style="font-size: 1.1em; color: #999">硬盘/删除分区</a> <a href="/tags/shell/" style="font-size: 1.1em; color: #999">shell</a> <a href="/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/tags/%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6-dd/" style="font-size: 1.1em; color: #999">传输文件/dd</a> <a href="/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F-inode/" style="font-size: 1.1em; color: #999">文件系统/inode</a> <a href="/tags/%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6-cp/" style="font-size: 1.1em; color: #999">传输文件/cp</a> <a href="/tags/docker/" style="font-size: 1.1em; color: #999">docker</a> <a href="/tags/css/" style="font-size: 1.42em; color: #99a6b7">css</a> <a href="/tags/shell%E7%A8%8B%E5%BA%8F/" style="font-size: 1.1em; color: #999">shell程序</a> <a href="/tags/%E6%9C%AC%E5%9C%B0%E5%8C%96-%E4%B8%BB%E6%9C%BA%E5%90%8D/" style="font-size: 1.1em; color: #999">本地化/主机名</a> <a href="/tags/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-flathub/" style="font-size: 1.1em; color: #999">包管理器/flathub</a> <a href="/tags/linux-set-%E8%BE%93%E5%85%A5%E6%B3%95/" style="font-size: 1.1em; color: #999">linux-set/输入法</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4-cp/" style="font-size: 1.1em; color: #999">基本命令/cp</a> <a href="/tags/%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6-rsync/" style="font-size: 1.1em; color: #999">传输文件/rsync</a> <a href="/tags/%E8%84%9A%E6%9C%AC-%E5%8F%8D%E6%96%9C%E6%9D%A0%E5%92%8C%E5%BC%95%E5%8F%B7/" style="font-size: 1.1em; color: #999">脚本/反斜杠和引号</a> <a href="/tags/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-apt/" style="font-size: 1.1em; color: #999">包管理器/apt</a> <a href="/tags/%E7%A1%AC%E7%9B%98-%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA-mount/" style="font-size: 1.1em; color: #999">硬盘/挂载分区/mount</a> <a href="/tags/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86-uniq/" style="font-size: 1.1em; color: #999">文本处理/uniq</a> <a href="/tags/%E8%84%9A%E6%9C%AC-%E5%8F%98%E9%87%8F/" style="font-size: 1.1em; color: #999">脚本/变量</a> <a href="/tags/%E8%84%9A%E6%9C%AC-%E6%8E%A7%E5%88%B6%E6%B5%81/" style="font-size: 1.1em; color: #999">脚本/控制流</a> <a href="/tags/C/" style="font-size: 1.5em; color: #99a9bf">C</a> <a href="/tags/boot/" style="font-size: 1.1em; color: #999">boot</a> <a href="/tags/network/" style="font-size: 1.1em; color: #999">network</a> <a href="/tags/algorithm/" style="font-size: 1.34em; color: #99a3b0">algorithm</a> <a href="/tags/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86-grep/" style="font-size: 1.1em; color: #999">文本处理/grep</a> <a href="/tags/%E8%84%9A%E6%9C%AC-%E9%80%9A%E9%85%8D%E7%AC%A6/" style="font-size: 1.1em; color: #999">脚本/通配符</a> <a href="/tags/%E8%84%9A%E6%9C%AC-%E9%87%8D%E5%AE%9A%E5%90%91/" style="font-size: 1.1em; color: #999">脚本/重定向</a> <a href="/tags/%E8%84%9A%E6%9C%AC-%E8%BF%90%E7%AE%97%E7%AC%A6/" style="font-size: 1.1em; color: #999">脚本/运算符</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4-rename/" style="font-size: 1.1em; color: #999">基本命令/rename</a> <a href="/tags/python/" style="font-size: 1.26em; color: #999fa8">python</a> <a href="/tags/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86/" style="font-size: 1.18em; color: #999ca1">文本处理</a> <a href="/tags/linux-set-%E5%BF%85%E8%A3%85%E8%BD%AF%E4%BB%B6/" style="font-size: 1.1em; color: #999">linux-set/必装软件</a> <a href="/tags/vscode/" style="font-size: 1.1em; color: #999">vscode</a> <a href="/tags/%E5%B8%AE%E5%8A%A9-info/" style="font-size: 1.1em; color: #999">帮助/info</a> <a href="/tags/html/" style="font-size: 1.42em; color: #99a6b7">html</a> <a href="/tags/%E7%9B%AE%E5%BD%95/" style="font-size: 1.1em; color: #999">目录</a> <a href="/tags/tricks/" style="font-size: 1.1em; color: #999">tricks</a> <a href="/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F-btrfs/" style="font-size: 1.1em; color: #999">文件系统/btrfs</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><span class="card-archive-list-count">47</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">68</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">119</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-04-01T22:10:32.973Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By illyber</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

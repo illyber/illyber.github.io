@@ -1,0 +1,224 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>3_expansion | MyBlog</title><meta name="author" content="illyber"><meta name="copyright" content="illyber"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="shell中的扩展(Expansions) 花括号展开Brace Expansion 123456mkdir &#x2F;usr&#x2F;local&#x2F;src&#x2F;bash&#x2F;&#123;old,new,dist,bugs&#125;fox@deb12  ~ ❯ echo &#123;1..9..2&#125; #指定步长1 3 5 7 9fox@deb12  ~ ❯ echo ll&#123;1..3&#125;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3_expansion">
+<meta property="og:url" content="https://illyber.github.io/2024/04/02/Linux/Zettelkasten/3_expansion/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="shell中的扩展(Expansions) 花括号展开Brace Expansion 123456mkdir &#x2F;usr&#x2F;local&#x2F;src&#x2F;bash&#x2F;&#123;old,new,dist,bugs&#125;fox@deb12  ~ ❯ echo &#123;1..9..2&#125; #指定步长1 3 5 7 9fox@deb12  ~ ❯ echo ll&#123;1..3&#125;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg">
+<meta property="article:published_time" content="2024-04-01T21:20:15.506Z">
+<meta property="article:modified_time" content="2024-04-01T22:08:21.383Z">
+<meta property="article:author" content="illyber">
+<meta property="article:tag" content="脚本&#x2F;展开">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://illyber.github.io/2024/04/02/Linux/Zettelkasten/3_expansion/index.html"><link rel="preconnect"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '3_expansion',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-02 06:08:21'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">119</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">63</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-2.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="MyBlog"><span class="site-name">MyBlog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">3_expansion</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-01T21:20:15.506Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-04-01T22:08:21.383Z" title="更新于 2024-04-02 06:08:21">2024-04-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="3_expansion"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<p><a target="_blank" rel="noopener" href="https://opengers.github.io/linux/linux-shell-brace-parameter-command-pathname-expansion/">shell中的扩展(Expansions)</a></p>
+<h2><span id="花括号展开">花括号展开</span></h2><p>Brace Expansion</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir /usr/local/src/bash/&#123;old,new,dist,bugs&#125;</span><br><span class="line">fox@deb12  ~ ❯ echo &#123;1..9..2&#125; #指定步长</span><br><span class="line">1 3 5 7 9</span><br><span class="line">fox@deb12  ~ ❯ echo ll&#123;1..3&#125; </span><br><span class="line">ll1 ll2 ll3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2><span id="波浪线展开-tilde-expansion">波浪线展开 (Tilde Expansion)</span></h2><h2><span id="参数展开-parameter-expansion">参数展开 (Parameter Expansion)</span></h2><p><a target="_blank" rel="noopener" href="https://xstarcd.github.io/wiki/shell/ShellParameterExpansion.html">Shell Parameter Expansion 参数展开</a></p>
+<p>基本格式：<code>$parameter</code>或<code>$&#123;parameter&#125;</code>, 花括号能防止误操作. 引用变量值是参数扩展的一种。<br>在shell中，符号<code>$</code>用作参数扩展、命令替换、算数扩展的前导符，就是说<code>$</code>符号告诉shell接下来要匹配的可能是这三种扩展中的一种。</p>
+<h3><span id="参数parameter的形式">参数parameter的形式</span></h3><p>这部分我们讨论<code>parameter</code>有哪几种形式。其形式可以是变量名(例如<code>LANG、PWD、USER</code>)，数字(例如<code>1、2、...、n</code>)，特殊字符(例如<code>?、*、@</code>)，感叹号(格式:${!strings})，数组引用(例如<code>&#123;num[1]&#125;</code>)。具体可以查看<a target="_blank" rel="noopener" href="https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameters">bash手册</a></p>
+<p><strong>变量名</strong><br>变量我们很熟悉，此时<code>parameter</code>是一个变量，扩展的结果是<code>$&#123;parameter&#125;</code>被替换为<code>parameter</code>的值。同时，如果你真的是想在屏幕输出<code>$&#123;LANG&#125;</code>这几个字符，可以使用转义符，像这样<code>echo \$&#123;LANG&#125;</code></p>
+<p><strong>数字</strong><br>此时<code>parameter</code>为数字，称作位置参数，扩展的结果是<code>$n</code>被替换为命令行传入的第n个参数</p>
+<p><strong>特殊字符</strong><br>此时，<code>parameter</code>为特殊字符，此时可以不需要<code>&#123;&#125;</code>。特殊字符只能被引用，像这样<code>echo $@</code>，不能赋值。 <code>$*</code> 展开所有的位置参数，默认用空格分割，使用引号 特殊字符有<code>@、*、#、?、-、$、!、0、_</code>，</p>
+<p><strong>感叹号</strong><br>当<code>parameter</code>字符串第一个字符是<code>!</code>时，shell把随后的字符串解释为一个变量名，就是<code>$&#123;!strings&#125;</code>这种形式(当然，strings要是一个正确的变量名，不能带有特殊字符)，它称作间接扩展，其特点是shell把<code>strings</code>变量的值依然看做一个变量，展开了两次。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;!parameter&#125; <span class="comment"># 间接展开</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">缺省值的替换</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;parameter:-word&#125; <span class="comment"># 为空替换</span></span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;parameter:=word&#125; <span class="comment"># 为空替换，并将值赋给$parameter变量</span></span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;parameter:?word&#125; <span class="comment"># 为空报错</span></span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;parameter:+word&#125; <span class="comment"># 不为空替换</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;<span class="comment">#parameter&#125;      # 获得字符串的长度</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">截取字符串，有了着四种用法就不必使用<span class="built_in">cut</span>命令来截取字符串了。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在shell里面使用外部命令会降低shell的执行效率。特别是在循环的时候。</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;parameter%word&#125;  <span class="comment"># 最小限度从后面截取word</span></span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;parameter%%word&#125; <span class="comment"># 最大限度从后面截取word</span></span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;parameter<span class="comment">#word&#125;  # 最小限度从前面截取word</span></span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;parameter<span class="comment">##word&#125; # 最大限度从前面截取word</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;parameter/pattern/string&#125; <span class="comment"># 字符串替换</span></span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;parameter:offset:length&#125;  <span class="comment"># 截取子串</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;!prefix*&#125; <span class="comment"># 查找参数名</span></span></span><br><span class="line"></span><br><span class="line">其它的见man</span><br></pre></td></tr></table></figure>
+<h3><span id="变量内容的提取和替换x2fparameter-expansion">变量内容的提取和替换&#x2F;parameter expansion</span></h3><p>参见：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cbc7177cfc31">caokai001 - Linux ${} 变量内容的提取和替换功能</a></p>
+<p>用aa替换第一个匹配的di</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost <span class="built_in">log</span>]<span class="comment"># echo $&#123;var/di/aa&#125;</span></span><br><span class="line"></span><br><span class="line">/aar1/dir2/file.txt</span><br></pre></td></tr></table></figure>
+<p>见 man bash, Parameter Expansion 条目. parameter expansion又叫variable expansion<br><code>$par</code> or <code>$&#123;parameter&#125;</code><br><code>$&#123;parameter#word&#125;</code><br><code>$&#123;parameter/pattern/string&#125;</code></p>
+<h2><span id="命令替换-command-substitution">命令替换 (Command Substitution)</span></h2><p>Command substitution allows the output of a command to replace the command name.<br>两种形式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$</span><span class="language-bash">(<span class="built_in">command</span>)</span></span><br><span class="line">`command` #backquote, 反引号</span><br></pre></td></tr></table></figure>
+<p>反引号和<code>$()</code>基本几乎等价，但尽量使用<code>$()</code>。反引号有两点不方便之处：(1)命令替换嵌套或者是包含引号的时候，反引号很麻烦，不如<code>$()</code>易读。(2)反引号处理反斜线的转义规则比较不明确，但是<code>$()</code>中的反斜线会按正常的方式转义。</p>
+<h2><span id="算术展开-arithmetic-expansion">算术展开 (Arithmetic Expansion)</span></h2><p>形式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let命令</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">或</span></span><br><span class="line">((expresssion)) # 在双括号里可以用算术运算符（包括+=,++等）</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">或</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">((expression))</span></span><br></pre></td></tr></table></figure>
+<p>The old format <code>$[expression]</code> is deprecated and will be removed in upcoming versions of bash.<br>算术运算:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a=10</span><br><span class="line">b=20</span><br><span class="line"></span><br><span class="line">val=$(( a + b))</span><br><span class="line">echo &quot;a + b : $val&quot;</span><br></pre></td></tr></table></figure>
+
+<h2><span id="process-substitution">Process Substitution</span></h2><p>Process substitution allows a process’s input or output to be referred to using a filename. It takes the form of</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;(list) or &gt;(list)</span><br></pre></td></tr></table></figure>
+
+<h2><span id="word-splitting">Word Splitting</span></h2><p>The shell scans the results of parameter expansion, command substitution, and arithmetic expansion that did not occur within double quotes for word splitting.</p>
+<h2><span id="pathname-expansion通配符">Pathname Expansion（通配符）</span></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*</span><br><span class="line">?</span><br><span class="line">[...]    [a-d], [:class:]</span><br></pre></td></tr></table></figure>
+<p>If the extglob shell option is enabled using the shopt builtin, the shell recognizes several extended pattern matching operators.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">?(pattern-list)</span><br><span class="line">Matches zero or one occurrence of the given patterns</span><br><span class="line"></span><br><span class="line">*(pattern-list)</span><br><span class="line">Matches zero or more occurrences of the given patterns</span><br><span class="line"></span><br><span class="line">+(pattern-list)</span><br><span class="line">Matches one or more occurrences of the given patterns</span><br><span class="line"></span><br><span class="line">@(pattern-list)</span><br><span class="line">Matches one of the given patterns</span><br><span class="line"></span><br><span class="line">!(pattern-list)</span><br><span class="line">Matches anything except one of the given patterns</span><br></pre></td></tr></table></figure>
+
+<h2><span id="quote-removal">Quote Removal</span></h2><hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://illyber.github.io">illyber</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://illyber.github.io/2024/04/02/Linux/Zettelkasten/3_expansion/">https://illyber.github.io/2024/04/02/Linux/Zettelkasten/3_expansion/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://illyber.github.io" target="_blank">MyBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%84%9A%E6%9C%AC-%E5%B1%95%E5%BC%80/">脚本/展开</a></div><div class="post_share"><div class="social-share" data-image="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/04/02/Linux/Zettelkasten/tar/" title="tar"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">tar</div></div></a></div><div class="next-post pull-right"><a href="/2024/04/02/Linux/Zettelkasten/4_variable/" title="4_variable"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">4_variable</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="utterances-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">illyber</div><div class="author-info__description">学习计算机的记录</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">119</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">63</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">花括号展开</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">波浪线展开 (Tilde Expansion)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">参数展开 (Parameter Expansion)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">参数parameter的形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">变量内容的提取和替换&#x2F;parameter expansion</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">命令替换 (Command Substitution)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">算术展开 (Arithmetic Expansion)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">Process Substitution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">Word Splitting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">Pathname Expansion（通配符）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">Quote Removal</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/cp/" title="cp">cp</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/find/" title="find">find</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/flathub/" title="flathub">flathub</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/good_softwares/" title="good_softwares">good_softwares</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/info/" title="info">info</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By illyber</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><div class="js-pjax"><script>(() => {
+  const loadUtterances = () => {
+    let ele = document.createElement('script')
+    ele.id = 'utterances_comment'
+    ele.src = 'https://utteranc.es/client.js'
+    ele.setAttribute('repo', 'illyber/comments')
+    ele.setAttribute('issue-term', 'url')
+    const nowTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'photon-dark' : 'github-light'
+    ele.setAttribute('theme', nowTheme)
+    ele.crossOrigin = 'anonymous'
+    ele.async = true
+    document.getElementById('utterances-wrap').appendChild(ele)
+  }
+
+  const utterancesTheme = theme => {
+    const iframe = document.querySelector('.utterances-frame')
+    if (iframe) {
+      const theme = theme === 'dark' ? 'photon-dark' : 'github-light'
+      const message = {
+        type: 'set-theme',
+        theme: theme
+      };
+      iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+  }
+
+  btf.addGlobalFn('themeChange', utterancesTheme, 'utterances')
+
+  if ('Utterances' === 'Utterances' || !true) {
+    if (true) btf.loadComment(document.getElementById('utterances-wrap'), loadUtterances)
+    else loadUtterances()
+  } else {
+    window.loadOtherComment = loadUtterances
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

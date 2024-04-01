@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>8_control-flow | MyBlog</title><meta name="author" content="illyber"><meta name="copyright" content="illyber"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="if 判断双小括号里用数值比较式 1if (($a &gt; 2))  方括号里用非数值比较式。方括号和内容之间要有空格。[[5_operator#文件测试运算符]] 1234if [ 条件判断式 ]then	程序fi  (1)单分支 不换行就用分号代替换行符 12345678if [ 条件判断式 ];then	程序fi或者if [ 条件判断式 ]then	程序fi  (2)多分支 123456">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8_control-flow">
+<meta property="og:url" content="https://illyber.github.io/2024/04/02/Linux/Zettelkasten/8_control-flow/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="if 判断双小括号里用数值比较式 1if (($a &gt; 2))  方括号里用非数值比较式。方括号和内容之间要有空格。[[5_operator#文件测试运算符]] 1234if [ 条件判断式 ]then	程序fi  (1)单分支 不换行就用分号代替换行符 12345678if [ 条件判断式 ];then	程序fi或者if [ 条件判断式 ]then	程序fi  (2)多分支 123456">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg">
+<meta property="article:published_time" content="2024-04-01T21:20:15.506Z">
+<meta property="article:modified_time" content="2024-04-01T22:08:21.355Z">
+<meta property="article:author" content="illyber">
+<meta property="article:tag" content="脚本&#x2F;控制流">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://illyber.github.io/2024/04/02/Linux/Zettelkasten/8_control-flow/index.html"><link rel="preconnect"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '8_control-flow',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-02 06:08:21'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">119</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">63</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-2.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="MyBlog"><span class="site-name">MyBlog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">8_control-flow</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-01T21:20:15.506Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-04-01T22:08:21.355Z" title="更新于 2024-04-02 06:08:21">2024-04-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="8_control-flow"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h1><span id="if-判断">if 判断</span></h1><p>双小括号里用数值比较式</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (($a &gt; 2))</span><br></pre></td></tr></table></figure>
+
+<p>方括号里用非数值比较式。方括号和内容之间要有空格。<br>[[5_operator#文件测试运算符]]</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ 条件判断式 ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">	程序</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+
+<p>(1)单分支</p>
+<p>不换行就用分号代替换行符</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if [ 条件判断式 ];then</span><br><span class="line">	程序</span><br><span class="line">fi</span><br><span class="line">或者</span><br><span class="line">if [ 条件判断式 ]</span><br><span class="line">then</span><br><span class="line">	程序</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>(2)多分支</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if [ 条件判断式 ]</span><br><span class="line">then</span><br><span class="line">	程序</span><br><span class="line">elif [ 条件判断式 ]</span><br><span class="line">then</span><br><span class="line">	程序</span><br><span class="line">else</span><br><span class="line">	程序</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>(3)结合多条件判断</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [ ] &amp;&amp; [ ]</span><br><span class="line">或</span><br><span class="line">if [ 表达式1 -a 表达式2 ]</span><br></pre></td></tr></table></figure>
+
+<h1><span id="case语句">case语句</span></h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">case $变量名 in</span><br><span class="line">值1)</span><br><span class="line">	如果变量的值等于值1，则执行程序1</span><br><span class="line">;;</span><br><span class="line">值2)</span><br><span class="line">	如果变最的值等于值2，则执行程序2</span><br><span class="line">;;</span><br><span class="line">	...省略其他分支...</span><br><span class="line">*)</span><br><span class="line">	如果变量的值都不是以上的值，则执行此程序</span><br><span class="line">;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+
+<p>注意事项:<br>(1)case行尾必须为单词“in”，每一个模式匹配必须以右括号“)”结束。<br>(2)双分号“;;”表示命令序列结束，相当于c中的break<br>(3)最后的“<code>*)</code>”表示默认模式，相当于c中的default。</p>
+<h1><span id="for循环变量取值">for循环变量取值</span></h1><p>现在一般都使用for in结构，for in结构后面可以使用函数来构造范围，比如$()、``这些，里面写一些查找的语法，比如ls test*，那么遍历之后就是输出文件名了。</p>
+<h2><span id="结构">结构</span></h2><p>命令行里有分号</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> $(<span class="built_in">ls</span> *md);<span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">$file</span>;<span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<p>脚本里不需要分号，但需要换行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> $(<span class="built_in">ls</span> *md)</span><br><span class="line"><span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">$file</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<h2><span id="第一类遍历文件">第一类：遍历文件</span></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">for file in /proc/*;  </span><br><span class="line"></span><br><span class="line">for file in $(ls *.sh)</span><br><span class="line"></span><br><span class="line">for file in $(echo [0-9]*_*md);do sed -f sed_script $file -i;done</span><br><span class="line"></span><br><span class="line">for i in `ls`;  </span><br><span class="line"></span><br><span class="line">for i in $* ;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">注意与<span class="variable">$@</span>的区别，但是不加双引号时一样</span></span><br></pre></td></tr></table></figure>
+
+<h2><span id="第二类遍历字符串组">第二类：遍历字符串组</span></h2><p>Shell 脚本中有个变量叫 IFS (Internal Field Seprator) ，内部域分隔符。完整定义是 The shell uses the value stored in IFS, which is the space, tab, and newline characters by default, to delimit words for the read and set commands, when parsing output from command substitution, and when performing variable substitution.<br>Shell 的环境变量分为 set, env 两种，其中 set 变量可以通过 export 工具导入到 env 变量中。其中，set 是显示设置 shell 变量，仅在本 shell 中有效；env 是显示设置用户环境变量 ，仅在当前会话中有效。换句话说，set 变量里包含了 env 变量，但 set 变量不一定都是 env 变量。这两种变量不同之处在于变量的作用域不同。显然，env 变量的作用域要大些，它可以在 subshell 中使用。<br>IFS 是一种 set 变量，当 shell 处理”命令替换”和”参数替换”时，shell 根据 IFS 的值，默认是 space, tab, newline 来拆解读入的变量，然后对特殊字符进行处理，最后重新组合赋值给该变量。</p>
+<p>笼统的说，bash实现字符串遍历的方式，实际是定义一个数组然后遍历其元素</p>
+<h3><span id="示例-1字符串组不加双引号空格分隔">示例 1：字符串组不加双引号，空格分隔</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">这里的字符串不用加引号</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Read a string with spaces using <span class="keyword">for</span> loop</span></span><br><span class="line">for value in I like programming</span><br><span class="line">do</span><br><span class="line">    echo $value</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">I</span><br><span class="line">like</span><br><span class="line">programming</span><br></pre></td></tr></table></figure>
+
+<h3><span id="示例-2字符串组加引号用-引用">示例 2：字符串组加引号，用 $引用</span></h3><p>在变量 StringVal 中分配文本，并使用 for 循环读取此变量的值。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Define a string variable with a value</span></span><br><span class="line">StringVal=<span class="string">&quot;Welcome to linuxhint&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Iterate the string variable using for loop</span></span><br><span class="line"><span class="keyword">for</span> val <span class="keyword">in</span> <span class="variable">$StringVal</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$val</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>bash 的输出（用双引号内的空格分隔）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Welcome</span><br><span class="line">to</span><br><span class="line">linuxhint</span><br></pre></td></tr></table></figure>
+<p>zsh 的输出（不用双引号内的空格分隔）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Welcome to linuxhint</span><br></pre></td></tr></table></figure>
+
+<h3><span id="示例-3declare">示例 3：declare</span></h3><p>在此脚本中使用类型声明字符串值的数组。数组中包含空格的两个值是“ Linux Mint”和“ Red Hat Linux”。该脚本将这些值拆分为多个单词并将其打印为单独的值，从而生成输出。但这不是正确的输出。下一个示例显示了此类问题的解决方案。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Declare an array of string with type</span></span><br><span class="line"><span class="built_in">declare</span> -a StringArray=(<span class="string">&quot;Linux Mint&quot;</span> <span class="string">&quot;Fedora&quot;</span> <span class="string">&quot;Red Hat Linux&quot;</span> <span class="string">&quot;Ubuntu&quot;</span> <span class="string">&quot;Debian&quot;</span> )</span><br><span class="line"> </span><br><span class="line"><span class="comment"># Iterate the string array using for loop</span></span><br><span class="line"><span class="keyword">for</span> val <span class="keyword">in</span> <span class="variable">$&#123;StringArray[@]&#125;</span>; <span class="keyword">do</span></span><br><span class="line">   <span class="built_in">echo</span> <span class="variable">$val</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Linux</span><br><span class="line">Mint</span><br><span class="line">Fedora</span><br><span class="line">Red</span><br><span class="line">Hat</span><br><span class="line">Linux</span><br><span class="line">Ubuntu</span><br><span class="line">Debian</span><br></pre></td></tr></table></figure>
+<h3><span id="示例-4declare">示例 4：declare</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Declare a string array with type</span></span><br><span class="line"><span class="built_in">declare</span> -a StringArray=(<span class="string">&quot;Windows XP&quot;</span> <span class="string">&quot;Windows 10&quot;</span> <span class="string">&quot;Windows ME&quot;</span> <span class="string">&quot;Windows 8.1&quot;</span></span><br><span class="line"><span class="string">&quot;Windows Server 2016&quot;</span> )</span><br><span class="line"> </span><br><span class="line"><span class="comment"># Read the array values with space</span></span><br><span class="line"><span class="keyword">for</span> val <span class="keyword">in</span> <span class="string">&quot;<span class="variable">$&#123;StringArray[@]&#125;</span>&quot;</span>; <span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="variable">$val</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Windows XP</span><br><span class="line">Windows 10</span><br><span class="line">Windows ME</span><br><span class="line">Windows 8.1</span><br><span class="line">Windows Server 2016</span><br></pre></td></tr></table></figure>
+
+<h3><span id="示例-5星号遍历字符串数组">示例 5：星号遍历字符串数组</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Declare a string array</span></span><br><span class="line">LanguageArray=(<span class="string">&quot;PHP&quot;</span>  <span class="string">&quot;Java&quot;</span>  <span class="string">&quot;C#&quot;</span>  <span class="string">&quot;C++&quot;</span>  <span class="string">&quot;VB.Net&quot;</span>  <span class="string">&quot;Python&quot;</span>  <span class="string">&quot;Perl&quot;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># Print array values in new lines</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Print every element in new line&quot;</span></span><br><span class="line"><span class="keyword">for</span> val1 <span class="keyword">in</span> <span class="variable">$&#123;LanguageArray[*]&#125;</span>; <span class="keyword">do</span></span><br><span class="line">     <span class="built_in">echo</span> <span class="variable">$val1</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;&quot;</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># Print array values in one line</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Print all elements in a single line&quot;</span></span><br><span class="line"><span class="keyword">for</span> val2 <span class="keyword">in</span> <span class="string">&quot;<span class="variable">$&#123;LanguageArray[*]&#125;</span>&quot;</span>; <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$val2</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Print every element <span class="keyword">in</span> new line</span><br><span class="line">PHP</span><br><span class="line">Java</span><br><span class="line">C<span class="comment">#</span></span><br><span class="line">C++</span><br><span class="line">VB.Net</span><br><span class="line">Python</span><br><span class="line">Perl</span><br><span class="line"></span><br><span class="line">Print all elements <span class="keyword">in</span> a single line</span><br><span class="line">PHP Java C<span class="comment"># C++ VB.Net Python Perl</span></span><br></pre></td></tr></table></figure>
+<h3><span id="示例-6指定逗号为-ifs">示例 6：指定逗号为 IFS</span></h3><p>在这里，逗号（，）用于分割字符串值。 IFS 变量用于设置字段分隔符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">DataList=<span class="string">&quot; HTML5, CCS3, BootStrap, JQuery &quot;</span></span><br><span class="line">Field_Separator=<span class="variable">$IFS</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># set comma as internal field separator for the string list</span></span><br><span class="line">IFS=,</span><br><span class="line"><span class="keyword">for</span> val <span class="keyword">in</span> <span class="variable">$DataList</span>;</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$val</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"> </span><br><span class="line">IFS=<span class="variable">$Field_Separator</span></span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTML5</span><br><span class="line">CCS3</span><br><span class="line">BootStrap</span><br><span class="line">JQuery</span><br></pre></td></tr></table></figure>
+<h3><span id="示例-7合并字符串数组">示例 7：合并字符串数组</span></h3><p>示例演示怎么合并多个数据并遍历出来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">str_array1=(<span class="string">&quot;Magento 2.2.4&quot;</span> <span class="string">&quot;WooCommerce&quot;</span>)</span><br><span class="line">str_array2=(<span class="string">&quot;CodeIgnitor&quot;</span> <span class="string">&quot;Laravel&quot;</span>)</span><br><span class="line">combine=(str_array1 str_array2)</span><br><span class="line"><span class="keyword">for</span> arrItem <span class="keyword">in</span> <span class="variable">$&#123;combine[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">   <span class="built_in">eval</span> <span class="string">&#x27;for val in &quot;$&#123;&#x27;</span><span class="variable">$arrItem</span><span class="string">&#x27;[@]&#125;&quot;;do echo &quot;$val&quot;;done&#x27;</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Magento 2.2.4</span><br><span class="line">WooCommerce</span><br><span class="line">CodeIgnitor</span><br><span class="line">Laravel</span><br></pre></td></tr></table></figure>
+
+<h3><span id="示例-8使用模式读取字符串列表">示例 8：使用模式读取字符串列表</span></h3><p>在这里，“ &#x2F;，&#x2F;”模式用于根据逗号分割字符串值。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Define a list of string variable</span></span><br><span class="line">stringList=WordPress,Joomla,Magento</span><br><span class="line"> </span><br><span class="line"><span class="comment"># Use comma as separator and apply as pattern</span></span><br><span class="line"><span class="keyword">for</span> val <span class="keyword">in</span> <span class="variable">$&#123;stringList//,/ &#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">   <span class="built_in">echo</span> <span class="variable">$val</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">WordPress</span><br><span class="line">Joomla</span><br><span class="line">Magento</span><br></pre></td></tr></table></figure>
+
+<h3><span id="示例-9用符号">示例 9：用@符号</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">arr=(<span class="string">&quot;0&quot;</span> <span class="string">&quot;1&quot;</span> <span class="string">&quot;2&quot;</span> <span class="string">&quot;3&quot;</span> <span class="string">&quot;4&quot;</span> <span class="string">&quot;5&quot;</span> <span class="string">&quot;6&quot;</span> <span class="string">&quot;7&quot;</span> <span class="string">&quot;8&quot;</span> <span class="string">&quot;9&quot;</span> <span class="string">&quot;a&quot;</span> <span class="string">&quot;b&quot;</span> <span class="string">&quot;c&quot;</span> <span class="string">&quot;e&quot;</span> <span class="string">&quot;e&quot;</span> <span class="string">&quot;f&quot;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> <span class="variable">$&#123;arr[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="variable">$value</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者采取如下方式</span></span><br><span class="line"><span class="keyword">for</span> (( i = <span class="number">0</span> ; i &lt; <span class="variable">$&#123;#arr[@]&#125;</span> ; i++ ))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="variable">$&#123;arr[$i]&#125;</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2><span id="第三类计数循环x2f变量取值为数字">第三类：计数循环&#x2F;变量取值为数字</span></h2><p>双小括号里用可以用数值</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for i in &#123;1..10&#125; </span><br><span class="line"></span><br><span class="line">for((i=1;i&lt;=10;i++))</span><br><span class="line">do awk &#x27;BEGIN&#123;for(i=1; i&lt;=10; i++) print i&#125;&#x27;</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">for i in $(seq 1 10)</span><br><span class="line">do echo $i</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p>seq 命令<br>用法：seq [选项]… 尾数<br>　或：seq [选项]… 首数 尾数<br>　或：seq [选项]… 首数 增量 尾数<br>打印从 &lt;首数&gt; 到 &lt;尾数&gt; 的数字，且每两个数字间的步长为 &lt;增量&gt;。<br>如果省略了 &lt;首数&gt; 或者 &lt;增量&gt;，则默认值为 1。</p>
+<h1><span id="while-循环">while 循环</span></h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while [ 条件判断式 ]</span><br><span class="line">do</span><br><span class="line">	程序</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://illyber.github.io">illyber</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://illyber.github.io/2024/04/02/Linux/Zettelkasten/8_control-flow/">https://illyber.github.io/2024/04/02/Linux/Zettelkasten/8_control-flow/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://illyber.github.io" target="_blank">MyBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%84%9A%E6%9C%AC-%E6%8E%A7%E5%88%B6%E6%B5%81/">脚本/控制流</a></div><div class="post_share"><div class="social-share" data-image="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/04/02/Linux/Zettelkasten/7z/" title="7z"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">7z</div></div></a></div><div class="next-post pull-right"><a href="/2024/04/02/Linux/Zettelkasten/9_pass-args/" title="9_pass-args"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">9_pass-args</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="utterances-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">illyber</div><div class="author-info__description">学习计算机的记录</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">119</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">63</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">if 判断</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">case语句</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">for循环变量取值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">第一类：遍历文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">第二类：遍历字符串组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">示例 1：字符串组不加双引号，空格分隔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">示例 2：字符串组加引号，用 $引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">示例 3：declare</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">示例 4：declare</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">示例 5：星号遍历字符串数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">示例 6：指定逗号为 IFS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">示例 7：合并字符串数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">示例 8：使用模式读取字符串列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">示例 9：用@符号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">第三类：计数循环&#x2F;变量取值为数字</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">while 循环</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/cp/" title="cp">cp</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/find/" title="find">find</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/flathub/" title="flathub">flathub</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/good_softwares/" title="good_softwares">good_softwares</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/Linux/Zettelkasten/info/" title="info">info</a><time datetime="2024-04-01T21:20:15.510Z" title="发表于 2024-04-02 05:20:15">2024-04-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By illyber</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><div class="js-pjax"><script>(() => {
+  const loadUtterances = () => {
+    let ele = document.createElement('script')
+    ele.id = 'utterances_comment'
+    ele.src = 'https://utteranc.es/client.js'
+    ele.setAttribute('repo', 'illyber/comments')
+    ele.setAttribute('issue-term', 'url')
+    const nowTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'photon-dark' : 'github-light'
+    ele.setAttribute('theme', nowTheme)
+    ele.crossOrigin = 'anonymous'
+    ele.async = true
+    document.getElementById('utterances-wrap').appendChild(ele)
+  }
+
+  const utterancesTheme = theme => {
+    const iframe = document.querySelector('.utterances-frame')
+    if (iframe) {
+      const theme = theme === 'dark' ? 'photon-dark' : 'github-light'
+      const message = {
+        type: 'set-theme',
+        theme: theme
+      };
+      iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+  }
+
+  btf.addGlobalFn('themeChange', utterancesTheme, 'utterances')
+
+  if ('Utterances' === 'Utterances' || !true) {
+    if (true) btf.loadComment(document.getElementById('utterances-wrap'), loadUtterances)
+    else loadUtterances()
+  } else {
+    window.loadOtherComment = loadUtterances
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
