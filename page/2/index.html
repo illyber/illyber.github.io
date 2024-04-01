@@ -53,7 +53,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2024-03-12 19:39:30'
+  postUpdate: '2024-04-02 01:17:53'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -150,101 +150,280 @@
         }
       }
       detectApple()
-    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">86</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page fixed" id="page-header" style="background-image: url('https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-2.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="MyBlog"><span class="site-name">MyBlog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">MyBlog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Linux/btrfs/" title="btrfs notes">btrfs notes</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">Ubuntu Document
-子卷&#x2F;快照删除子卷子卷里有子卷无法一次性删除，会显示
-1ERROR: Could not destroy subvolume/snapshot: Directory not empty
-需要先删除里面的子卷。
-删除timeshift 第一个备份恢复后创建的 restore 备份问题：恢复 timeshift 第一个备份后自动生成的备份无法被删除，如下图
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">81</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page fixed" id="page-header" style="background-image: url('https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-2.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="MyBlog"><span class="site-name">MyBlog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/todo/"><i class="fa-fw fas fa-list-alt"></i><span> ToDo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">MyBlog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/04/Front-End/1_html/18-%E6%A0%87%E7%AD%BE%E6%80%BB%E7%BB%93/" title="html-标签总结">html-标签总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-04T02:37:29.183Z" title="发表于 2024-03-04 10:37:29">2024-03-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Front-End/">Front-End</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Front-End/1-html/">1_html</a></span></div><div class="content">html标签的结构
 
-原因：before restoring的备份里还有子卷machines和portables。必须要先删除内部的子卷。
-解决方法：
-
-点击 timeshift-&gt;browser. 按上图的路径找子卷
-
-复制地址，在终端里删除machines和portables两个子卷
-
-这样就可以在timeshift里直接删除 ‘before restoring’这个子卷
-
-
-显示使用空间1btrfs filesystem usage /
-挂载快照Linux btrfs 文件系统快照备份与恢复（恢复为挂载快照为根文件系统或进入 initramfs 环境）
-可读写性help 信息
-123456btrfs p ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Linux/details/" title="Linux 主机和账户设置">Linux 主机和账户设置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">参见《Linux命令行与shell脚本编程大全》
-主机名修改主机名：sudo hostnamectl set-hostname &lt;new_hostname&gt;                    hostname new_hostname查看主机名：hostname 或 hostnamectl
-账户管理添加账户 (useradd)useradd 选项 用户名
-123456789101112131415#archlinuxuseradd -m -G wheel -s /bin/bash &lt;username&gt;    	-m 创建用户的同时创建用户家目录    	-G 选项后指定附加组    	wheel —— wheel 附加组可 sudo 进行提权    	-s 选项后指定 shell 程序    	username —— 用户名（请自定义，但不要包含空格和特殊字符）#arch编辑/etc/sudoers文件    EDITOR=vim visudo # 这里需要显式的指定编辑器，因为上面的环境变量还未生效    在/etc/sudoers里注释掉下面这一行    ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Linux/file_and_directory/" title="Linux 文件和目录">Linux 文件和目录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">Linux系统中文件有多种颜色，不同颜色文件代表不同类型的文件，具体如下：
-
-蓝色：目录   
-绿色：可执行文件
-红色：压缩文件
-浅蓝色：链接文件
-白色：普通文件
-黄色：设备文件
-
-各目录的作用常见的目录名均基于文件系统层级标准（filesystem hierarchy standard，FHS），官网：http://www.pathname.com/fhs。
-设置用户目录下默认文件夹先把当前用户名添加到 sudoers files，再设置
-1234567891011cd ~mkdir Desktop Download Templates Public Documents Music Pictures Videosrm -rf 公共 模板 视频 图片 文档 下载 音乐 桌面xdg-user-dirs-update --set DESKTOP ~/Desktopxdg-user-dirs-update --set DOWNLOAD ~/Downloadxdg-user-dirs-update --set TEMPLATES ~/Templatesxdg-user-dirs-update  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Linux/input_method/" title="Linux 安装输入法">Linux 安装输入法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">[TOC]
-debian安装fcitx5
-卸载 ibus
-安装fcitx5和中文插件1sudo apt install fcitx5 fcitx5-chinese-addons
-fcitx5-diagnose命令能诊断输入问题
-可能是zsh在登陆时不读取&#x2F;etc&#x2F;profile而读取&#x2F;etc&#x2F;zprofile造成的，在&#x2F;etc&#x2F;zprofile里调用&#x2F;etc&#x2F;profile即可：echo &quot;source /etc/profile&quot; &gt; /etc/zprofile 为了保险，再新建一个&#x2F;etc&#x2F;environment, 内容为：12345export XIM_PROGRAM=fcitx                                          export XIM=fcitxexport GTK_IM_MODULE=fcitxexport QT_IM_MODULE=fcitxexport XMODIFIERS=“ @im=fcitx” 
-
- ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Linux/install_softwares/" title="必要的 Linux 软件">必要的 Linux 软件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">Gnome pluginsnap 的 Firefox 安插件有问题，去官网下Firefox（用apt安装），或者用 chrome。
-12345678910111213AppIndicator and KStatusNotifierItem Support #在顶部任务栏显示应用图标（如输入法图标），是Ubuntu的默认插件bing wallpapercaffeineClipboard IndicatorDash to Dock (Ubuntu Dock)desktop icons NGgsconnectSimple System Monitorscreenshot toolUnite #将最大最小按钮融合到顶部compiz alike lamp effectNo Titlebar When Maximizeddebian linux updates indicator
-archlinux 需安装 gnome-browser-connector
-kde生成视频缩略图(thumbnail)安装 ffmpegthumbs，并在 dolphin 进行相关设置
-OCROCR 工具OCRpot-d ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Linux/kde/" title="kde plasma">kde plasma</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">application launcher修改位于 /usr/share/applications  的 desktop entry，就能让应用出现在启动器菜单，链接可以放到桌面。
-设置 meta 键为 overview 快捷键：1kwriteconfig5 --file kwinrc --group ModifierOnlyShortcuts --key Meta &quot;org.kde.kglobalaccel,/component/kwin,,invokeShortcut,Overview&quot;
-reload your KWin settings without restarting KWin by running:
-1qdbus org.kde.KWin /KWin reconfigure</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Linux/network_cmd/" title="Linux 网络相关">Linux 网络相关</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">下载工具wget，不能多线程当我们在使用wget命令下载文件时，通常会需要将文件下载到指定的目录，这时就可以使用 -P 参数来指定目录，如果指定的目录不存在，则会自动创建。
-1wget -P /usr/local/src http://download.redis.io/releases/redis-4.0.9.tar.gz
-
-如果需要对下载的文件进行重命名，则可以通过 -O 参数指定文件名，需要注意的是，如果重命名中包含路径，那么该路径必须实现创建好。
-1wget  http://download.redis.io/releases/redis-4.0.9.tar.gz  -O /usr/local/src/redis.tar.gz
-经测试 小写的和大写的都可以 但是大写的会显示下载过程 小写的不会
-aria21、直链下载
-下载直链文件，只需在命令后附加地址，如：
-1aria2c http://xx.com/xx
-
-使用aria2的多线程和分段下载功能可以加快文件的下载速度，对于下载大文件时特别有用。-s 多线程下载，-x 分段下载，如：
-123aria2c -s 2 -x 2 ht ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Linux/ownership_and_permission/" title="Linux 所有权和权限">Linux 所有权和权限</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">所有权(chmod和chgrp)123456#改变所有者和所属组chown [-R] hdg a.txt		#改变所有者为hdgchgrp [-R] hdg a.txt		#改变所属组为hdgchown [-R] hdg:root a.txt	#将a.txt的所有者改为hdg, 所属组改为root#也可将colon改为dotchown [-R] hdg.root a.txt
-权限(permission)
-123456789101112131415161718#chmod改变权限的三种方法#chmod 命令的权限模式的格式是 [ugoa][+-=][perms]，也就是 [用户身份][赋予方式][权限] 的格式#chmod [选项]... 模式[,模式]... 文件...#1.用数字chmod [-R] 644 a.txt	#每个数字对应所有者/所有组/访客。(421,rwx)#2.用字母赋值chmod [-R] u=rwx,g=rw,o=r a.txt	#ugo，对应user, group，other; 会覆盖原来的权限#也可写成:chmod [-R] u=rwx,g=rw-,o=r- ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Linux/package_manager/" title="包管理器">包管理器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">aptdpkg-reconfigure重新设置已安装的软件
-1dpkg-reconfigure [options] packages
-
-dpkg-preconfigurelet packages ask questions prior to their installation
-12dpkg-preconfigure [options] package.debdpkg-preconfigure --apt
+标签由&lt;、&gt;、&#x2F;、英文单词或字母组成。并且把标签中&lt;&gt;包括起来的英文单词或字母称为标签名  
+常见标签由两部分组成，我们称之为:双标签。前部分叫开始标签，后部分叫结束标签，两部分之间包裹内容  
+少数标签由一部分组成，我们称之为:单标签。自成一体，无法包裹内容。eg: &lt;br&gt;(break row),&lt;hr&gt;(horizon)
 
 
 
-仓库分类Ubuntu 的仓库分类：
 
-Main - Canonical 支持的自由开源软件。
-Universe - 社区维护的自由开源软件。
-Restricted - 设备的专有驱动程序。
-Multiverse - 受版权或法律问题限制的软件。
+标签
+代码
+备注
 
-Debian 的仓库分类：
 
-free
-contri
-non-free
 
-设置软件源12345678sudo apt edit-sources/etc/apt/sources.list 文件/etc/apt/sources.list.d 文件夹里的文件add-apt-repository --help  //用 add-apt-rep ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Linux/partition_dump/" title="Linux 硬盘和分区">Linux 硬盘和分区</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">硬盘和分区fstab1234genfstab -U /mnt &gt; /mnt/etc/fstab#修改fstab后生效systemctl daemon-reload
+一、排版标签
 
-查看信息1234567df -h     #查看磁盘占用du -h     #查看目录占用sudo du -h /var/ | sort -rh | head -5 #打印/var目录的前5大文件与目录fdisk -l  #显示分区起点终点lsblk -f  #显示分区ＵＵＩＤ和其它信息，通过blkid实现的blkid：显示分区ＵＵＩＤbtrfs subvolume list -p /mnt #列出子卷
 
-设置文件系统标签
-for ext2&#x2F;ext3&#x2F;ext41e2label device [newlabel]
-for dos(vfat, fat16, fat32, etc.)1dosfslabel device [label]
-for swap1swaplabel -L [label] dev
-for ntfs1ntfslabel [options] device [label]
-for xfs ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/#content-inner">9</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">illyber</div><div class="author-info__description">学习计算机的记录</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">86</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/05/Front-End/2_css/12-%E6%B5%AE%E5%8A%A8/" title="CSS-12-浮动">CSS-12-浮动</a><time datetime="2024-03-05T02:21:00.000Z" title="发表于 2024-03-05 10:21:00">2024-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/05/Front-End/2_css/11-%E6%96%87%E5%AD%97%E9%98%B4%E5%BD%B1/" title="CSS-文字阴影">CSS-文字阴影</a><time datetime="2024-03-05T02:07:00.000Z" title="发表于 2024-03-05 10:07:00">2024-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/04/Front-End/2_css/10-%E7%9B%92%E5%AD%90%E9%98%B4%E5%BD%B1/" title="CSS-盒子阴影">CSS-盒子阴影</a><time datetime="2024-03-04T14:00:00.000Z" title="发表于 2024-03-04 22:00:00">2024-03-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/04/Front-End/1_html/18-%E6%A0%87%E7%AD%BE%E6%80%BB%E7%BB%93/" title="html-标签总结">html-标签总结</a><time datetime="2024-03-04T02:37:29.183Z" title="发表于 2024-03-04 10:37:29">2024-03-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/04/Front-End/2_css/9-%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/" title="CSS-圆角边框">CSS-圆角边框</a><time datetime="2024-03-03T17:08:00.000Z" title="发表于 2024-03-04 01:08:00">2024-03-04</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+
+
+标题标签
+&lt;h1&gt;1级标题&lt;/h1&gt;…&lt;h6&gt;6级标题&lt;/h6&gt;
+取消标题加粗：font-weight: 400;
+
+
+段落标签
+&lt;p&gt;&lt;/p&gt;
+
+
+
+换行标签
+&lt;br&gt;
+break row, 强制换行
+
+
+水平分割线标签
+&lt;hr&gt;
+horizontal row
+
+
+
+
+
+
+
+文本格式化标签
+
+
+
+
+加粗
+b or strong
+bold
+
+
+下划线
+u or ins
+underline&#x2F;inserted
+
+
+倾斜
+i or  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/04/Front-End/2_css/9-%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/" title="CSS-圆角边框">CSS-圆角边框</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-03T17:08:00.000Z" title="发表于 2024-03-04 01:08:00">2024-03-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Front-End/">Front-End</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Front-End/2-css/">2_css</a></span></div><div class="content">165-圆角边框原理border-radius属性用于设置元素的外边框圆角.
+1border-radius: length;
+radius: 半径(圆的半径)
+12345678&lt;style&gt;    div&#123;        width: 300px;        height: 150px;        background-color: pink;        border-radius: 10px;    &#125;&lt;/style&gt;
+
+166-圆角边框的使用border-radius 参数值可以为数值或百分比的形式如果是正方形，想要设置为一个圆，把数值修改为高度或者宽度的一半即可，或者直接写为50%该属性是一个简写属性，可以跟四个值，分别代表左上角、右上角、右下角、左下角两个值：分开写：
+
+border-top-left-radius
+border-top-right-radius
+border-bottom-right-radius
+border-bottom-left-radius也可以这样子border-radius:0px 0px 0 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/network/" title="网络是怎样连接的_户根勤-笔记">网络是怎样连接的_户根勤-笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span></div><div class="content">端口号范围在网络技术中，端口（Port）大致有两种意思：一是物理意义上的端口，比如，ADSL Modem、集线器、交换机、路由器用于连接其他网络设备的接口，如RJ-45端口、SC端口等等。二是逻辑意义上的端口，一般是指TCP&#x2F;IP协议中的端口，端口号的范围从0到65535，比如用于浏览网页服务的80端口，用于FTP服务的21端口等等。
+16 位 2 进制数，也就是 0~65535
+0~1023之间的端口号保留给预定义的服务（Well-Known Ports）。例如：http使用 80 端口。我们在编写网络应用程序时，要为程序指定 1024～ 65535 之间的端口号。
+dhcp动态主机设置协议（DHCP）是一种使网络管理员能够集中管理和自动分配 IP 网络地址的通信协议。 在IP网络中，每个连接Internet的设备都需要分配唯一的IP地址。 DHCP使网络管理员能从中心结点监控和分配IP地址。 当某台计算机移到网络中的其它位置时，能自动收到新的IP地址。
+dhcpcdDynamic Host Configuration Protocol Client Daemon （net ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/package-lock.json/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/punctuation/" title="标点符号的英文名称">标点符号的英文名称</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span></div><div class="content">参考：MTI翻硕大本营 - 英文标点符号（中英对照）用法大全
+括号
+
+
+标点符号
+中文名称
+英文名称
+
+
+
+()
+圆括号
+parentheses&#x2F;brackets
+
+
+(
+左圆括号
+open parenthesis&#x2F;open paren
+
+
+)
+右圆括号
+close parenthesis&#x2F;close paren
+
+
+[]
+方括号
+square brackets
+
+
+[
+左方括号
+open bracket
+
+
+]
+右方括号
+close bracket
+
+
+{}
+花括号
+braces
+
+
+{
+左花括号
+open brace&#x2F;opencurly
+
+
+}
+右花括号
+close brace&#x2F;close curly
+
+
+引号
+
+
+标点符号
+中文名称
+英文名称
+
+
+
+``
+反引号
+backticks
+
+
+‘
+撇号&#x2F;单引号
+apostrophe
+
+
+“
+单引号&#x2F;一个双引号
+single quotation marks
+
+
+“”
+双引号
+double quotation marks
+
+
+单个标点符号
+
+
+标点符号
+中文名称
+英文名称 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Tool/docker/" title="docker 常用命令">docker 常用命令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Tool/">Tool</a></span></div><div class="content">登录账号12//退出容器进入宿主机执行  docker exec -it --user=work test bash
+
+ssh参考：极品小男 - SSH连接docker中的container
+
+设置端口映射. sudo docker run -p 10022:22 --name=debian --hostname=deb -it debian bash
+没有密码的话需要设置密码，ssh 连接时需要. passwd
+安装 ssh. apt install ssh vim
+修改 ssh 配置文件 &#x2F;etc&#x2F;ssh&#x2F;sshd_config12345vim /etc/ssh/sshd_configPubkeyAuthentication yes #启用公钥私钥配对认证方式PermitRootLogin yes #root能使用ssh登录port=22 #开启22端口
+重启 ssh 服务. service ssh start
+不知道为什么，ssh 连接 docker container 时用主机名不行，用 ip 地址。ssh user_name@ip_address ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Tool/git/" title="Git notes">Git notes</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Tool/">Tool</a></span></div><div class="content">基本概念工作区（workspace）、暂存区（staging area）、本地仓库（local repository）、远程仓库（remote repository）暂存（add&#x2F;stage）、提交（commit）
+
+克隆到目录1git clone &lt;repo&gt; &lt;directory&gt;	从 repo 克隆到指定目录
+
+创建仓库12git init				将当前目录初始化为仓库git init &lt;directory&gt;	将指定目录初始化为仓库
+
+工作区1使用 &quot;git restore &lt;文件&gt;...&quot; 丢弃工作区的改动
+
+
+
+添加&#x2F;取消 暂存区取消暂存
+1使用 &quot;git restore --staged &lt;文件&gt;...&quot; 以取消暂存，将更改移动到工作区。
+
+当我们需要删除暂存区或分支上的文件, 同时工作区也不需要这个文件了, 可以使用
+123git rm file_path  git commit -m &#x27;delete somefile&#x27;  git p ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Language/C/file_IO/" title="文件操作">文件操作</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Language/">Language</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Language/C/">C</a></span></div><div class="content">文本文件与二进制文件的区别
+文本文件：以字符编码形式存储到磁盘文件
+二进制文件：将内存数据原样存储到磁盘文件
+二进制模式：模式字符串加b
+
+eg: 浮点数以文本模式输出到文件后，就成为了字符串
+换行与文件结尾
+
+
+系统
+换行
+结尾
+
+
+
+UNIX&#x2F;Linux
+\n (换行符)
+记录文件大小，计数确认是否读到结尾
+
+
+OS X Macintosh
+\r (回车符)
+
+
+
+MS-DOS
+\r\n
+Ctrl+z
+
+
+Windows
+Notepad 生成 MS-DOS 格式的文件，新的编辑器生成类 UNIX 格式的文件
+Notepad 生成 MS-DOS 格式的文件，新的编辑器生成类 UNIX 格式的文件
+
+
+两种访问模式，文本模式和二进制模式：
+
+文本模式：把本地系统的格式转换成 C 的格式，比如在 MS-DOS 系统上把 \r\n 转换成 \n；
+二进制模式：在二进制模式，程序能访问文件的每一个字节；文件格式不会被转换；
+
+UNIX 用同一种格式处理文本文件和二进制文件，所以这两种模式对 UNIX 相同。
+getc() 读到结尾返回EOF。程序一定会读到超过文件末尾。
+fopen ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Language/C/function/" title="函数">函数</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Language/">Language</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Language/C/">C</a></span></div><div class="content">parameter与argument辨析虽然常常混用，但C99规定，parameter是形式参数；argument是实际参数，也就是函数调用传递的值。
+命令行参数 P311
+main() 接收命令行参数：int main( int argc, char *argv[])
+
+名为 repeat 的 C 可执行程序在命令行这样接受参数：$ .&#x2F;repeat Resistance
+
+argc（即 argument count）表示命令行中的字符串数量（包括命令名），以空格分割字符串；上面命令的参数数量为 2；
+
+argv（即 argument value）存放每个字符串的地址，argv[0] 存放命令名（即 “repeat”）的地址。
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/01/Language/C/memory_allocation/" title="内存分配">内存分配</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T03:18:17.552Z" title="发表于 2024-03-01 11:18:17">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Language/">Language</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Language/C/">C</a></span></div><div class="content">malloc(), exit(), free()
+
+
+函数
+作用
+参数
+返回值
+
+
+
+void *malloc( size_t size )
+分配 size 字节的内存
+size_t
+以 void* 格式，返回内存的首字节地址
+
+
+void exit( int exit_code )
+结束程序
+int 类型的 exit_code, (EXIT_SUCCESS, EXIT_FAILURE)
+exit_code 为EXIT_SUCCESS(即0) ，返回指示成功终止的实现定义状态。exit_code 为 EXIT_FAILURE(即1)，则返回指示不成功终止的实现定义状态。其他情况下返回实现定义的状态值。
+
+
+void free( void *ptr )
+释放malloc(), calloc()的内存
+
+
+
+
+malloc 的使用虽然 malloc() 的 void * 相当于通用指针，但是还是建议用 (double *) 这样的强制类型转换，便于阅读和转换为 C++ 程序。
+123int n;double *ptr;ptr = (double *) malloc(n*sizeof(dou ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/#content-inner">9</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://illyber-images.oss-cn-chengdu.aliyuncs.com/kuroyukihime-3.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">illyber</div><div class="author-info__description">学习计算机的记录</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">81</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/31/Linux/Zettelkasten/tricks/" title="无题">无题</a><time datetime="2024-03-31T15:26:32.866Z" title="发表于 2024-03-31 23:26:32">2024-03-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/31/Linux/Zettelkasten/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86/" title="无题">无题</a><time datetime="2024-03-31T12:17:27.618Z" title="发表于 2024-03-31 20:17:27">2024-03-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/20/Linux/Zettelkasten/Drawing%202024-03-20%2023.47.00.excalidraw/" title="无题">无题</a><time datetime="2024-03-20T15:47:00.778Z" title="发表于 2024-03-20 23:47:00">2024-03-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/20/Linux/Zettelkasten/dd/" title="无题">无题</a><time datetime="2024-03-20T14:49:56.661Z" title="发表于 2024-03-20 22:49:56">2024-03-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/20/Linux/Zettelkasten/wipefs/" title="无题">无题</a><time datetime="2024-03-20T14:48:47.320Z" title="发表于 2024-03-20 22:48:47">2024-03-20</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             
             </div>
             <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Data-Structure/"><span class="card-category-list-name">Data-Structure</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Front-End/"><span class="card-category-list-name">Front-End</span><span class="card-category-list-count">21</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Front-End/1-html/"><span class="card-category-list-name">1_html</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Front-End/2-css/"><span class="card-category-list-name">2_css</span><span class="card-category-list-count">12</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Language/"><span class="card-category-list-name">Language</span><span class="card-category-list-count">25</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Language/C/"><span class="card-category-list-name">C</span><span class="card-category-list-count">19</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Language/C/data-type/"><span class="card-category-list-name">data_type</span><span class="card-category-list-count">6</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Language/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Language/Python/"><span class="card-category-list-name">Python</span><span class="card-category-list-count">5</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">12</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Shell/"><span class="card-category-list-name">Shell</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Tool/"><span class="card-category-list-name">Tool</span><span class="card-category-list-count">12</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Tool/Editor/"><span class="card-category-list-name">Editor</span><span class="card-category-list-count">10</span></a></li></ul></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/tags/html/" style="font-size: 1.39em; color: #99a4b4">html</a> <a href="/tags/regular/" style="font-size: 1.1em; color: #999">regular</a> <a href="/tags/btrfs/" style="font-size: 1.1em; color: #999">btrfs</a> <a href="/tags/css/" style="font-size: 1.39em; color: #99a4b4">css</a> <a href="/tags/algorithm/" style="font-size: 1.33em; color: #99a2af">algorithm</a> <a href="/tags/bash/" style="font-size: 1.1em; color: #999">bash</a> <a href="/tags/package-manager/" style="font-size: 1.1em; color: #999">package manager</a> <a href="/tags/boot/" style="font-size: 1.1em; color: #999">boot</a> <a href="/tags/shell/" style="font-size: 1.27em; color: #99a0a9">shell</a> <a href="/tags/wildcard/" style="font-size: 1.1em; color: #999">wildcard</a> <a href="/tags/expression/" style="font-size: 1.1em; color: #999">expression</a> <a href="/tags/docker/" style="font-size: 1.1em; color: #999">docker</a> <a href="/tags/network/" style="font-size: 1.16em; color: #999b9e">network</a> <a href="/tags/python/" style="font-size: 1.21em; color: #999ea4">python</a> <a href="/tags/linux/" style="font-size: 1.44em; color: #99a7ba">linux</a> <a href="/tags/vscode/" style="font-size: 1.1em; color: #999">vscode</a> <a href="/tags/regex/" style="font-size: 1.1em; color: #999">regex</a> <a href="/tags/C/" style="font-size: 1.5em; color: #99a9bf">C</a> <a href="/tags/macOS/" style="font-size: 1.1em; color: #999">macOS</a> <a href="/tags/vim/" style="font-size: 1.39em; color: #99a4b4">vim</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">81</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">86</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-03-12T11:39:29.903Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By illyber</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Data-Structure/"><span class="card-category-list-name">Data-Structure</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Front-End/"><span class="card-category-list-name">Front-End</span><span class="card-category-list-count">21</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Front-End/1-html/"><span class="card-category-list-name">1_html</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Front-End/2-css/"><span class="card-category-list-name">2_css</span><span class="card-category-list-count">12</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Language/"><span class="card-category-list-name">Language</span><span class="card-category-list-count">25</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Language/C/"><span class="card-category-list-name">C</span><span class="card-category-list-count">19</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Language/C/data-type/"><span class="card-category-list-name">data_type</span><span class="card-category-list-count">6</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Language/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Language/Python/"><span class="card-category-list-name">Python</span><span class="card-category-list-count">5</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Tool/"><span class="card-category-list-name">Tool</span><span class="card-category-list-count">12</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Tool/Editor/"><span class="card-category-list-name">Editor</span><span class="card-category-list-count">10</span></a></li></ul></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/python/" style="font-size: 1.2em; color: #999da3">python</a> <a href="/tags/vim/" style="font-size: 1.4em; color: #99a5b6">vim</a> <a href="/tags/vscode/" style="font-size: 1.1em; color: #999">vscode</a> <a href="/tags/html/" style="font-size: 1.4em; color: #99a5b6">html</a> <a href="/tags/css/" style="font-size: 1.4em; color: #99a5b6">css</a> <a href="/tags/excalidraw/" style="font-size: 1.1em; color: #999">excalidraw</a> <a href="/tags/network/" style="font-size: 1.1em; color: #999">network</a> <a href="/tags/docker/" style="font-size: 1.1em; color: #999">docker</a> <a href="/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/tags/regular/" style="font-size: 1.1em; color: #999">regular</a> <a href="/tags/algorithm/" style="font-size: 1.3em; color: #99a1ac">algorithm</a> <a href="/tags/C/" style="font-size: 1.5em; color: #99a9bf">C</a> <a href="/tags/shell/" style="font-size: 1.1em; color: #999">shell</a> <a href="/tags/macOS/" style="font-size: 1.1em; color: #999">macOS</a> <a href="/tags/expression/" style="font-size: 1.1em; color: #999">expression</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">77</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">81</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-04-01T17:17:52.701Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By illyber</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
