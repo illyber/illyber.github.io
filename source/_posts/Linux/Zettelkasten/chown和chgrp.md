@@ -1,5 +1,11 @@
-2024 0331 16:04
-Tags: #所有权
+---
+title: chown和chgrp
+categories:
+  - Linux
+date: 2024-04-02 05:20
+tags:
+  - 所有权
+---
 
 ---
 # chown

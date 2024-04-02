@@ -1,3 +1,10 @@
+---
+title: process-manager
+categories:
+  - Linux
+date: 2024-04-02 03:30
+tags: 
+---
 
 `top`
 `ps -ef|grep`

@@ -1,5 +1,11 @@
-2024 0331 20:43
-Tags: #脚本/传递参数
+---
+title: 9_pass-args
+categories:
+  - Linux
+date: 2024-04-02 05:20
+tags:
+  - 脚本/传递参数
+---
 
 ---
 

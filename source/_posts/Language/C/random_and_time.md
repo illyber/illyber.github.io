@@ -4,7 +4,6 @@ tags:
   - C
 categories:
   - Language
-  - C
 ---
 # 随机数
 

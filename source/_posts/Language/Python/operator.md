@@ -1,7 +1,6 @@
 ---
 categories:
   - Language
-  - Python
 ---
 
 

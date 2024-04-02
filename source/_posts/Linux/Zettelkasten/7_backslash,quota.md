@@ -1,5 +1,11 @@
-2024 0331 20:43
-Tags: #脚本/反斜杠和引号
+---
+title: 7_backslash,quota
+categories:
+  - Linux
+date: 2024-04-02 05:20
+tags:
+  - 脚本/反斜杠和引号
+---
 
 ---
 

@@ -1,3 +1,11 @@
+---
+title: disk-commands
+categories:
+  - Linux
+date: 2024-04-02 03:30
+tags: 
+---
+
 # 查看信息
 ```shell
 df -h     #查看磁盘占用

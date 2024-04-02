@@ -4,7 +4,6 @@ tags:
   - C
 categories:
   - Language
-  - C
 ---
 # 缓存
 - [为什么有时按两次ctrl+D才能结束标准I/O](https://blog.csdn.net/weixin_43590796/article/details/107479816#commentBox)

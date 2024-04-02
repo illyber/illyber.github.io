@@ -4,8 +4,6 @@ tags:
   - C
 categories:
   - Language
-  - C
-  - data_type
 ---
 # malloc()创建数组
 # 初始化

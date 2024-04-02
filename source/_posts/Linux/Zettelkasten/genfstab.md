@@ -1,5 +1,13 @@
-# genfstab
-#disk/fstab/genfstab 
+---
+title: genfstab
+categories:
+  - Linux
+date: 2024-04-02 03:30
+tags:
+  - 硬盘/fstab/genfstab
+---
+
+# genfstab 
 生成fstab文件
 ```shell
 genfstab -U /mnt > /mnt/etc/fstab

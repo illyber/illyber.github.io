@@ -4,7 +4,6 @@ tags:
   - vim
 categories:
   - Tool
-  - Editor
 ---
 The motion commands can be used after an operator command, to have the command operate on the text that was moved over.  That is the text between the cursor position before and after the motion.  Operators are generally used to delete or change text.
 # 通用

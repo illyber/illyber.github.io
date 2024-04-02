@@ -4,7 +4,6 @@ tags:
   - vim
 categories:
   - Tool
-  - Editor
 ---
 # vim键位图
 ![vi-vim-cheat-sheet-sch](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202301281946924.gif)

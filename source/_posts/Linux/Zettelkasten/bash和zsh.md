@@ -1,5 +1,11 @@
-2024 0331 16:06
-Tags: #bash	#zsh
+---
+title: bash和zsh
+categories:
+  - Linux
+date: 2024-04-02 05:20
+tags:
+  - shell程序
+---
 
 ---
 

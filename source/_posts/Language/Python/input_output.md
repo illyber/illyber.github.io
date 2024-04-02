@@ -4,7 +4,6 @@ tags:
   - python
 categories:
   - Language
-  - Python
 ---
 - `input()` 从标准输入读取字符串，不读取换行符。
 - `print()` 函数将括号内的字符串显示在屏幕上。如果没有参数就打印空行（换行符）

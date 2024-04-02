@@ -4,7 +4,6 @@ tags:
   - vim
 categories:
   - Tool
-  - Editor
 ---
 注意查找回车应当用 `\n`，而替换为回车应当用 `\r`（相当于 `<CR>`）。
 [harttle - 在 Vim 中优雅地查找和替换](https://harttle.land/2016/08/08/vim-search-in-file.html)

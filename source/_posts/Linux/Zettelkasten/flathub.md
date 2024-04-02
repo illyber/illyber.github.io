@@ -1,5 +1,11 @@
-2024 0331 15:50
-Tags: #package-manager/flathub
+---
+title: flathub
+categories:
+  - Linux
+date: 2024-04-02 05:20
+tags:
+  - 包管理器/flathub
+---
 
 ---
 

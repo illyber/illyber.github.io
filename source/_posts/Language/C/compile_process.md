@@ -4,7 +4,6 @@ tags:
   - C
 categories:
   - Language
-  - C
 ---
 # gcc带颜色
 

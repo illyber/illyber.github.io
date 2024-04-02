@@ -4,7 +4,6 @@ tags:
   - C
 categories:
   - Language
-  - C
 ---
 # continue 与 break
 

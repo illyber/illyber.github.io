@@ -1,7 +1,6 @@
 ---
 categories:
   - Language
-  - Python
 ---
 - 流程图：
     - 开始/结束：圆角矩形

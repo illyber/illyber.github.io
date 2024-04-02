@@ -1,5 +1,13 @@
+---
+title: fs-label
+categories:
+  - Linux
+date: 2024-04-02 03:30
+tags:
+  - 文件系统/label
+---
+
 # fs label
-#disk/filesystem/label
 1. for ext2/ext3/ext4
 ```shell
 e2label device [newlabel]

@@ -4,7 +4,6 @@ tags:
   - python
 categories:
   - Language
-  - Python
 ---
 # def 语句和参数
 ```python

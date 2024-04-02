@@ -4,8 +4,6 @@ tags:
   - C
 categories:
   - Language
-  - C
-  - data_type
 ---
 # 字符串/字符数组
 字符串常量也存储在某个地方。"hello" 也代表字符串的地址。

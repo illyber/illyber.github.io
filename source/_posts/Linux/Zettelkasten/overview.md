@@ -1,5 +1,11 @@
-2024 0331 16:25
-Tags: #linux-set/概览
+---
+title: overview
+categories:
+  - Linux
+date: 2024-04-02 05:20
+tags:
+  - linux-set/概览
+---
 
 ---
 # 设置 `meta` 键为 overview 快捷键：

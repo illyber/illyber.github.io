@@ -4,7 +4,6 @@ tags:
   - C
 categories:
   - Language
-  - C
 ---
 
 # C 标准历史

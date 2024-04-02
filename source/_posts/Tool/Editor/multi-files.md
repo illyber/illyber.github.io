@@ -4,7 +4,6 @@ tags:
   - vim
 categories:
   - Tool
-  - Editor
 ---
 
 # 相关概念

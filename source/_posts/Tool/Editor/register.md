@@ -4,7 +4,6 @@ tags:
   - vim
 categories:
   - Tool
-  - Editor
 ---
 参考 [harttle - Vim 寄存器完全手册](https://harttle.land/2016/07/25/vim-registers.html#header-8)
 - 查看寄存器内容 `:reg`

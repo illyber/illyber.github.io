@@ -3,7 +3,6 @@ title: Vscode notes
 tags: vscode
 categories:
   - Tool
-  - Editor
 ---
 
 # vscode安装和配置

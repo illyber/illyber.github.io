@@ -1,5 +1,11 @@
-2024 0331 20:43
-Tags: #脚本/重定向
+---
+title: 2_redirection
+categories:
+  - Linux
+date: 2024-03-31 20:56
+tags:
+  - 脚本/重定向
+---
 
 ---
 

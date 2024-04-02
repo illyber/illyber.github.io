@@ -4,8 +4,6 @@ tags:
   - C
 categories:
   - Language
-  - C
-  - data_type
 ---
 ## 大小一览
 linux 上的大小。

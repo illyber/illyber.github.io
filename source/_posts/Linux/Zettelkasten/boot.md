@@ -1,4 +1,12 @@
-#boot
+---
+title: boot
+categories:
+  - Linux
+date: 2024-04-02 03:30
+tags:
+  - boot
+---
+
 LegacyBIOS/UEFI BIOS -> grub/MBR/GPT
 
 # 显示开机信息

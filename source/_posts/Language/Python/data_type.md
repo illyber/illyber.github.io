@@ -4,7 +4,6 @@ tags:
   - python
 categories:
   - Language
-  - Python
 ---
 整型、浮点型
 # 字符串

@@ -1,5 +1,11 @@
-2024 0331 20:43
-Tags: #脚本/通配符
+---
+title: 10_wildcard
+categories:
+  - Linux
+date: 2024-04-02 05:20
+tags:
+  - 脚本/通配符
+---
 
 ---
 

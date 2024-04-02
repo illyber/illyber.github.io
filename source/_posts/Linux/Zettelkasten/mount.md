@@ -1,5 +1,11 @@
-2024 0331 16:12
-Tags: #disk/分区/mount 
+---
+title: mount
+categories:
+  - Linux
+date: 2024-04-02 05:20
+tags:
+  - 硬盘/挂载分区/mount
+---
 
 ---
 格式化之后才挂载。按一定顺序挂载分区和子卷

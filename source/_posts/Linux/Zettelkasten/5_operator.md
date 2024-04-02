@@ -1,5 +1,11 @@
-2024 0331 20:43
-Tags: #脚本/运算符
+---
+title: 5_operator
+categories:
+  - Linux
+date: 2024-04-02 05:20
+tags:
+  - 脚本/运算符
+---
 
 ---
 

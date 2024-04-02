@@ -1,5 +1,11 @@
-2024 0331 15:49
-Tags: #package-manager/pacman
+---
+title: pacman
+categories:
+  - Linux
+date: 2024-04-02 05:20
+tags:
+  - 包管理器/pacman
+---
 
 ---
 # pacman

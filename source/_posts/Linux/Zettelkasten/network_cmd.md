@@ -1,3 +1,11 @@
+---
+title: network_cmd
+categories:
+  - Linux
+date: 2024-04-02 03:30
+tags: 
+---
+
 # 下载工具
 
 ## wget，不能多线程

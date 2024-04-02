@@ -4,8 +4,6 @@ tags:
   - C
 categories:
   - Language
-  - C
-  - data_type
 ---
 # 字符/字符变量
 

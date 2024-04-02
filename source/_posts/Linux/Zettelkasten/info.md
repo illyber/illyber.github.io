@@ -1,5 +1,11 @@
-2024 0331 16:16
-Tags: #帮助/info
+---
+title: info
+categories:
+  - Linux
+date: 2024-04-02 05:20
+tags:
+  - 帮助/info
+---
 
 ---
 # info

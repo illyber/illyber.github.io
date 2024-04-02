@@ -1,10 +1,17 @@
-2024 0331 20:43
-Tags: #脚本/展开
+---
+title: 3_expansion
+categories:
+  - Linux
+date: 2024-04-02 05:20
+tags:
+  - 脚本/展开
+---
 
 ---
 
 [shell中的扩展(Expansions)](https://opengers.github.io/linux/linux-shell-brace-parameter-command-pathname-expansion/)
-## Brace Expansion（花括号）
+## 花括号展开
+Brace Expansion
 ```shell
 mkdir /usr/local/src/bash/{old,new,dist,bugs}
 fox@deb12  ~ ❯ echo {1..9..2} #指定步长
@@ -14,8 +21,8 @@ ll1 ll2 ll3
 
 ```
 
-## Tilde Expansion（波浪线）
-## Parameter Expansion（参数）
+## 波浪线展开 (Tilde Expansion)
+## 参数展开 (Parameter Expansion)
 [Shell Parameter Expansion 参数展开](https://xstarcd.github.io/wiki/shell/ShellParameterExpansion.html)
 
 基本格式：`$parameter`或`${parameter}`, 花括号能防止误操作. 引用变量值是参数扩展的一种。
@@ -74,7 +81,7 @@ ${!prefix*} # 查找参数名
 `${parameter#word}`
 `${parameter/pattern/string}`
 
-## Command Substitution（命令替换）
+## 命令替换 (Command Substitution)
 Command substitution allows the output of a command to replace the command name.
 两种形式：
 ```shell
@@ -82,7 +89,7 @@ $(command)
 `command` #backquote, 反引号
 ```
 反引号和`$()`基本几乎等价，但尽量使用`$()`。反引号有两点不方便之处：(1)命令替换嵌套或者是包含引号的时候，反引号很麻烦，不如`$()`易读。(2)反引号处理反斜线的转义规则比较不明确，但是`$()`中的反斜线会按正常的方式转义。
-## Arithmetic Expansion（算术）
+## 算术展开 (Arithmetic Expansion)
 
 形式：
 ```shell

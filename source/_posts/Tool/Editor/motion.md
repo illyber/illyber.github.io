@@ -4,7 +4,6 @@ tags:
   - vim
 categories:
   - Tool
-  - Editor
 ---
 - linewise 就是影响整行的。linewise motion 的操作与光标起始、结束位置的横坐标无关，只与纵坐标有关。举例：j 、k。比如指令 dj 会删掉当前整行及下面的整行，无论光标的横坐标是在行中还是哪里。
 - characterwise 就是影响光标移动中间部分的。characterwise motion 的操作与光标的起始、结束位置的横坐标有关。举例：w、W、e、E 等等。比如指令 dw 会删除一个词，即使这个 w 的 motion 跨行移动了，也只是删除起始和结束所包含的中间这个单词的部分，不会影响整行。

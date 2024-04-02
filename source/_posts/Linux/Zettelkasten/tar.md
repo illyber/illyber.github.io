@@ -1,5 +1,11 @@
-2024 0331 16:00
-Tags: #tar #compress
+---
+title: tar
+categories:
+  - Linux
+date: 2024-04-02 05:20
+tags:
+  - 归档和压缩/tar
+---
 
 ---
 # tar 命令

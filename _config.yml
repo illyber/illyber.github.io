@@ -111,7 +111,7 @@ deploy:
 # depth: the max_depth of directory-tree you want to generate, should > 0
 auto_category:
   enable: true
-  depth: 5
+  depth: 1
 
 # hexo-toc插件
 # 能够让hexo支持markdown的toc语法，生成toc目录

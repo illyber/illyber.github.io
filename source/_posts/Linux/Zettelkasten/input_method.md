@@ -1,5 +1,11 @@
-2024 0331 16:25
-Tags: #linux-set/输入法
+---
+title: input_method
+categories:
+  - Linux
+date: 2024-04-02 05:20
+tags:
+  - linux-set/输入法
+---
 
 ---
 [TOC]
@@ -127,8 +133,77 @@ ibus-daemon -drx
 https://wiki.archlinuxcn.org/wiki/建议阅读#中国大陆用户的推荐解决方案
 ```
 
+# fcitx 自定义短语
 
+> 建议使用 QuickPhrase 快速输入，触发方式是长按逗号之后右划，或者拼音输入法中按 v 触发。在设置界面 插件-快速输入-编辑器 中可以自定义映射。
+> 
+> 输入任意字符输出任意短语的这种“自定义短语“，目前不考虑 fcitx/fcitx 5 #270 。
+> 
+> 但如果输入的是合法全拼，可以使用自定义词库的方式实现。
 
+[reference](https://github.com/fcitx5-android/fcitx5-android/issues/174)
+# fcitx 5 设置直角引号
+
+Fcitx5 默认的标点符号键位为：
+```bash
+cat /usr/share/fcitx5/punctuation/punc.mb.zh_CN
+```
+
+```
+. 。
+, ，
+? ？
+" “ ”
+: ：
+; ；
+' ‘ ’
+< 《
+> 》
+\ 、
+! ！
+$ ￥
+^ ……
+_ ——
+( （
+) ）
+[ ·
+] 「 」
+~ ～
+```
+
+1. 在. local 下新建标点键位文件
+```bash
+mkdir ~/.local/share/fcitx5/punctuation/
+touch ~/.local/share/fcitx5/punctuation/punc.mb.zh_CN
+```
+
+2. 修改键位文件
+```bash
+vim ~/.local/share/fcitx5/punctuation/punc.mb.zh_CN
+
+. 。
+, ，
+? ？
+" 『 』
+: ：
+; ；
+' 「 」
+< 《
+> 》
+\ 、
+! ！
+$ ￥
+^ ……
+_ ——
+( （
+) ）
+[ ·
+] 「 」
+~ ～
+
+```
+
+[reference](https://cyrusyip.org/zh-cn/post/2020/11/06/configure-fcitx5-on-ubuntu/)
 
 
 ---

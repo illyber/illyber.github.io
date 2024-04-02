@@ -1,5 +1,11 @@
-2024 0331 16:26
-Tags: #linux-set/必装软件
+---
+title: good_softwares
+categories:
+  - Linux
+date: 2024-04-02 05:20
+tags:
+  - linux-set/必装软件
+---
 
 ---
 # Gnome plugin

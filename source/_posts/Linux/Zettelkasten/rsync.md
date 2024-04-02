@@ -1,5 +1,11 @@
-2024 0331 15:59
-Tags: #传输文件
+---
+title: rsync
+categories:
+  - Linux
+date: 2024-04-02 05:20
+tags:
+  - 传输文件/rsync
+---
 
 ---
 

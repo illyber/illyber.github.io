@@ -4,8 +4,6 @@ tags:
   - C
 categories:
   - Language
-  - C
-  - data_type
 ---
 # 结构体（structure）
 

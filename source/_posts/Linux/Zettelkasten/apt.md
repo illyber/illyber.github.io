@@ -1,5 +1,11 @@
-2024 0331 15:45
-Tags: #package-manager/apt
+---
+title: apt
+categories:
+  - Linux
+date: 2024-04-02 05:20
+tags:
+  - 包管理器/apt
+---
 
 ---
 ## 添加其它架构支持

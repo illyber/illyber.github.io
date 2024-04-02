@@ -1,4 +1,12 @@
-#本地化/主机名
+---
+title: local本地化
+categories:
+  - Linux
+date: 2024-04-02 03:30
+tags:
+  - 本地化/主机名
+---
+
 参见《Linux命令行与shell脚本编程大全》
 # 主机名
 修改主机名：`sudo hostnamectl set-hostname <new_hostname>`

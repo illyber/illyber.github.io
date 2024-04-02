@@ -4,7 +4,6 @@ tags:
   - vim
 categories:
   - Tool
-  - Editor
 ---
 ![image-20230115202343272](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202301281946922.png)
 - 基础类型：
