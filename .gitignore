@@ -7,3 +7,4 @@ public/
 .deploy*/
 _multiconfig.yml
 source/_posts/.git/
+source/_posts/*/.obsidian

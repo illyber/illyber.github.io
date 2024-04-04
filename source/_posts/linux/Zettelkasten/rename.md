@@ -9,7 +9,7 @@ categories:
 
 ---
 # 版本
-rename 有两个版本：
+rename 有两个版本：c语言版和perl版。
 1. arch自带的是c语言版的。
 ```shell
 rename foo foo00 foo?
@@ -26,29 +26,35 @@ rename 's/old/new/' *.old
 
 # perl 版
 
-## 例子
-将所有文件的空格替换为下划线。
+## 常用命令
+
+1. 将所有文件的空格替换为下划线。
 要有 igm 后缀。元字符前要加反斜杠转译。
 ```bash
 rename 's/\ /_/igm'  *
 rename [选项] '命令/旧字符串匹配/新字符串/后缀' 文件名
 ```
-
-## 常用命令
-```shell
-3.5 文件开头加入字符串(比如jelline)  
-rename 's/^/jelline/' *  
-3.6 文件末尾加入字符串(比如jelline)  
-rename 's/$/jelline/' *
-
-3.2 去掉文件后缀名(比如去掉.bak)  
-rename 's/\.bak$//' *.bak
-3.4 去掉文件名的空格  
-rename 's/[ ]+//g' *
-
-3.3 将文件名改为小写  
+2. 将文件名改为小写
+```bash
 rename 'y/A-Z/a-z/' *
 ```
+3. 去掉文件名的空格  
+```bash
+rename 's/[ ]+//g' *
+```
+4. 去掉文件后缀名(比如去掉.bak)  
+```bash
+rename 's/\.bak$//' *.bak
+```
+5. 文件名开头加入字符串(比如jelline)  
+```bash
+rename 's/^/jelline/' *  
+```
+6. 文件名末尾加入字符串(比如jelline)  
+```bash
+rename 's/$/jelline/' *
+```
+
 
 ## 选项
 ```shell
