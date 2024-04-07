@@ -42,7 +42,8 @@ typedef struct bitnode{
 #define SQUARE(X) ((X)*(X))
 ```
 
-#运算符：将参数转换为字符串，利用字符串的串联特性。
+## 井号运算符
+将参数转换为字符串，利用字符串的串联特性。
 
 ```c
 #define PSQR(X) printf("The square of " #X " is %d.\n", ((X)*(X)))
@@ -52,7 +53,8 @@ PSQR(y);
 printf("The square of ""y"" is %d.\n", ((y)*(y)));
 ```
 
-##运算符：将两个标识符组合成一个。
+## 双井号运算符
+将两个标识符组合成一个。
 
 ```c
 #define XNAME(n) x ## n
