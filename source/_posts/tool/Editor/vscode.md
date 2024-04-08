@@ -47,7 +47,7 @@ sudo apt install software-properties-common apt-transport-https
 - chinese
 - C/C++
 - code runner
-- open in default browser
+- open browser preview
 - htmltagwrap
 - auto rename tag
 - open in default browser

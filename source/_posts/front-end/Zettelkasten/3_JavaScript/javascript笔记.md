@@ -261,6 +261,8 @@ id 是唯一的，class 和 tag 不是唯一的所以返回数组。
 ```
 
 ## addEventListener 添加
+
+匿名函数
 ```js
 <button>点击按钮</button>
 <script>
@@ -270,7 +272,16 @@ id 是唯一的，class 和 tag 不是唯一的所以返回数组。
 </script>
 ```
 
+方法外定义函数
+```js
+    <button>点击按钮</button>
+<script>
+    let button_element = document.getElementsByTagName('button')[0];
+    function click_event(){alert('addEventListener 添加点击事件')}
 
+    button_element.addEventListener('click', click_event);
+</script>
+```
 
 
 

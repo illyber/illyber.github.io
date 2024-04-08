@@ -1,5 +1,5 @@
 ---
-title: CSS-CSS特性
+title: 7-CSS特性
 categories:
   - Front-End
 date: 2023-11-17 00:00:00
@@ -80,30 +80,33 @@ body{
 ```
 1.4 如果元素没有指定宽度，则继承父亲的宽度
 
-# 132-css特性-优先级
+# 132-css特性-优先级权重
+
 ```html
-<html>
-    <head>
-        <title>css优先级</title>
-        <style>
-            div{
-                color: pink;
-            }
-            .test{
-                color: red;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="test">你笑起来真好看</div>
-    </body>
-</html>
+<style>
+    div{
+        color: pink;
+    }
+    .test{
+        color: red;
+    }
+</style>
+<div class="test">你笑起来真好看</div>
 ```
 当同一个元素指定多个选择器，就会有优先级的产生。
 - 优先级高的选择器不会覆盖所有低优先级选择器的内容，只会覆盖相同类型的属性
 - 选择器相同，则执行层叠性
-- 选择器不同，则根据选择器权重执行。选择器权重如下所示：
-![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402131737932.png)
+- 选择器不同，则根据选择器权重执行。选择器权重如下所示（越严格优先级越高）：
+
+| 选择器                                           | 选择器权重   |
+| --------------------------------------------- | ------- |
+| 继承 或者 通配符`*`                                  | 0,0,0,0 |
+| 标签选择器（元素选择器）                                  | 0,0,0,1 |
+| 类选择器，伪类选择器                                    | 0,0,1,0 |
+| ID 选择器（[[2-选择器#05-选择器-id（ ）\|ID只有一个，也只能选一个]]） | 0,1,0,0 |
+| 行内样式 style=""                                 | 1,0,0,0 |
+| !important 重要的                                | 无穷大     |
+
 - !important的使用方法
 ```html
 div{
@@ -111,65 +114,34 @@ div{
     }
 ```
 
-```html
-<html>
-    <head>
-        <style>
-            #father {
-                color: red;
-            }
-            p{
-                color: pink;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="father">
-            <p>你真漂亮</p>
-        </div>
-    </body>
-</html>
-```
-
 - 继承的权重最低，加!important也不起作用
-- a链接浏览器默认指定了一个样式，继承父元素的不管用。
+- 默认样式：a链接浏览器默认指定了一个样式，继承父元素的不管用。
 ```html
-<html>
-    <head>
-        <style>
-            body{
-                color: red;
-            }
-        </style>
-    </head>
-    <body>
-        <a href="#">我是单独的样式</a>
-        <!-- 仍为蓝色，因为a自己有默认属性（蓝色+下划线），比继承权重高 -->
-    </body>
-</html>
+<style>
+    body{
+        color: red;
+    }
+</style>
+
+<a href="#">我是单独的样式</a>
+<!-- 仍为蓝色，因为a自己有默认属性（蓝色+下划线），比继承权重高 -->
 ```
 - 如果是复合选择器，则会有权重叠加，需要计算权重。
 - 权重是有4组数字组成，但是不会有进位。
 ![image.png](https://illyber-images.oss-cn-chengdu.aliyuncs.com/202402110115570.png)
 ```html
-<html>
-    <head>
-        <title>权重练习</title>
-        <style>
-            .nav li{
-                color: red;
-            }
-            .pink{
-                color: pink;
-                font-size: 20px;
-            }
-        </style>
-    </head>
-    <body>
-        <ul class="nav">
-            <li class="pink">第一行</li>
-            <li>第二行</li>
-        </ul>
-    </body>
-</html>
+<style>
+    .nav li{
+        color: red;
+    }
+    .pink{
+        color: pink;
+        font-size: 20px;
+    }
+</style>
+
+<ul class="nav">
+    <li class="pink">第一行</li>
+    <li>第二行</li>
+</ul>
 ```
